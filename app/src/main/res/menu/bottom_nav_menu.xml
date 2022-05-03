@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_education"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@drawable/selector_education"
         android:title="Formation" />
 
     <item
         android:id="@+id/navigation_quiz"
-        android:icon="@android:drawable/ic_menu_recent_history"
+        android:icon="@drawable/selector_quiz"
         android:title="Quiz" />
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@android:drawable/btn_star_big_on"
+        android:icon="@drawable/selector_recuitment"
         android:title="Recrutement" />
 
 </menu>
