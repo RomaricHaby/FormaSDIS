@@ -16,4 +16,10 @@
         android:icon="@drawable/selector_recuitment"
         android:title="Recrutement" />
 
+    <item
+        android:id="@+id/invisible"
+        android:visible="false"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="null" />
+
 </menu>

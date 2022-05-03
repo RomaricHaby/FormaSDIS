@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.formasdis.R
+import com.formasdis.ui.activity.MainActivity
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -19,6 +20,10 @@ class HomeFragment : Fragment() {
         val toolBarTitle = view.findViewById<TextView>(R.id.titleToolBar)
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "Forma SDIS"
+
+        if (activity is MainActivity) {
+            (activity as MainActivity).resetNavBar()
+        }
 
         return view
     }
