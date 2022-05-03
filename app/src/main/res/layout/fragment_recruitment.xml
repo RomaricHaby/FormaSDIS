@@ -18,9 +18,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutVolunteer"
-        android:layout_width="301dp"
+        android:layout_width="350dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2">
@@ -29,18 +29,18 @@
             android:id="@+id/imageButtonVolunteer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
+            android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="SpeakableTextPresentCheck"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars[0]" />
 
         <TextView
             android:id="@+id/textViewVolunteer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/volunteer"
             app:layout_constraintBottom_toTopOf="@+id/imageButtonVolunteer"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -48,9 +48,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutProfessional"
-        android:layout_width="301dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutVolunteer">
@@ -59,18 +59,18 @@
             android:id="@+id/imageButtonProfessional"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
+            android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="SpeakableTextPresentCheck"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars[0]" />
 
         <TextView
             android:id="@+id/textViewProfessional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/professional"
             app:layout_constraintBottom_toTopOf="@+id/imageButtonProfessional"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -78,9 +78,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutYoung"
-        android:layout_width="301dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutProfessional">
@@ -89,17 +89,18 @@
             android:id="@+id/imageButtonYoung"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
+            android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textViewYoung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/young"
             app:layout_constraintBottom_toTopOf="@+id/imageButtonYoung"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
