@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomNavBar() {
-        //navigation.selectedItemId = R.id.navigation_education
+        resetNavBar()
         navigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_education -> loadFragment(EducationFragment())
@@ -41,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun resetNavBar(){
+        navigation.selectedItemId = R.id.invisible
+    }
 
     //Management fragment
     private fun loadFragment(fragment: Fragment) {

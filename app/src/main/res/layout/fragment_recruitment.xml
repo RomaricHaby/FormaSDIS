@@ -18,7 +18,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutVolunteer"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,9 +27,9 @@
 
         <ImageButton
             android:id="@+id/imageButtonVolunteer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:layout_width="300dp"
+            android:layout_height="175dp"
+            android:background="@drawable/shape_recruitment_image_rigth"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,28 +38,33 @@
 
         <TextView
             android:id="@+id/textViewVolunteer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="20dp"
+            android:background="@drawable/shape_recruitment_text"
             android:text="@string/volunteer"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/imageButtonVolunteer"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutProfessional"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutVolunteer">
 
         <ImageButton
             android:id="@+id/imageButtonProfessional"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:layout_width="300dp"
+            android:layout_height="175dp"
+            android:background="@drawable/shape_recruitment_image_left"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,9 +73,13 @@
 
         <TextView
             android:id="@+id/textViewProfessional"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="20dp"
+            android:background="@drawable/shape_recruitment_text"
             android:text="@string/professional"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/imageButtonProfessional"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -78,18 +87,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutYoung"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutProfessional">
 
         <ImageButton
             android:id="@+id/imageButtonYoung"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:layout_width="300dp"
+            android:layout_height="175dp"
+            android:background="@drawable/shape_recruitment_image_rigth"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -98,9 +107,13 @@
 
         <TextView
             android:id="@+id/textViewYoung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="20dp"
+            android:background="@drawable/shape_recruitment_text"
             android:text="@string/young"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/imageButtonYoung"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
