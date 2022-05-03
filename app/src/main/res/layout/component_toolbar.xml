@@ -13,6 +13,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,14 +22,14 @@
         android:layout_width="58dp"
         android:layout_height="55dp"
         android:background="@android:color/transparent"
-        android:visibility="visible"
+        android:contentDescription="TODO"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
-        tools:ignore="SpeakableTextPresentCheck"
         app:tint="@color/white"
-        android:contentDescription="TODO" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButtonAddOrAccount"
@@ -37,7 +38,7 @@
         android:layout_marginStart="352dp"
         android:background="@android:color/transparent"
         android:contentDescription="TODO"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,9 +51,15 @@
         android:id="@+id/titleToolBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:fontFamily="@font/montserrat_extra_bold"
         android:text="TextView"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAddOrAccount"
         app:layout_constraintStart_toEndOf="@+id/imageButtonBack"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.432" />

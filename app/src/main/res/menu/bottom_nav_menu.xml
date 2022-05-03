@@ -7,7 +7,7 @@
         android:title="Formation" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_quiz"
         android:icon="@android:drawable/ic_menu_recent_history"
         android:title="Quiz" />
 
