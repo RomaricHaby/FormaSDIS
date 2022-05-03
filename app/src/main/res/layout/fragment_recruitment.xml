@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/textViewVolunteer"
-            android:layout_width="125dp"
+            android:layout_width="140dp"
             android:layout_height="20dp"
             android:background="@drawable/shape_recruitment_text"
             android:text="@string/volunteer"
@@ -73,7 +73,7 @@
 
         <TextView
             android:id="@+id/textViewProfessional"
-            android:layout_width="125dp"
+            android:layout_width="140dp"
             android:layout_height="20dp"
             android:background="@drawable/shape_recruitment_text"
             android:text="@string/professional"
@@ -107,7 +107,7 @@
 
         <TextView
             android:id="@+id/textViewYoung"
-            android:layout_width="125dp"
+            android:layout_width="140dp"
             android:layout_height="20dp"
             android:background="@drawable/shape_recruitment_text"
             android:text="@string/young"
