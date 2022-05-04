@@ -5,4 +5,7 @@
     <string name="volunteer">Volontaire</string>
     <string name="professional">Professionnel(le)</string>
     <string name="young">Jeune</string>
+    <string name="lifeSaving">Secours à personne</string>
+    <string name="fire">Incendie</string>
+    <string name="variousOperation">Opération diverse</string>
 </resources>
