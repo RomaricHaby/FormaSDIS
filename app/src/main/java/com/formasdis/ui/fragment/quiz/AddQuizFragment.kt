@@ -111,7 +111,13 @@ class AddQuizFragment : Fragment() {
             val quiz = Quiz(id, name, nbrQuestions, type, listQuestions)
 
             Toast.makeText(context, quiz.toString(), Toast.LENGTH_LONG).show()
-            loadFragment(AddQuestionToQuizFragment(quiz))
+
+            if(nameQuiz.text.isNotBlank()){
+                loadFragment(AddQuestionToQuizFragment(quiz))
+            }else{
+                Toast.makeText(context, "Le quiz doit avoir un nom", Toast.LENGTH_LONG).show()
+            }
+
         }
     }
 
