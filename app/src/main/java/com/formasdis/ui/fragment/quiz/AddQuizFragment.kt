@@ -35,6 +35,8 @@ class AddQuizFragment : Fragment() {
 
         initUI(view)
 
+        onClick(view)
+
         return view
     }
 
@@ -58,17 +60,45 @@ class AddQuizFragment : Fragment() {
 
         toolBarTitle.text = "Créer un quiz"
         toolBarTitle.textSize = 20F
+    }
 
+
+    private fun onClick(view: View) {
 
         toolBarBack.setOnClickListener {
             loadFragment(AllQuizFragment())
         }
 
+        addQuestion.setOnClickListener {
+            var nbrQuestionInt  = nbrQuestion.text.toString().toInt()
+
+            if(nbrQuestionInt == 10){
+                Toast.makeText(context, "Le quiz ne peut pas dépasser 10 questions", Toast.LENGTH_LONG).show()
+            }
+            else{
+                nbrQuestionInt++
+            }
+
+            nbrQuestion.text = nbrQuestionInt.toString()
+        }
+
+        removeQuestion.setOnClickListener {
+            var nbrQuestionInt  = nbrQuestion.text.toString().toInt()
+
+            if(nbrQuestionInt == 1){
+                Toast.makeText(context, "Un quiz doit comporter une question", Toast.LENGTH_LONG).show()
+            }
+            else{
+                nbrQuestionInt--
+            }
+
+            nbrQuestion.text = nbrQuestionInt.toString()
+        }
+
         addQuestionButton.setOnClickListener {
             val id = currentTimeMillis().toInt()
 
-            val selectedRadioButton =
-                view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
+            val selectedRadioButton = view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
 
             val type: String = selectedRadioButton.text.toString()
 
