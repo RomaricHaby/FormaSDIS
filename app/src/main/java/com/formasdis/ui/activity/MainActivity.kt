@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.network.DataQuiz
 import com.formasdis.ui.fragment.EducationFragment
-import com.formasdis.ui.fragment.QuizFragment
 import com.formasdis.ui.fragment.RecruitmentFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun resetNavBar(){
+    fun resetNavBar() {
         navigation.selectedItemId = R.id.invisible
     }
 

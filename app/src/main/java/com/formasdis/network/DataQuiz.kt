@@ -11,9 +11,9 @@ object DataQuiz {
     val listQuizSAP = ArrayList<Quiz>()
     val listQuizINC = ArrayList<Quiz>()
 
-    private fun filterQuiz(){
-        for (quiz in listQuiz){
-            when(quiz.type.lowercase()){
+    private fun filterQuiz() {
+        for (quiz in listQuiz) {
+            when (quiz.type.lowercase()) {
                 "od" -> listQuizOD.add(quiz)
                 "inc" -> listQuizINC.add(quiz)
                 "sap" -> listQuizSAP.add(quiz)

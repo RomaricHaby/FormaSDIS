@@ -18,9 +18,9 @@ import com.formasdis.ui.fragment.HomeFragment
 
 class AllQuizFragment : Fragment() {
     // Get item in view
-    private lateinit var toolBarTitle : TextView
-    private lateinit var toolBarBack : ImageButton
-    private lateinit var toolBarAddQuiz : ImageButton
+    private lateinit var toolBarTitle: TextView
+    private lateinit var toolBarBack: ImageButton
+    private lateinit var toolBarAddQuiz: ImageButton
 
     private lateinit var recycleViewSUAP: RecyclerView
     private lateinit var recycleViewOD: RecyclerView
@@ -39,7 +39,7 @@ class AllQuizFragment : Fragment() {
     }
 
     private fun initUI(view: View) {
-        toolBarTitle  = view.findViewById(R.id.titleToolBar)
+        toolBarTitle = view.findViewById(R.id.titleToolBar)
         toolBarBack = view.findViewById(R.id.imageButtonBack)
         toolBarAddQuiz = view.findViewById(R.id.imageButtonAddQuizz)
 
@@ -48,12 +48,12 @@ class AllQuizFragment : Fragment() {
         recycleViewSUAP = view.findViewById(R.id.recycler_view_suap)
 
 
-        configureRecyclerView(DataQuiz.listQuizINC,recycleViewINC)
-        configureRecyclerView(DataQuiz.listQuizOD,recycleViewOD)
-        configureRecyclerView(DataQuiz.listQuizSAP,recycleViewSUAP)
+        configureRecyclerView(DataQuiz.listQuizINC, recycleViewINC)
+        configureRecyclerView(DataQuiz.listQuizOD, recycleViewOD)
+        configureRecyclerView(DataQuiz.listQuizSAP, recycleViewSUAP)
 
         // ToolBar
-        toolBarBack.visibility= View.VISIBLE
+        toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarAddQuiz.visibility = View.VISIBLE
 

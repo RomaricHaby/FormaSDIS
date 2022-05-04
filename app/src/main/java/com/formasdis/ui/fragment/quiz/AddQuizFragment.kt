@@ -67,8 +67,9 @@ class AddQuizFragment : Fragment() {
         addQuestionButton.setOnClickListener {
             val id = currentTimeMillis().toInt()
 
-            val selectedRadioButton = view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
-          
+            val selectedRadioButton =
+                view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
+
             val type: String = selectedRadioButton.text.toString()
 
 
@@ -77,7 +78,7 @@ class AddQuizFragment : Fragment() {
 
             val name: String = nameQuiz.text.toString()
 
-            val quiz = Quiz(id,name,nbrQuestions,type,listQuestions)
+            val quiz = Quiz(id, name, nbrQuestions, type, listQuestions)
 
             //TODO envoyer en param l'object
 
