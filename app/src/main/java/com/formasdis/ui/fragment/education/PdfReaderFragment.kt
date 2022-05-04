@@ -19,11 +19,14 @@ class PdfReaderFragment(private val urlPdf: String, private val isPdf: Boolean) 
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_young, container, false)
-        val webView: WebView = view.findViewById(R.id.webview)
+        val view = inflater.inflate(R.layout.fragment_pdf_reader, container, false)
+        val webView: WebView = view.findViewById(R.id.webviewPdf)
         webView.webViewClient = WebViewClient()
 
-        if(isPdf) {
+        if(!isPdf) {
+            webView.settings.setSupportZoom(true)
+
+            webView.settings.javaScriptEnabled = true
             webView.loadUrl(urlPdf)
         }
         else {
