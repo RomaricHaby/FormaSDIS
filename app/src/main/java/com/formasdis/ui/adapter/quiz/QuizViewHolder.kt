@@ -33,12 +33,12 @@ class QuizViewHolder(itemView: View, val context: Context) :
     fun updateQuiz(quiz: Quiz) {
         initUI()
 
-        if (quiz.shareCode.isNotBlank()) {
+        /*if (quiz.shareCode.isNotBlank()) {
             shareCode.text = quiz.shareCode
             shareCode.visibility = View.VISIBLE
 
             textViewShareCode.visibility = View.VISIBLE
-        }
+        }*/
 
         titleQuiz.text = quiz.name
         nbrQuestions.text = quiz.nbrQuestion.toString()

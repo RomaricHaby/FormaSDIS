@@ -75,7 +75,7 @@ object DataQuiz {
                         }
                     }
                 }
-                listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions, shareCode))
+                listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions))
             }
 
             filterQuiz()

@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.formasdis.R
+import com.formasdis.model.Question
+import com.formasdis.model.Quiz
+import java.lang.System.currentTimeMillis
+
 
 class AddQuizFragment : Fragment() {
 
@@ -23,6 +24,8 @@ class AddQuizFragment : Fragment() {
     private lateinit var addQuestion: ImageButton
     private lateinit var removeQuestion: ImageButton
     private lateinit var nbrQuestion: TextView
+
+    private lateinit var addQuestionButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,7 +49,9 @@ class AddQuizFragment : Fragment() {
         removeQuestion = view.findViewById(R.id.removeQuestionQuizAdd)
 
         nbrQuestion = view.findViewById(R.id.nbrQuestionAddQuiz)
-        
+
+        addQuestionButton = view.findViewById(R.id.buttonAddQuiz)
+
         // ToolBar
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
@@ -57,6 +62,28 @@ class AddQuizFragment : Fragment() {
 
         toolBarBack.setOnClickListener {
             loadFragment(AllQuizFragment())
+        }
+
+        addQuestionButton.setOnClickListener {
+            val id = currentTimeMillis().toInt()
+
+            val selectedRadioButton = view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
+          
+            val type: String = selectedRadioButton.text.toString()
+
+
+            val nbrQuestions = nbrQuestion.text.toString().toInt()
+            val listQuestions = ArrayList<Question>()
+
+            val name: String = nameQuiz.text.toString()
+
+            val quiz = Quiz(id,name,nbrQuestions,type,listQuestions)
+
+            //TODO envoyer en param l'object
+
+            Toast.makeText(context, quiz.toString(), Toast.LENGTH_LONG).show()
+            //loadFragment()
+
         }
     }
 

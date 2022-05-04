@@ -6,5 +6,4 @@ data class Quiz(
     val nbrQuestion: Int,
     val type: String,
     val listQuestions: List<Question>,
-    val shareCode : String
 )
