@@ -110,11 +110,8 @@ class AddQuizFragment : Fragment() {
 
             val quiz = Quiz(id, name, nbrQuestions, type, listQuestions)
 
-            //TODO envoyer en param l'object
-
             Toast.makeText(context, quiz.toString(), Toast.LENGTH_LONG).show()
-            //loadFragment()
-
+            loadFragment(AddQuestionToQuizFragment(quiz))
         }
     }
 
