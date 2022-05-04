@@ -5,5 +5,6 @@ data class Quiz(
     val name: String,
     val nbrQuestion: Int,
     val type: String,
-    val listQuestions: List<Question>
+    val listQuestions: List<Question>,
+    val shareCode : String
 )

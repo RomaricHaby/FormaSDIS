@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -28,7 +29,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
+                android:id="@+id/my_quiz_page_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -77,21 +78,66 @@
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/my_quiz_page_layout" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/suap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="39dp"
-                tools:layout_editor_absoluteY="234dp" />
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Thème secours à personne  "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="428dp"
-                android:layout_height="280dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="282dp" />
+                android:id="@+id/recycler_view_suap"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suap"
+                tools:listitem="@layout/view_holder_quiz">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/suap2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Thème opération diverses"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_view_suap" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_od"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suap2"
+                tools:listitem="@layout/view_holder_quiz" />
+
+            <TextView
+                android:id="@+id/suap3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Thème incendie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_view_od" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_inc"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suap3"
+                tools:listitem="@layout/view_holder_quiz" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

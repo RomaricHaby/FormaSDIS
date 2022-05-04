@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="350dp"
+    android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:layout_marginHorizontal="16dp"
     android:background="@drawable/shape_view_holder_quiz"
     android:elevation="8dp"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="25dp">
 
     <TextView
         android:id="@+id/title_quiz_view_holder"
@@ -29,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/montserrat_light"
         android:text="x"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -39,7 +40,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_light"
         android:text="Nombres de questions : "
         app:layout_constraintStart_toStartOf="@+id/title_quiz_view_holder"
         app:layout_constraintTop_toBottomOf="@+id/title_quiz_view_holder" />
+
+    <ImageView
+        android:id="@+id/type_quiz_ic_view_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/nbrquestions_view_holder"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_type_inc" />
+
+    <TextView
+        android:id="@+id/text_view_share_code_view_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="Code de partage :  "
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/share_code_view_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="x"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_share_code_view_holder"
+        app:layout_constraintStart_toEndOf="@+id/text_view_share_code_view_holder"
+        app:layout_constraintTop_toTopOf="@+id/text_view_share_code_view_holder" />
 </androidx.constraintlayout.widget.ConstraintLayout>

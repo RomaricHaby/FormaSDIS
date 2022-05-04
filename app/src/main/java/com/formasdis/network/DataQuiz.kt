@@ -7,6 +7,20 @@ import com.formasdis.model.Quiz
 object DataQuiz {
     val listQuiz = ArrayList<Quiz>()
 
+    val listQuizOD = ArrayList<Quiz>()
+    val listQuizSAP = ArrayList<Quiz>()
+    val listQuizINC = ArrayList<Quiz>()
+
+    private fun filterQuiz(){
+        for (quiz in listQuiz){
+            when(quiz.type.lowercase()){
+                "od" -> listQuizOD.add(quiz)
+                "inc" -> listQuizINC.add(quiz)
+                "sap" -> listQuizSAP.add(quiz)
+            }
+        }
+    }
+
     fun addQuiz(quiz: Quiz) {
         ClientFirebase.myRef.child("quiz").child(quiz.id.toString()).setValue(quiz)
     }
@@ -17,6 +31,7 @@ object DataQuiz {
                 var name = "null"
                 var nbrQuestion = 0
                 var type = ""
+                var shareCode = ""
                 val listQuestions = ArrayList<Question>()
 
                 val id: Int = idQuiz.key.toString().toInt()
@@ -25,6 +40,7 @@ object DataQuiz {
                         "name" -> name = dataQuiz.value.toString()
                         "nbrQuestion" -> nbrQuestion = dataQuiz.value.toString().toInt()
                         "type" -> type = dataQuiz.value.toString()
+                        "shareCode" -> shareCode = dataQuiz.value.toString()
                         "listQuestions" -> {
                             for (questionsId in dataQuiz.children) {
                                 var typeQuestion = 0
@@ -59,8 +75,10 @@ object DataQuiz {
                         }
                     }
                 }
-                listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions))
+                listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions, shareCode))
             }
+
+            filterQuiz()
         }
     }
 
