@@ -1,12 +1,12 @@
 package com.formasdis.ui.fragment.quiz
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
@@ -20,6 +20,7 @@ class AllQuizFragment : Fragment() {
     // Get item in view
     private lateinit var toolBarTitle : TextView
     private lateinit var toolBarBack : ImageButton
+    private lateinit var toolBarAddQuiz : ImageButton
 
     private lateinit var recycleViewSUAP: RecyclerView
     private lateinit var recycleViewOD: RecyclerView
@@ -40,6 +41,7 @@ class AllQuizFragment : Fragment() {
     private fun initUI(view: View) {
         toolBarTitle  = view.findViewById(R.id.titleToolBar)
         toolBarBack = view.findViewById(R.id.imageButtonBack)
+        toolBarAddQuiz = view.findViewById(R.id.imageButtonAddQuizz)
 
         recycleViewINC = view.findViewById(R.id.recycler_view_inc)
         recycleViewOD = view.findViewById(R.id.recycler_view_od)
@@ -53,6 +55,8 @@ class AllQuizFragment : Fragment() {
         // ToolBar
         toolBarBack.visibility= View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
+        toolBarAddQuiz.visibility = View.VISIBLE
+
         toolBarTitle.text = "Quiz"
         toolBarTitle.textSize = 20F
 
@@ -61,12 +65,21 @@ class AllQuizFragment : Fragment() {
             loadFragment(HomeFragment())
         }
 
+        toolBarAddQuiz.setOnClickListener {
+            loadFragment(AddQuizFragment())
+        }
+
     }
 
     private fun configureRecyclerView(list: List<Quiz>, recyclerView: RecyclerView) {
         val adapter = QuizAdapter(list)
         adapter.also { recyclerView.adapter = it }
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        val horizontalLayout = LinearLayoutManager(
+            context,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+        recyclerView.layoutManager = horizontalLayout
     }
 
 
