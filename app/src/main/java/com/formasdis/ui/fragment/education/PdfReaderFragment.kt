@@ -31,12 +31,12 @@ class PdfReaderFragment(private val urlPdf: String, private val isPdf: Boolean) 
 
             webView.settings.javaScriptEnabled = true
 
-            webView.getSettings().setJavaScriptEnabled(true)
+            //webView.getSettings().setJavaScriptEnabled(true)
             webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$urlPdf")
 
-            val settings: WebSettings = webView.getSettings()
-            settings.javaScriptEnabled = true
-            settings.databaseEnabled = true
+            //val settings: WebSettings = webView.getSettings()
+            //settings.javaScriptEnabled = true
+            //settings.databaseEnabled = true
             /*val databasePath: String =
                 this.getApplicationContext().getDir("database", Context.MODE_PRIVATE).getPath()
             settings.databasePath = databasePath

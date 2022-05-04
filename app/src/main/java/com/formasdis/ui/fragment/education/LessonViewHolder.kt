@@ -30,7 +30,7 @@ class LessonViewHolder(itemView: View, val context: Context) :
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
             transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(200,200)
+            size(400,400)
         }
     }
 }

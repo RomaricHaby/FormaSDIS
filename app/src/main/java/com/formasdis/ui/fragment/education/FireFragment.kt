@@ -36,14 +36,14 @@ class FireFragment : Fragment() {
     }
 
     private fun initUI(view: View) {
-        //toolBarTitle  = view.findViewById(R.id.titleToolBar)
-        //toolBarBack = view.findViewById(R.id.imageButtonBack)
+        toolBarTitle  = view.findViewById(R.id.titleToolBar)
+        toolBarBack = view.findViewById(R.id.imageButtonBack)
         recycleViewLesson = view.findViewById(R.id.recycler_view_lesson)
 
         configureRecyclerView(DataLesson.listLesson, recycleViewLesson)
 
         // ToolBar
-        /*toolBarBack.visibility= View.VISIBLE
+        toolBarBack.visibility= View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "Lesson"
         toolBarTitle.textSize = 20F
@@ -52,11 +52,11 @@ class FireFragment : Fragment() {
         toolBarBack.setOnClickListener {
             loadFragment(HomeFragment())
         }
-*/
+
     }
 
     private fun configureRecyclerView(list: List<Lesson>, recyclerView: RecyclerView) {
-        val adapter = LessonAdapter(list)
+        val adapter = LessonAdapter(list, parentFragmentManager)
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
