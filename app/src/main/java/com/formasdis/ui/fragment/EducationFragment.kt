@@ -53,7 +53,7 @@ class EducationFragment : Fragment() {
         }
 
         imageLifeSaving.setOnClickListener {
-            loadFragment((PdfReaderFragment("https://stackoverflow.com/questions/5899087/android-webview-localstorage", false)))
+            loadFragment((PdfReaderFragment("https://spf-editions.fr/SUAP_sdis01/SUAP_sdis01/suap.php", false)))
         }
 
 

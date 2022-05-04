@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Lesson
 import com.formasdis.network.DataLesson
-import com.formasdis.network.DataQuiz
 import com.formasdis.ui.fragment.HomeFragment
 
 class FireFragment : Fragment() {
@@ -21,7 +20,7 @@ class FireFragment : Fragment() {
     private lateinit var toolBarTitle : TextView
     private lateinit var toolBarBack : ImageButton
 
-    private lateinit var recycleViewLesson: RecyclerView
+    private lateinit var recyclerViewLesson: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,9 +37,9 @@ class FireFragment : Fragment() {
     private fun initUI(view: View) {
         toolBarTitle  = view.findViewById(R.id.titleToolBar)
         toolBarBack = view.findViewById(R.id.imageButtonBack)
-        recycleViewLesson = view.findViewById(R.id.recycler_view_lesson)
+        recyclerViewLesson = view.findViewById(R.id.recycler_view_lesson)
 
-        configureRecyclerView(DataLesson.listLesson, recycleViewLesson)
+        configureRecyclerView(DataLesson.listFire, recyclerViewLesson)
 
         // ToolBar
         toolBarBack.visibility= View.VISIBLE
