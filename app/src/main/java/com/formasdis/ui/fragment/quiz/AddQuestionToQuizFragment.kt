@@ -36,7 +36,7 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
 
     private fun onClick(view: View) {
         toolBarBack.setOnClickListener {
-            loadFragment(AllQuizFragment())
+            loadFragment(AddQuizFragment())
         }
     }
 

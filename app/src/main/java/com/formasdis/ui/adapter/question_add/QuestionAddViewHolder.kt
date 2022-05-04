@@ -17,6 +17,6 @@ class QuestionAddViewHolder(itemView: View, val context: Context) :
 
     fun updateQuestionAdd(int: Int) {
         initUI()
-        titleQuestionAdd.text = int.toString()
+        titleQuestionAdd.text = "Question $int"
     }
 }
