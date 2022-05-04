@@ -12,6 +12,7 @@ import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
 import com.formasdis.ui.fragment.education.FireFragment
 import com.formasdis.ui.fragment.education.LifeSavingFragment
+import com.formasdis.ui.fragment.education.PdfReaderFragment
 import com.formasdis.ui.fragment.education.VariousOperationFragment
 import com.formasdis.ui.fragment.recruitment.ProfessionalFragment
 import com.formasdis.ui.fragment.recruitment.VolunteerFragment
@@ -52,7 +53,7 @@ class EducationFragment : Fragment() {
         }
 
         imageLifeSaving.setOnClickListener {
-            loadFragment((LifeSavingFragment()))
+            loadFragment((PdfReaderFragment("https://stackoverflow.com/questions/5899087/android-webview-localstorage", false)))
         }
 
 
