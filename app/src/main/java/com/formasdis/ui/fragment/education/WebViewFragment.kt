@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import com.formasdis.R
 
 
-class PdfReaderFragment(private val urlPdf: String, private val isPdf: Boolean) : Fragment() {
+class WebViewFragment(private val urlPdf: String, private val isPdf: Boolean) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

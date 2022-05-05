@@ -15,7 +15,7 @@ import com.formasdis.model.Lesson
 import com.formasdis.network.DataLesson
 import com.formasdis.ui.fragment.HomeFragment
 
-class VariousOperationFragment : Fragment() {
+class RecyclerViewFragment(val type: String) : Fragment() {
     // Get item in view
     private lateinit var toolBarTitle : TextView
     private lateinit var toolBarBack : ImageButton
@@ -27,7 +27,7 @@ class VariousOperationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_various_operation, container, false)
+        val view = inflater.inflate(R.layout.fragment_fire, container, false)
 
         initUI(view)
 
@@ -37,9 +37,13 @@ class VariousOperationFragment : Fragment() {
     private fun initUI(view: View) {
         toolBarTitle  = view.findViewById(R.id.titleToolBar)
         toolBarBack = view.findViewById(R.id.imageButtonBack)
-        recyclerViewLesson = view.findViewById(R.id.recycler_view_various_operation)
+        recyclerViewLesson = view.findViewById(R.id.recycler_view_lesson)
 
-        configureRecyclerView(DataLesson.listVariousOperation, recyclerViewLesson)
+        if (type == "fire")
+            configureRecyclerView(DataLesson.listFire, recyclerViewLesson)
+        else
+            configureRecyclerView(DataLesson.listVariousOperation, recyclerViewLesson)
+
 
         // ToolBar
         toolBarBack.visibility= View.VISIBLE

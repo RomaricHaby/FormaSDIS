@@ -10,13 +10,8 @@ import android.widget.TextView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
-import com.formasdis.ui.fragment.education.FireFragment
-import com.formasdis.ui.fragment.education.LifeSavingFragment
-import com.formasdis.ui.fragment.education.PdfReaderFragment
-import com.formasdis.ui.fragment.education.VariousOperationFragment
-import com.formasdis.ui.fragment.recruitment.ProfessionalFragment
-import com.formasdis.ui.fragment.recruitment.VolunteerFragment
-import com.formasdis.ui.fragment.recruitment.YoungFragment
+import com.formasdis.ui.fragment.education.RecyclerViewFragment
+import com.formasdis.ui.fragment.education.WebViewFragment
 
 class EducationFragment : Fragment() {
     override fun onCreateView(
@@ -53,7 +48,7 @@ class EducationFragment : Fragment() {
         }
 
         imageLifeSaving.setOnClickListener {
-            loadFragment((PdfReaderFragment("https://spf-editions.fr/SUAP_sdis01/SUAP_sdis01/suap.php", false)))
+            loadFragment((WebViewFragment("https://spf-editions.fr/SUAP_sdis01/SUAP_sdis01/suap.php", false)))
         }
 
 
@@ -66,7 +61,7 @@ class EducationFragment : Fragment() {
         }
 
         imageFire.setOnClickListener {
-            loadFragment(FireFragment())
+            loadFragment(RecyclerViewFragment("fire"))
         }
 
         // Young
@@ -78,7 +73,7 @@ class EducationFragment : Fragment() {
         }
 
         imageVariousOperation.setOnClickListener {
-            loadFragment(VariousOperationFragment())
+            loadFragment(RecyclerViewFragment("various"))
         }
 
         return view
