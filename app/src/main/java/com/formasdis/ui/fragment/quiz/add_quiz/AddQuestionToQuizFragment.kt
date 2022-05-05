@@ -1,9 +1,10 @@
-package com.formasdis.ui.fragment.quiz
+package com.formasdis.ui.fragment.quiz.add_quiz
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -19,6 +20,7 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
     private lateinit var toolBarBack: ImageButton
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var buttonValidate: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +53,15 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
         toolBarTitle.text = "Créer un quiz"
         toolBarTitle.textSize = 20F
 
+
+        buttonValidate = view.findViewById(R.id.buttonAddQuestionToQuiz)
+
+        buttonValidate.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AddQuizRecapFragment(quiz))
+                .setReorderingAllowed(true)
+                .addToBackStack("detail").commit()
+        }
 
 
         recyclerView = view.findViewById(R.id.recyclerViewAddQuestionToQuiz)

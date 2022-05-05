@@ -1,4 +1,4 @@
-package com.formasdis.ui.fragment.quiz
+package com.formasdis.ui.fragment.quiz.add_quiz
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.model.Question
 import com.formasdis.model.Quiz
+import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import java.lang.System.currentTimeMillis
 
 

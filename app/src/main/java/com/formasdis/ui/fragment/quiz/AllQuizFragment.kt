@@ -14,6 +14,7 @@ import com.formasdis.model.Quiz
 import com.formasdis.network.DataQuiz
 import com.formasdis.ui.adapter.quiz.QuizAdapter
 import com.formasdis.ui.fragment.HomeFragment
+import com.formasdis.ui.fragment.quiz.add_quiz.AddQuizFragment
 
 
 class AllQuizFragment : Fragment() {

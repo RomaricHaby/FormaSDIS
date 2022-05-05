@@ -1,4 +1,4 @@
-package com.formasdis.ui.fragment.quiz
+package com.formasdis.ui.fragment.quiz.add_quiz
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
