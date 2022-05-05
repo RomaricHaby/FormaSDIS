@@ -4,9 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebChromeClient
-import android.webkit.WebSettings
-import android.webkit.WebStorage.QuotaUpdater
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
@@ -23,13 +20,12 @@ class WebViewFragment(private val urlPdf: String, private val isPdf: Boolean) : 
         val webView: WebView = view.findViewById(R.id.webviewPdf)
         webView.webViewClient = WebViewClient()
 
-        if(!isPdf) {
+        if (!isPdf) {
             webView.settings.setSupportZoom(true)
 
             webView.settings.javaScriptEnabled = true
             webView.loadUrl(urlPdf)
-        }
-        else {
+        } else {
             webView.settings.setSupportZoom(true)
 
             webView.settings.javaScriptEnabled = true

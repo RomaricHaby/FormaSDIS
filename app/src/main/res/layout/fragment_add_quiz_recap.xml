@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.quiz.add_quiz.AddQuestionFragment">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Récapitulatif"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include6" />
+
+    <include
+        android:id="@+id/include6"
+        layout="@layout/component_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonRecapQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_button_quiz_add"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Créer le quiz "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suap6" />
+
+    <TextView
+        android:id="@+id/suap4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Nom du quiz :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/suap5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nombre de questions :"
+        app:layout_constraintStart_toStartOf="@+id/suap4"
+        app:layout_constraintTop_toBottomOf="@+id/suap4" />
+
+    <TextView
+        android:id="@+id/suap6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Code de partage :"
+        app:layout_constraintStart_toStartOf="@+id/suap5"
+        app:layout_constraintTop_toBottomOf="@+id/suap5" />
+
+    <TextView
+        android:id="@+id/nomQuizRecapAddQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/suap4"
+        app:layout_constraintStart_toEndOf="@+id/suap4"
+        app:layout_constraintTop_toTopOf="@+id/suap4" />
+
+    <TextView
+        android:id="@+id/nbrQuestionRecapAddQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/nomQuizRecapAddQuiz"
+        app:layout_constraintTop_toTopOf="@+id/suap5" />
+
+    <TextView
+        android:id="@+id/codePartageRecapAddQuiz"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nbrQuestionRecapAddQuiz"
+        app:layout_constraintTop_toTopOf="@+id/suap6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

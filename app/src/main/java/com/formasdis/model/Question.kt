@@ -1,7 +1,7 @@
 package com.formasdis.model
 
 data class Question(
-    val nameQuestion: String,
-    val type: Int,
-    val listAnswer: List<Answer>
+    var nameQuestion: String,
+    var type: Int,
+    val listAnswer: ArrayList<Answer>
 )

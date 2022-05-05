@@ -2,12 +2,12 @@ package com.formasdis.ui.fragment.education
 
 import LessonAdapter
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
@@ -17,8 +17,8 @@ import com.formasdis.ui.fragment.HomeFragment
 
 class RecyclerViewFragment(val type: String) : Fragment() {
     // Get item in view
-    private lateinit var toolBarTitle : TextView
-    private lateinit var toolBarBack : ImageButton
+    private lateinit var toolBarTitle: TextView
+    private lateinit var toolBarBack: ImageButton
 
     private lateinit var recyclerViewLesson: RecyclerView
 
@@ -35,7 +35,7 @@ class RecyclerViewFragment(val type: String) : Fragment() {
     }
 
     private fun initUI(view: View) {
-        toolBarTitle  = view.findViewById(R.id.titleToolBar)
+        toolBarTitle = view.findViewById(R.id.titleToolBar)
         toolBarBack = view.findViewById(R.id.imageButtonBack)
         recyclerViewLesson = view.findViewById(R.id.recycler_view_lesson)
 
@@ -46,7 +46,7 @@ class RecyclerViewFragment(val type: String) : Fragment() {
 
 
         // ToolBar
-        toolBarBack.visibility= View.VISIBLE
+        toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "Lesson"
         toolBarTitle.textSize = 20F
