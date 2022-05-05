@@ -1,4 +1,4 @@
-package com.formasdis.ui.fragment
+package com.formasdis.ui.fragment.education
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,7 @@ import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
-import com.formasdis.ui.fragment.education.RecyclerViewFragment
-import com.formasdis.ui.fragment.education.WebViewFragment
+import com.formasdis.ui.fragment.HomeFragment
 
 class EducationFragment : Fragment() {
     override fun onCreateView(
@@ -66,7 +65,7 @@ class EducationFragment : Fragment() {
         }
 
         imageFire.setOnClickListener {
-            loadFragment(RecyclerViewFragment("fire"))
+            loadFragment(ShowListLessonFragment("fire"))
         }
 
         // Young
@@ -78,7 +77,7 @@ class EducationFragment : Fragment() {
         }
 
         imageVariousOperation.setOnClickListener {
-            loadFragment(RecyclerViewFragment("various"))
+            loadFragment(ShowListLessonFragment("various"))
         }
 
         return view

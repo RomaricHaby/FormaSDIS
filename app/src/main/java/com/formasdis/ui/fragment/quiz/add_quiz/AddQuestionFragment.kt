@@ -34,7 +34,7 @@ class AddQuestionFragment(val quiz: Quiz, val position: Int) : Fragment() {
 
         initUI(view)
 
-        onClick(view)
+        onClick()
 
         return view
     }
@@ -59,12 +59,10 @@ class AddQuestionFragment(val quiz: Quiz, val position: Int) : Fragment() {
 
         toolBarTitle.text = "Créer un quiz"
         toolBarTitle.textSize = 20F
-
-
     }
 
 
-    private fun onClick(view: View) {
+    private fun onClick() {
 
         toolBarBack.setOnClickListener {
             loadFragment(AddQuestionToQuizFragment(quiz))

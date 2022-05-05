@@ -1,6 +1,5 @@
 package com.formasdis.ui.fragment.education
 
-import LessonAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Lesson
 import com.formasdis.network.DataLesson
+import com.formasdis.ui.adapter.lesson.LessonAdapter
 import com.formasdis.ui.fragment.HomeFragment
 
-class RecyclerViewFragment(val type: String) : Fragment() {
+class ShowListLessonFragment(val type: String) : Fragment() {
     // Get item in view
     private lateinit var toolBarTitle: TextView
     private lateinit var toolBarBack: ImageButton
@@ -27,7 +27,7 @@ class RecyclerViewFragment(val type: String) : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_fire, container, false)
+        val view = inflater.inflate(R.layout.fragment_show_list_lesson, container, false)
 
         initUI(view)
 
@@ -69,6 +69,6 @@ class RecyclerViewFragment(val type: String) : Fragment() {
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .setReorderingAllowed(true)
-            .addToBackStack("detail").commit()
+            .commit()
     }
 }

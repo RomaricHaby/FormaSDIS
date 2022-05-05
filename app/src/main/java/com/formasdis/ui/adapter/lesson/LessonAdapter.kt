@@ -1,10 +1,11 @@
+package com.formasdis.ui.adapter.lesson
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Lesson
-import com.formasdis.ui.fragment.education.LessonViewHolder
 import com.formasdis.ui.fragment.education.WebViewFragment
 
 class LessonAdapter(

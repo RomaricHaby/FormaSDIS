@@ -1,4 +1,4 @@
-package com.formasdis.ui.fragment
+package com.formasdis.ui.fragment.recruitment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,7 @@ import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
-import com.formasdis.ui.fragment.recruitment.ProfessionalFragment
-import com.formasdis.ui.fragment.recruitment.VolunteerFragment
-import com.formasdis.ui.fragment.recruitment.YoungFragment
+import com.formasdis.ui.fragment.HomeFragment
 
 class RecruitmentFragment : Fragment() {
     override fun onCreateView(
