@@ -71,9 +71,9 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
                     .replace(R.id.fragment_container, AddQuizRecapFragment(quiz))
                     .setReorderingAllowed(true)
                     .commit()
-            }
-            else{
-                Toast.makeText(context, "Veuillez remplir toutes les questions", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(context, "Veuillez remplir toutes les questions", Toast.LENGTH_LONG)
+                    .show()
             }
         }
 

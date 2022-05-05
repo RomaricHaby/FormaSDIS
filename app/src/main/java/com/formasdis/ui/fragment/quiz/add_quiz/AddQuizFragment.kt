@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.util.rangeTo
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.model.Question
@@ -72,12 +71,15 @@ class AddQuizFragment : Fragment() {
         }
 
         addQuestion.setOnClickListener {
-            var nbrQuestionInt  = nbrQuestion.text.toString().toInt()
+            var nbrQuestionInt = nbrQuestion.text.toString().toInt()
 
-            if(nbrQuestionInt == 10){
-                Toast.makeText(context, "Le quiz ne peut pas dépasser 10 questions", Toast.LENGTH_LONG).show()
-            }
-            else{
+            if (nbrQuestionInt == 10) {
+                Toast.makeText(
+                    context,
+                    "Le quiz ne peut pas dépasser 10 questions",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
                 nbrQuestionInt++
             }
 
@@ -85,12 +87,12 @@ class AddQuizFragment : Fragment() {
         }
 
         removeQuestion.setOnClickListener {
-            var nbrQuestionInt  = nbrQuestion.text.toString().toInt()
+            var nbrQuestionInt = nbrQuestion.text.toString().toInt()
 
-            if(nbrQuestionInt == 1){
-                Toast.makeText(context, "Un quiz doit comporter une question", Toast.LENGTH_LONG).show()
-            }
-            else{
+            if (nbrQuestionInt == 1) {
+                Toast.makeText(context, "Un quiz doit comporter une question", Toast.LENGTH_LONG)
+                    .show()
+            } else {
                 nbrQuestionInt--
             }
 
@@ -100,7 +102,8 @@ class AddQuizFragment : Fragment() {
         addQuestionButton.setOnClickListener {
             val id = currentTimeMillis()
 
-            val selectedRadioButton = view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
+            val selectedRadioButton =
+                view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
 
             val type: String = selectedRadioButton.text.toString()
 
@@ -112,17 +115,15 @@ class AddQuizFragment : Fragment() {
 
             val quiz = Quiz(id, name, nbrQuestions, type, listQuestions)
 
-            Toast.makeText(context, quiz.toString(), Toast.LENGTH_LONG).show()
-
-            if(nameQuiz.text.isNotBlank()){
+            if (nameQuiz.text.isNotBlank()) {
                 var i = 0
-                while(i < quiz.nbrQuestion){
-                    quiz.listQuestions.add(Question("",0,ArrayList()))
+                while (i < quiz.nbrQuestion) {
+                    quiz.listQuestions.add(Question("", 0, ArrayList()))
                     i++
                 }
 
                 loadFragment(AddQuestionToQuizFragment(quiz))
-            }else{
+            } else {
                 Toast.makeText(context, "Le quiz doit avoir un nom", Toast.LENGTH_LONG).show()
             }
 

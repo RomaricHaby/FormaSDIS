@@ -34,7 +34,8 @@ class QuestionAddAdapter(
                     .setReorderingAllowed(true)
                     .addToBackStack("detail").commit()
             } else {
-                Toast.makeText(context, "Cette question est déja complète", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Cette question est déja complète", Toast.LENGTH_LONG)
+                    .show()
             }
         }
     }

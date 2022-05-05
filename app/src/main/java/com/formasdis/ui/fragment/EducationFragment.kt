@@ -4,14 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import androidx.fragment.app.Fragment
-
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
-
 import com.formasdis.R
 import com.formasdis.ui.fragment.education.RecyclerViewFragment
 import com.formasdis.ui.fragment.education.WebViewFragment
@@ -33,7 +30,7 @@ class EducationFragment : Fragment() {
 
 
         // ToolBar
-        toolBarBack.visibility= View.VISIBLE
+        toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "Thème principal"
         toolBarTitle.textSize = 20F
@@ -46,12 +43,17 @@ class EducationFragment : Fragment() {
         imageLifeSaving.load("https://www.pompiers.fr/sites/default/files/content/text/picture/vsr1.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(810,465)
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
+            size(810, 465)
         }
 
         imageLifeSaving.setOnClickListener {
-            loadFragment((WebViewFragment("https://spf-editions.fr/SUAP_sdis01/SUAP_sdis01/suap.php", false)))
+            loadFragment(
+                (WebViewFragment(
+                    "https://spf-editions.fr/SUAP_sdis01/SUAP_sdis01/suap.php",
+                    false
+                ))
+            )
         }
 
 
@@ -59,8 +61,8 @@ class EducationFragment : Fragment() {
         imageFire.load("https://www.challenges.fr/assets/img/2020/06/03/cover-r4x3w1000-5ed7e5db7c1d8-4eb6a97af6b16645661c49df4167316490af9b98-jpg.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(810,465)
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
+            size(810, 465)
         }
 
         imageFire.setOnClickListener {
@@ -71,8 +73,8 @@ class EducationFragment : Fragment() {
         imageVariousOperation.load("https://www.leparisien.fr/resizer/s5xMboKY3akFnmdD_gkAMr0svNg=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/H6I2CCS54BHP3EPHJCZCZDCFCI.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(810,465)
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
+            size(810, 465)
         }
 
         imageVariousOperation.setOnClickListener {

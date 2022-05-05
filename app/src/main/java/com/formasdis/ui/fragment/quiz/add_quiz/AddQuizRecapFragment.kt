@@ -13,7 +13,7 @@ import com.formasdis.model.Quiz
 import com.formasdis.network.DataQuiz
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 
-class AddQuizRecapFragment(val quiz: Quiz)  : Fragment(){
+class AddQuizRecapFragment(val quiz: Quiz) : Fragment() {
     private lateinit var toolBarTitle: TextView
     private lateinit var toolBarBack: ImageButton
 
@@ -21,7 +21,7 @@ class AddQuizRecapFragment(val quiz: Quiz)  : Fragment(){
     private lateinit var nbrQuestion: TextView
     private lateinit var shareCode: TextView
 
-    private lateinit var buttonValidate : Button
+    private lateinit var buttonValidate: Button
 
 
     override fun onCreateView(
