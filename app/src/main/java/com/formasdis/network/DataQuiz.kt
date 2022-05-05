@@ -31,16 +31,14 @@ object DataQuiz {
                 var name = "null"
                 var nbrQuestion = 0
                 var type = ""
-                var shareCode = ""
                 val listQuestions = ArrayList<Question>()
 
-                val id: Int = idQuiz.key.toString().toInt()
+                val id: Long = idQuiz.key.toString().toLong()
                 for (dataQuiz in it.child(idQuiz.key.toString()).children) {
                     when (dataQuiz.key.toString()) {
                         "name" -> name = dataQuiz.value.toString()
                         "nbrQuestion" -> nbrQuestion = dataQuiz.value.toString().toInt()
                         "type" -> type = dataQuiz.value.toString()
-                        "shareCode" -> shareCode = dataQuiz.value.toString()
                         "listQuestions" -> {
                             for (questionsId in dataQuiz.children) {
                                 var typeQuestion = 0

@@ -98,7 +98,7 @@ class AddQuizFragment : Fragment() {
         }
 
         addQuestionButton.setOnClickListener {
-            val id = currentTimeMillis().toInt()
+            val id = currentTimeMillis()
 
             val selectedRadioButton = view.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
 
