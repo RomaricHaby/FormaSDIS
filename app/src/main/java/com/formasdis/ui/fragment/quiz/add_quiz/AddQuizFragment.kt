@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.util.rangeTo
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.model.Question
@@ -114,6 +115,12 @@ class AddQuizFragment : Fragment() {
             Toast.makeText(context, quiz.toString(), Toast.LENGTH_LONG).show()
 
             if(nameQuiz.text.isNotBlank()){
+                var i = 0
+                while(i < quiz.nbrQuestion){
+                    quiz.listQuestions.add(Question("",0,ArrayList()))
+                    i++
+                }
+
                 loadFragment(AddQuestionToQuizFragment(quiz))
             }else{
                 Toast.makeText(context, "Le quiz doit avoir un nom", Toast.LENGTH_LONG).show()

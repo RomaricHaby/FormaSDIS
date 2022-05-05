@@ -19,8 +19,18 @@
         android:text="TextView"
         android:textColor="@color/grey"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_question_add_view_holder"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_question_add_view_holder"
+        app:layout_constraintTop_toTopOf="@+id/image_question_add_view_holder" />
+
+    <ImageView
+        android:id="@+id/image_question_add_view_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

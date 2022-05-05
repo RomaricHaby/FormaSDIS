@@ -77,7 +77,7 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
             i++
         }
 
-        val adapter = QuestionAddAdapter(list)
+        val adapter = context?.let { QuestionAddAdapter(list, parentFragmentManager, quiz, it) }
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
