@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -57,12 +58,24 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
         buttonValidate = view.findViewById(R.id.buttonAddQuestionToQuiz)
 
         buttonValidate.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AddQuizRecapFragment(quiz))
-                .setReorderingAllowed(true)
-                .addToBackStack("detail").commit()
-        }
+            var valide = false
 
+            for (question in quiz.listQuestions) {
+                if (question.nameQuestion.isNotBlank()) {
+                    valide = true
+                }
+            }
+
+            if (valide) {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, AddQuizRecapFragment(quiz))
+                    .setReorderingAllowed(true)
+                    .commit()
+            }
+            else{
+                Toast.makeText(context, "Veuillez remplir toutes les questions", Toast.LENGTH_LONG).show()
+            }
+        }
 
         recyclerView = view.findViewById(R.id.recyclerViewAddQuestionToQuiz)
         configureRecyclerView()
@@ -81,7 +94,6 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
-
 
     //Management fragment
     private fun loadFragment(fragment: Fragment) {
