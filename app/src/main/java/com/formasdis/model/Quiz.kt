@@ -1,9 +1,9 @@
 package com.formasdis.model
 
 data class Quiz(
-    val id: Int,
+    val id: Long,
     val name: String,
     val nbrQuestion: Int,
     val type: String,
-    val listQuestions: List<Question>
+    val listQuestions: ArrayList<Question>,
 )

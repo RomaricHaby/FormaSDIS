@@ -1,21 +1,18 @@
 package com.formasdis.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
 import com.formasdis.ui.fragment.recruitment.ProfessionalFragment
 import com.formasdis.ui.fragment.recruitment.VolunteerFragment
 import com.formasdis.ui.fragment.recruitment.YoungFragment
-import com.squareup.picasso.NetworkPolicy
-import com.squareup.picasso.Picasso
 
 class RecruitmentFragment : Fragment() {
     override fun onCreateView(
@@ -34,7 +31,7 @@ class RecruitmentFragment : Fragment() {
 
 
         // ToolBar
-        toolBarBack.visibility= View.VISIBLE
+        toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "Devenir sapeur-pompier"
         toolBarTitle.textSize = 20F
@@ -47,8 +44,8 @@ class RecruitmentFragment : Fragment() {
         imageVolunteer.load("https://demarchesadministratives.fr/images/demarches/957/comment-devenir-pompier-volontaire-1.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(810,465)
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
+            size(810, 465)
         }
 
         imageVolunteer.setOnClickListener {
@@ -60,8 +57,8 @@ class RecruitmentFragment : Fragment() {
         imageProfessional.load("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pompiers_IMG_2761.JPG/520px-Pompiers_IMG_2761.JPG") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(810,465)
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
+            size(810, 465)
         }
 
         imageProfessional.setOnClickListener {
@@ -72,8 +69,8 @@ class RecruitmentFragment : Fragment() {
         imageYoung.load("https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2021/07/20/node_277083/12347467/public/2021/07/20/B9727751521Z.1_20210720110621_000%2BGN4IIQBQT.1-0.jpg?itok=i70GaQBG1626771987") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(810,465)
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
+            size(810, 465)
         }
 
         imageYoung.setOnClickListener {
