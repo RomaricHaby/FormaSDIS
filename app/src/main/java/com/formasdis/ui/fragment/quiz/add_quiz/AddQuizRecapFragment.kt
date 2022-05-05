@@ -33,7 +33,7 @@ class AddQuizRecapFragment(val quiz: Quiz) : Fragment() {
 
         initUI(view)
 
-        onClick(view)
+        onClick()
 
         return view
     }
@@ -62,7 +62,7 @@ class AddQuizRecapFragment(val quiz: Quiz) : Fragment() {
     }
 
 
-    private fun onClick(view: View) {
+    private fun onClick() {
 
         toolBarBack.setOnClickListener {
             loadFragment(AddQuestionToQuizFragment(quiz))

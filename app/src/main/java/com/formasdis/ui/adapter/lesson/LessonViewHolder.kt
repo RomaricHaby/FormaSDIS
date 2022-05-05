@@ -1,4 +1,4 @@
-package com.formasdis.ui.fragment.education
+package com.formasdis.ui.adapter.lesson
 
 import android.content.Context
 import android.view.View

@@ -5,14 +5,17 @@ import com.formasdis.model.Question
 import com.formasdis.model.Quiz
 
 object DataQuiz {
-    val listQuiz = ArrayList<Quiz>()
+    val listQuizApp = ArrayList<Quiz>()
+
+    val listQuizUser = ArrayList<Quiz>()
 
     val listQuizOD = ArrayList<Quiz>()
     val listQuizSAP = ArrayList<Quiz>()
     val listQuizINC = ArrayList<Quiz>()
 
+
     private fun filterQuiz() {
-        for (quiz in listQuiz) {
+        for (quiz in listQuizApp) {
             when (quiz.type.lowercase()) {
                 "od" -> listQuizOD.add(quiz)
                 "inc" -> listQuizINC.add(quiz)
@@ -26,7 +29,7 @@ object DataQuiz {
     }
 
     fun getAllQuiz() {
-        ClientFirebase.myRef.child("quiz").get().addOnSuccessListener {
+        ClientFirebase.myRef.child("quizApp").get().addOnSuccessListener {
             for (idQuiz in it.children) {
                 var name = "null"
                 var nbrQuestion = 0
@@ -73,7 +76,7 @@ object DataQuiz {
                         }
                     }
                 }
-                listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions))
+                listQuizApp.add(Quiz(id, name, nbrQuestion, type, listQuestions))
             }
 
             filterQuiz()

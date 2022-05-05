@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.network.DataQuiz
-import com.formasdis.ui.fragment.EducationFragment
-import com.formasdis.ui.fragment.RecruitmentFragment
+import com.formasdis.ui.fragment.education.EducationFragment
+import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
