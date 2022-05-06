@@ -76,15 +76,15 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="- Découvrez le matériel d’incendie, apprenez les techniques de lutte contre l’incendie \n
-- Apprenez les gestes qui sauvent \n
-- Faites du sport \n
-- Participez à des manœuvres et à des cérémonies \n
-- Gagnez en courage \n
-- Apprenez le dépassement de soi \n
-- Évoluez au sein d’une véritable équipe \n
-- Partagez des valeurs de solidarité et de civisme \n
-- Participez à des compétitions sportives entre jeunes ! \n"
+                android:text="• Découvrez le matériel d’incendie, apprenez les techniques de lutte contre l’incendie \n
+• Apprenez les gestes qui sauvent \n
+• Faites du sport \n
+• Participez à des manœuvres et à des cérémonies \n
+• Gagnez en courage \n
+• Apprenez le dépassement de soi \n
+• Évoluez au sein d’une véritable équipe \n
+• Partagez des valeurs de solidarité et de civisme \n
+• Participez à des compétitions sportives entre jeunes ! \n"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleJoinYoung" />
@@ -112,11 +112,11 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="- être âgé de 11 à 18 ans (peut varier en fonction des départements), \n
-- fournir un certificat médical d'aptitude physique, \n
-- fournir un certificat de vaccination antitétanique \n
-- fournir une autorisation parentale ou des personnes investies de l'autorité parentale \n \n
-L'inscription se fait à la rentrée scolaire. La durée de formation est de 4 cycles. \n
+                android:text="• être âgé de 11 à 18 ans (peut varier en fonction des départements), \n
+• fournir un certificat médical d'aptitude physique, \n
+• fournir un certificat de vaccination antitétanique \n
+• fournir une autorisation parentale ou des personnes investies de l'autorité parentale \n \n
+L'inscription se fait à la rentrée scolaire. La durée de formation est de 4 cycles. \n\n
 Les sections de JSP sont ouvertes aux jeunes de nationalité étrangère."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -145,21 +145,16 @@ Les sections de JSP sont ouvertes aux jeunes de nationalité étrangère."
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="La formation, encadrée par des sapeurs-pompiers ou des bénévoles formés, se déroule généralement les mercredis et/ou samedis.
-
-Elle est composée de cours théoriques et pratiques, de sport (la moitié du temps) et d’initiation aux différentes facettes de l’activité, mais aussi de rencontres sportives, manœuvres, défilés ou événements.
-
-Elle est organisée en quatre cycles de formation : JSP1, JSP2, JSP3 et JSP4.
-
-Le cycle 1 correspond principalement à la découverte des matériels ainsi qu’à l’enseignement des comportements qui sauvent et des valeurs liées à l’engagement citoyen. Les cycles 2 et 3 portent sur une mise en œuvre simple des matériels et procédures pour aboutir en cycle 4 à des mises en situation contextualisées, proches de la réalité opérationnelle.
-
-Cinq modules sont abordés à chacun de ces cycles :
-
-Prompt secours
-Lutte contre les incendies
-Protection des biens et de l’environnement
-Engagement citoyen et acteurs de la sécurité civile
-Activités physiques et sportives
+                android:text="La formation, encadrée par des sapeurs-pompiers ou des bénévoles formés, se déroule généralement les mercredis et/ou samedis.\n\n
+Elle est composée de cours théoriques et pratiques, de sport (la moitié du temps) et d’initiation aux différentes facettes de l’activité, mais aussi de rencontres sportives, manœuvres, défilés ou événements.\n\n
+Elle est organisée en quatre cycles de formation : JSP1, JSP2, JSP3 et JSP4.\n\n
+Le cycle 1 correspond principalement à la découverte des matériels ainsi qu’à l’enseignement des comportements qui sauvent et des valeurs liées à l’engagement citoyen. Les cycles 2 et 3 portent sur une mise en œuvre simple des matériels et procédures pour aboutir en cycle 4 à des mises en situation contextualisées, proches de la réalité opérationnelle.\n\n
+Cinq modules sont abordés à chacun de ces cycles :\n\n
+• Prompt secours \n
+• Lutte contre les incendies \n
+• Protection des biens et de l’environnement \n
+• Engagement citoyen et acteurs de la sécurité civile \n
+• Activités physiques et sportives \n\n
 Le référentiel de formation des jeunes sapeurs-pompiers est calqué sur celui de l’équipier de sapeur-pompier volontaire. Cette particularité évite aux JSP d’avoir à repasser l’ensemble des modules au moment de leur recrutement comme sapeurs-pompiers volontaires, mais uniquement ceux qui leur manquent."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -172,8 +167,8 @@ Le référentiel de formation des jeunes sapeurs-pompiers est calqué sur celui 
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/montserrat_bold"
                 android:text="Du sport au quotidien"
+                android:fontFamily="@font/montserrat_bold"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="24sp"
@@ -183,29 +178,47 @@ Le référentiel de formation des jeunes sapeurs-pompiers est calqué sur celui 
 
             <TextView
                 android:id="@+id/textViewSport"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Les jeunes sapeurs-pompiers suivent des entraînements adaptés en fonction de leur âge et de leur morphologie lors de leurs séances de formation. Les sports pratiqués notamment sont : \n\n
 
-- Les exercices d’endurance \n
-- Le grimper de corde \n
-- La natation \n
-- Les tractions \n
-- L’athlétisme \n\n
-
-Un apprentissage citoyen \n
-Être jeune sapeur-pompier, c’est : \n\n
-
-- Savoir comment alerter les secours \n
-- Prévenir les risques de la vie courante \n
-- Apprendre les techniques d’intervention \n
-- Adopter la bonne conduite en cas de danger \n
-- Effectuer les gestes qui sauvent \n"
+• Les exercices d’endurance \n
+• Le grimper de corde \n
+• La natation \n
+• Les tractions \n
+• L’athlétisme \n"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleSport" />
+
+            <TextView
+                android:id="@+id/titleLearning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Un apprentissage citoyen \n"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSport" />
+
+            <TextView
+                android:id="@+id/textViewLearning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Être jeune sapeur-pompier, c’est :\n\n
+• Savoir comment alerter les secours \n
+• Prévenir les risques de la vie courante \n
+• Apprendre les techniques d’intervention \n
+• Adopter la bonne conduite en cas de danger \n
+• Effectuer les gestes qui sauvent \n\n\n\n"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleLearning" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
