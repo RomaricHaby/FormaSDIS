@@ -1,5 +1,6 @@
 package com.formasdis.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.navigation_education -> loadFragment(EducationFragment())
 
-                R.id.navigation_quiz -> loadFragment(AllQuizFragment())
+                R.id.navigation_quiz -> swipeActivity()
 
                 R.id.navigation_notifications -> loadFragment(RecruitmentFragment())
             }
@@ -52,8 +53,13 @@ class MainActivity : AppCompatActivity() {
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container_main_act, fragment)
             .setReorderingAllowed(true)
             .commit()
+    }
+
+    private fun swipeActivity(){
+        val intent = Intent(this, CurrentQuizActivity::class.java)
+        startActivity(intent)
     }
 }

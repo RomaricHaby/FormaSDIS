@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.formasdis.R
+import com.formasdis.model.Question
 
-class Show1Question4ResponseFragment() : Fragment() {
+class Show1Question4ResponseFragment(val question: Question?) : Fragment() {
 
     private lateinit var questionName: TextView
 
@@ -37,12 +38,24 @@ class Show1Question4ResponseFragment() : Fragment() {
     }
 
     private fun initUI(view: View) {
+        // Otherwise the correct answer is always first
+        question?.listAnswer?.shuffle()
+
         questionName = view.findViewById(R.id.questionName1Question4Response)
 
+        questionName.text = question?.nameQuestion ?: "Erreur"
+
         response1TextView = view.findViewById(R.id.response1TextView)
+        response1TextView.text = question?.listAnswer?.get(0)?.answer ?: "Erreur"
+
         response2TextView = view.findViewById(R.id.response2TextView)
+        response2TextView.text = question?.listAnswer?.get(1)?.answer ?: "Erreur"
+
         response3TextView = view.findViewById(R.id.response3TextView)
+        response3TextView.text = question?.listAnswer?.get(2)?.answer ?: "Erreur"
+
         response4TextView = view.findViewById(R.id.response4TextView)
+        response4TextView.text = question?.listAnswer?.get(3)?.answer ?: "Erreur"
 
         response1Button = view.findViewById(R.id.response1Button)
         response2Button = view.findViewById(R.id.response2Button)
