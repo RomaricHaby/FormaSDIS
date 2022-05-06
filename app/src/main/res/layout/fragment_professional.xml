@@ -1,14 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/frameLayout3"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ui.fragment.recruitment.ProfessionalFragment">
+
+<include
+    android:id="@+id/toolbarProfessional"
+    layout="@layout/component_toolbar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.recruitment.ProfessionalFragment">
+    android:layout_height="0dp"
+    android:fillViewport="true"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/toolbarProfessional">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imageViewProfessional"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewIntroductionProfessional"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Fonctionnaires des collectivités territoriales, les sapeurs-pompiers professionnels (SPP) assurent l'ossature des Services départementaux d'incendie et de secours (SDIS). Il y a 41.400 SPP en France en 2019*. Comment devenir sapeur-pompier professionnel ? Quelles sont les catégories de concours (officier, non officier...) ? Quand se déroulent les prochains concours ?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewProfessional" />
+
+        <TextView
+            android:id="@+id/titleRecruitmentProfessional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Un processus de recrutement en plusieurs étapes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewIntroductionProfessional" />
+
+        <TextView
+            android:id="@+id/textViewConditionVolunteer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Qu'ils soient officiers ou non, les sapeurs-pompiers professionnels (SPP) dépendent de la fonction publique territoriale. Leur recrutement est soumis à la réussite d'un concours, soit interne, soit externe, ouvrant droit à l'inscription sur une liste d'aptitude pour une durée déterminée, puis à l'accès à un emploi au sein d'un service départemental d'incendie et de secours (SDIS) en fonction de la disponibilité ou la vacance de postes de sapeurs-pompiers professionnels.
+Les principales étapes du processus de recrutement des SPP :
+Inscription au concours
+Réussite des épreuves de pré-admissibilité, d'admissibilité et d'admission (+d'infos sur le détail des épreuves des concours de SPP)
+Admission sur liste d'aptitude zonale ou nationale
+Candidature à un poste en fonction des avis de vacance d'emploi(s) dans les SDIS
+En cas de candidature acceptée, nomination dans l'emploi et affectation dans un centre de secours ou un service du SDIS."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleRecruitmentProfessional" />
+
+        <TextView
+            android:id="@+id/titleModalityProfessional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Modalités générales d’accès à la profession"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewConditionVolunteer" />
+
+        <TextView
+            android:id="@+id/textViewModalityProfessional"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Aptitude médicale
+Le recrutement des sapeurs-pompiers volontaires (SPV) ou sapeurs-pompiers professionnels (SPP) est soumis à des conditions d'aptitude médicale, liées aux particularités d'emploi des sapeurs-pompiers dans leurs interventions et missions de secours.En plus des conditions d'aptitude médicales, d'autres conditions d'accès à la profession sont à prendre en compte :
+avoir au moins 18 ans
+être de nationalité française (ou ressortissant européen sous certaines conditions) et jouir de ses droits civiques
+être titulaire d'un diplôme de niveau 5 (ex : brevet des collèges)
+inscription sur une liste d'aptitude en vue de la recherche d'un poste vacant
+formation initiale après recrutementÀ noter
+Il n'y a plus d'âge limite pour passer le concours de sapeur-pompier professionnel (SPP). Seul le recrutement des pompiers militaires (sapeurs-pompiers de Paris, sapeurs-sauveteurs et marins-pompiers) demeure soumis à la limite d’âge de 25 ans.
+Ces informations et conditions vous sont données à titre indicatif et sont susceptibles d'évoluer.
+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleModalityProfessional" />
+
+        <TextView
+            android:id="@+id/titleCandidacyVolunteer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Catégories de concours"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewModalityProfessional" />
+
+        <TextView
+            android:id="@+id/textViewCandidacyVolunteer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Sapeur-pompier professionnel non-officier (SPPNO)
+Sapeur / sans concours :
+ouvert aux sapeurs-pompiers volontaires (SPV), jeunes sapeurs-pompiers (JSP), volontaires civils de sécurité civile, SP auxiliaires, SP militaires (BSPP, BMPM, UIISC)
+Conditions de recevabilité des candidatures : 3 ans d’ancienneté et formation initiale validée
+Caporal / avec concours :
+Concours externe : toute personne répondant aux modalités générales
+Concours interne : ouvert aux sapeurs-pompiers volontaires (SPV), JSP, volontaires civils de sécurité civile, SP auxiliaires, SP militaires (BSPP, BMPM, UIISC)
+Conditions de recevabilité des candidatures : 3 ans d’ancienneté et formation initiale validée
+Sapeur-pompier professionnel officier (SPPO)
+Lieutenant 1ère classe / avec concours :
+ toute personne répondant aux modalités générales et titulaire d'un diplôme de niveau BAC+2
+Capitaine / avec concours :
+ toute personne répondant aux modalités générales et titulaire d'un diplôme de niveau BAC+3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleCandidacyVolunteer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
