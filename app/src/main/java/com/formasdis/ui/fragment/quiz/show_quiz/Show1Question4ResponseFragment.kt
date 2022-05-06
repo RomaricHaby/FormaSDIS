@@ -64,7 +64,7 @@ class Show1Question4ResponseFragment(val question: Question?) : Fragment() {
         response2TextView.text = question?.listAnswer?.get(1)?.answer ?: "Erreur"
 
         response3TextView = view.findViewById(R.id.response3TextView)
-       response3TextView.text = question?.listAnswer?.get(2)?.answer ?: "Erreur"
+        response3TextView.text = question?.listAnswer?.get(2)?.answer ?: "Erreur"
 
         response4TextView = view.findViewById(R.id.response4TextView)
         response4TextView.text = question?.listAnswer?.get(3)?.answer ?: "Erreur"
