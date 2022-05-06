@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/frameLayout3"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ui.fragment.recruitment.VolunteerFragment">
-
-<include
-    android:id="@+id/toolbarYoung"
-    layout="@layout/component_toolbar"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:fillViewport="true"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/toolbarYoung">
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.recruitment.VolunteerFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        android:id="@+id/toolbarYoung"
+        layout="@layout/component_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarYoung">
 
-        <ImageView
-            android:id="@+id/imageViewVolunteer"
-            android:layout_width="350dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textViewIntroductionVolunteer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:text="En France, quelque 198.900 hommes et femmes vivent un engagement quotidien au service des autres, en parallèle de leur métier ou de leurs études. Les sapeurs-pompiers volontaires représentent 79% des sapeurs-pompiers de France. Chaque jour, ils démontrent que solidarité et altruisme ne sont pas de vains mots. Sapeur-pompier volontaire, pourquoi pas vous ?"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewVolunteer" />
+            <ImageView
+                android:id="@+id/imageViewVolunteer"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/titleConditionVolunteer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textAlignment="center"
-            android:textColor="@color/blue"
-            android:textSize="24sp"
-            android:text="Principales conditions d’engagement"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewIntroductionVolunteer" />
+            <TextView
+                android:id="@+id/textViewIntroductionVolunteer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="En France, quelque 198.900 hommes et femmes vivent un engagement quotidien au service des autres, en parallèle de leur métier ou de leurs études. Les sapeurs-pompiers volontaires représentent 79% des sapeurs-pompiers de France. Chaque jour, ils démontrent que solidarité et altruisme ne sont pas de vains mots. Sapeur-pompier volontaire, pourquoi pas vous ?"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewVolunteer" />
 
-        <TextView
-            android:id="@+id/textViewConditionVolunteer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="La loi du 20 juillet 2011 relative à l’engagement des SPV et son cadre juridique définit «l’engagement citoyen en qualité de sapeur-pompier volontaire comme une activité reposant sur le volontariat et le bénévolat, exercée dans des conditions qui lui sont propres».\n\n
+            <TextView
+                android:id="@+id/titleConditionVolunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
+                android:text="Principales conditions d’engagement"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIntroductionVolunteer" />
+
+            <TextView
+                android:id="@+id/textViewConditionVolunteer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="La loi du 20 juillet 2011 relative à l’engagement des SPV et son cadre juridique définit «l’engagement citoyen en qualité de sapeur-pompier volontaire comme une activité reposant sur le volontariat et le bénévolat, exercée dans des conditions qui lui sont propres».\n\n
 Cet engagement citoyen est librement consenti et ouvert à tous. Cependant, il est régi par quelques conditions, précisées par le décret relatif aux sapeurs-pompiers volontaires :\n\n
 • Avoir 16 ans au moins avec un consentement écrit du représentant légal pour les mineurs (âge minimum de 21 ans pour être officier) \n
 • Résider légalement en France \n
@@ -89,100 +89,100 @@ Cet engagement citoyen est librement consenti et ouvert à tous. Cependant, il e
 Pour accéder au grade de lieutenant, les candidats doivent justifier d'un diplôme au moins de niveau II, soit Bac+3.\n\n
 Pour accéder au grade de capitaine, il convient de détenir un diplôme de niveau I, soit un Bac+5.\n\n
 Pour les sapeurs-pompiers volontaires du SSSM : détenir le diplôme de médecin, de pharmacien, d’infirmier, de vétérinaire ou de psychologue et être inscrit à l’ordre correspondant défini par le code de la santé publique. Engagement des étudiants en médecine admis en 2e année du 2e cycle (soit la 4e année) ou admis au 3e cycle (soit la 7e année) pour participer aux activités du service."
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleConditionVolunteer" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleConditionVolunteer" />
 
-        <TextView
-            android:id="@+id/titleObligationVolunteer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textAlignment="center"
-            android:textColor="@color/blue"
-            android:textSize="24sp"
-            android:text="Obligations relatives à l’engagement sapeur-pompier"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewConditionVolunteer" />
+            <TextView
+                android:id="@+id/titleObligationVolunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
+                android:text="Obligations relatives à l’engagement sapeur-pompier"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewConditionVolunteer" />
 
-        <TextView
-            android:id="@+id/textViewObligationVolunteer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Les sapeurs-pompiers volontaires sont engagés pour une période de cinq ans, tacitement reconduite, en principe au grade de sapeur. La première année constitue une année probatoire. \n\n
+            <TextView
+                android:id="@+id/textViewObligationVolunteer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Les sapeurs-pompiers volontaires sont engagés pour une période de cinq ans, tacitement reconduite, en principe au grade de sapeur. La première année constitue une année probatoire. \n\n
 L’activité de sapeur-pompier volontaire s'exerce avec obéissance, discrétion et responsabilité, dans le respect des dispositions législatives et réglementaires et notamment de la Charte nationale du sapeur-pompier volontaire. \n\n
 Le renouvellement de l'engagement est subordonné à la vérification périodique des conditions d'aptitude physique et médicale. \n\n
 Tout sapeur-pompier volontaire bénéficie d'une formation initiale à la suite de son engagement, adaptée aux missions exercées dans son centre de secours, puis d'une formation continue et de perfectionnement tout au long de sa carrière. \n\n
 Par ailleurs, ces règles générales sont soumises à quelques exceptions (âge, engagement simultané dans deux centres de secours, militaires, élus...). \n\n"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleObligationVolunteer" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleObligationVolunteer" />
 
-        <TextView
-            android:id="@+id/titleCandidacyVolunteer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textAlignment="center"
-            android:textColor="@color/blue"
-            android:textSize="24sp"
-            android:text="Dossier de candidature"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewObligationVolunteer" />
+            <TextView
+                android:id="@+id/titleCandidacyVolunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
+                android:text="Dossier de candidature"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewObligationVolunteer" />
 
-        <TextView
-            android:id="@+id/textViewCandidacyVolunteer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Pour s'engager en qualité de sapeur-pompier volontaire, il suffit d'adresser sa candidature directement au Service départemental d'incendie et de secours (SDIS) de votre département en joignant : \n\n
+            <TextView
+                android:id="@+id/textViewCandidacyVolunteer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Pour s'engager en qualité de sapeur-pompier volontaire, il suffit d'adresser sa candidature directement au Service départemental d'incendie et de secours (SDIS) de votre département en joignant : \n\n
 • une lettre de motivation \n
 • un CV \n
 • la copie des titres, diplômes ou attestations de formation. \n\n
 En outre, il est possible de se renseigner auprès de sa commune ou d'une commune proche pour savoir si elle dispose d'un centre de première intervention et donc d'un corps communal de sapeurs-pompiers volontaires. \n\n
 Si les règles générales définissant le statut des SPV sont identiques et applicables à tous les départements, les modalités de sélection des candidats et les critères mis en œuvre ressortent de la compétence de chacun des Services départementaux d'incendie et de secours (SDIS), lesquels disposent d'un assez large pouvoir d'appréciation, comme d'ailleurs pour le recrutement de tous leurs personnels quel que soit leur statut. \n\n
 Contactez le SDIS de votre département pour connaitre la procédure mise en place."
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleCandidacyVolunteer" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCandidacyVolunteer" />
 
-        <TextView
-            android:id="@+id/titleFormationVolunteer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textAlignment="center"
-            android:textColor="@color/blue"
-            android:textSize="24sp"
-            android:text="Formation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCandidacyVolunteer" />
+            <TextView
+                android:id="@+id/titleFormationVolunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
+                android:text="Formation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCandidacyVolunteer" />
 
-        <TextView
-            android:id="@+id/textViewFormationVolunteer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Le sapeur-pompier volontaire bénéfice d’une formation initiale ainsi que d’une formation continue et de perfectionnement. \n\n
+            <TextView
+                android:id="@+id/textViewFormationVolunteer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Le sapeur-pompier volontaire bénéfice d’une formation initiale ainsi que d’une formation continue et de perfectionnement. \n\n
 Formation initiale \n\n
 La formation initiale du sapeur-pompier volontaire comprend une période probatoire et est dispensée sur une trentaine de jours répartis sur 1 à 3 ans. Elle est adaptée aux missions confiées et nécessaire à leur accomplissement. En attendant son acquisition, le sapeur-pompier volontaire peut intervenir sur des opérations au fur et à mesure de l’assimilation des unités de valeur. \n\n
 Il peut être engagé en tant que sapeur-pompier volontaire apprenant dès son recrutement, à partir du moment où il a reçu une formation aux règles de sécurité individuelle et collective sur intervention. \n\n
@@ -220,10 +220,10 @@ Pour exercer les activités de : \n\n
 Un équipier de sapeur-pompier volontaire qui a suivi et validé tous les modules de la formation initiale peut réaliser l’ensemble des missions. \n\n
 Formation continue \n\n
 La formation continue et de perfectionnement vise à maintenir les compétences du sapeur-pompier volontaire, l’adapter aux fonctions, ainsi que lui faire acquérir puis entretenir des spécialités. Le contenu, les modalités d’organisation, les épreuves et la liste des organismes agréés pour dispenser la formation sont fixés par un arrêté ministériel de la sécurité civile. \n\n\n\n"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleFormationVolunteer" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleFormationVolunteer" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

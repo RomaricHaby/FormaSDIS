@@ -13,7 +13,6 @@ import com.formasdis.R
 import com.formasdis.model.Lesson
 import com.formasdis.network.DataLesson
 import com.formasdis.ui.adapter.lesson.LessonAdapter
-import com.formasdis.ui.fragment.HomeFragment
 
 class ShowListLessonFragment(val type: String) : Fragment() {
     // Get item in view
@@ -48,12 +47,12 @@ class ShowListLessonFragment(val type: String) : Fragment() {
         // ToolBar
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
-        toolBarTitle.text = "Lesson"
+        toolBarTitle.text = "Leçons"
         toolBarTitle.textSize = 20F
 
 
         toolBarBack.setOnClickListener {
-            loadFragment(HomeFragment())
+            loadFragment(EducationFragment())
         }
 
     }

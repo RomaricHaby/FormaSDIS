@@ -31,7 +31,7 @@ class EducationFragment : Fragment() {
         // ToolBar
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
-        toolBarTitle.text = "Thème principal"
+        toolBarTitle.text = "Formation initial"
         toolBarTitle.textSize = 20F
 
         toolBarBack.setOnClickListener {
@@ -54,7 +54,6 @@ class EducationFragment : Fragment() {
                 ))
             )
         }
-
 
         // Fire
         imageFire.load("https://www.challenges.fr/assets/img/2020/06/03/cover-r4x3w1000-5ed7e5db7c1d8-4eb6a97af6b16645661c49df4167316490af9b98-jpg.jpg") {

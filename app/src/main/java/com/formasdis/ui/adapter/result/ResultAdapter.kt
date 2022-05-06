@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
-import com.formasdis.model.CurrentQuiz
-import com.formasdis.model.Question
 import com.formasdis.network.User
 
 class ResultAdapter(val context: Context) :
