@@ -18,8 +18,9 @@ class CurrentQuizActivity : AppCompatActivity() {
 
     //Initialise all item of the view
     private fun initUI() {
-        loadFragment(Show1Question4ResponseFragment(User.currentQuiz.currentQuestion))
-
+        if(!User.currentQuiz.isFinish){
+            loadFragment(Show1Question4ResponseFragment())
+        }
     }
 
     //Management fragment

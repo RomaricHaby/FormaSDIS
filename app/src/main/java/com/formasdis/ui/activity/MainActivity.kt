@@ -11,14 +11,20 @@ import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity() : AppCompatActivity() {
     private lateinit var navigation: BottomNavigationView
+
+    var bool = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DataQuiz.getAllQuiz()
+        if(bool){
+            DataQuiz.getAllQuiz()
+            bool = false
+        }
+
 
         initUI()
     }
