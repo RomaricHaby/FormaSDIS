@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.model.Question
 import com.formasdis.network.User
-import com.formasdis.ui.fragment.HomeFragment
-import com.formasdis.ui.fragment.quiz.AllQuizFragment
 
 class Show1Question4ResponseFragment() : Fragment() {
 
@@ -107,22 +105,22 @@ class Show1Question4ResponseFragment() : Fragment() {
         response4TextView.text = currentQuestion?.listAnswer?.get(3)?.answer ?: "Erreur"
 
         response1Button.setOnClickListener {
-            checkAnswer(0,currentQuestion)
+            checkAnswer(0, currentQuestion)
             getNextQuestion(currentQuestion)
         }
 
         response2Button.setOnClickListener {
-            checkAnswer(1,currentQuestion)
+            checkAnswer(1, currentQuestion)
             getNextQuestion(currentQuestion)
         }
 
         response3Button.setOnClickListener {
-            checkAnswer(2,currentQuestion)
+            checkAnswer(2, currentQuestion)
             getNextQuestion(currentQuestion)
         }
 
         response4Button.setOnClickListener {
-            checkAnswer(3,currentQuestion)
+            checkAnswer(3, currentQuestion)
             getNextQuestion(currentQuestion)
         }
     }
@@ -132,6 +130,6 @@ class Show1Question4ResponseFragment() : Fragment() {
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container_current_quiz_act, fragment)
             .setReorderingAllowed(true)
-           .commit()
+            .commit()
     }
 }

@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import androidx.fragment.app.Fragment
 import com.formasdis.R
 
 class YoungFragment : Fragment() {
@@ -28,7 +26,7 @@ class YoungFragment : Fragment() {
         val image = view.findViewById<ImageView>(R.id.imageViewYoung)
 
         // ToolBar
-        toolBarBack.visibility= View.VISIBLE
+        toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "DEVENIR JEUNE SAPEUR-POMPIER"
         toolBarTitle.textSize = 12F
@@ -36,7 +34,7 @@ class YoungFragment : Fragment() {
         image.load("https://www.pompiers.fr/sites/default/files/content/text/picture/jsp.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
         }
 
         return view

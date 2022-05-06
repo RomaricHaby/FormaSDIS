@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
-import com.formasdis.model.CurrentQuiz
 import com.formasdis.model.Question
 import com.formasdis.network.User
 
