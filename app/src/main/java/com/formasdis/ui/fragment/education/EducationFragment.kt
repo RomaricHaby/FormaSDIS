@@ -38,7 +38,7 @@ class EducationFragment : Fragment() {
             loadFragment(HomeFragment())
         }
 
-        // Volunteer
+        // LifeSaving
         imageLifeSaving.load("https://www.pompiers.fr/sites/default/files/content/text/picture/vsr1.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
@@ -49,14 +49,14 @@ class EducationFragment : Fragment() {
         imageLifeSaving.setOnClickListener {
             loadFragment(
                 (WebViewFragment(
-                    "https://spf-editions.fr/SUAP_sdis01/SUAP_sdis01/suap.php",
+                    "https://enasis.univ-lyon1.fr/icap_website/709/6931",
                     false
                 ))
             )
         }
 
 
-        // Professional
+        // Fire
         imageFire.load("https://www.challenges.fr/assets/img/2020/06/03/cover-r4x3w1000-5ed7e5db7c1d8-4eb6a97af6b16645661c49df4167316490af9b98-jpg.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
@@ -68,7 +68,7 @@ class EducationFragment : Fragment() {
             loadFragment(ShowListLessonFragment("fire"))
         }
 
-        // Young
+        // Various
         imageVariousOperation.load("https://www.leparisien.fr/resizer/s5xMboKY3akFnmdD_gkAMr0svNg=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/H6I2CCS54BHP3EPHJCZCZDCFCI.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
@@ -83,7 +83,7 @@ class EducationFragment : Fragment() {
         return view
     }
 
-    //Management fragment
+    // Management fragment
     private fun loadFragment(fragment: Fragment) {
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
