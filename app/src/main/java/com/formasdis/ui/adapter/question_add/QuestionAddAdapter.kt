@@ -30,7 +30,7 @@ class QuestionAddAdapter(
         holder.itemView.setOnClickListener {
             if (quiz.listQuestions[position].nameQuestion.isBlank()) {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, AddQuestionFragment(quiz, position))
+                    .replace(R.id.fragment_container_main_act, AddQuestionFragment(quiz, position))
                     .setReorderingAllowed(true)
                     .addToBackStack("detail").commit()
             } else {

@@ -1,5 +1,6 @@
 package com.formasdis.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,14 +11,20 @@ import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity() : AppCompatActivity() {
     private lateinit var navigation: BottomNavigationView
+
+    var bool = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DataQuiz.getAllQuiz()
+        if(bool){
+            DataQuiz.getAllQuiz()
+            bool = false
+        }
+
 
         initUI()
     }
@@ -36,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.navigation_education -> loadFragment(EducationFragment())
 
-                R.id.navigation_quiz -> loadFragment(AllQuizFragment())
+                R.id.navigation_quiz -> /*swipeActivity()*/loadFragment(AllQuizFragment())
 
                 R.id.navigation_notifications -> loadFragment(RecruitmentFragment())
             }
@@ -52,8 +59,13 @@ class MainActivity : AppCompatActivity() {
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container_main_act, fragment)
             .setReorderingAllowed(true)
             .commit()
+    }
+
+    fun swipeActivity(){
+        val intent = Intent(this, CurrentQuizActivity::class.java)
+        startActivity(intent)
     }
 }

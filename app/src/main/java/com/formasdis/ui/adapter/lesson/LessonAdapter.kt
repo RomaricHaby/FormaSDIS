@@ -23,7 +23,7 @@ class LessonAdapter(
 
         holder.itemView.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, WebViewFragment(items.urlPdf, true))
+                .replace(R.id.fragment_container_main_act, WebViewFragment(items.urlPdf, true))
                 .setReorderingAllowed(true)
                 .addToBackStack("detail").commit()
         }

@@ -73,7 +73,7 @@ class AllQuizFragment : Fragment() {
     }
 
     private fun configureRecyclerView(list: List<Quiz>, recyclerView: RecyclerView) {
-        val adapter = QuizAdapter(list)
+        val adapter = context?.let { QuizAdapter(list, it) }
         adapter.also { recyclerView.adapter = it }
         val horizontalLayout = LinearLayoutManager(
             context,
@@ -87,7 +87,7 @@ class AllQuizFragment : Fragment() {
     //Management fragment
     private fun loadFragment(fragment: Fragment) {
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container_main_act, fragment)
             .setReorderingAllowed(true)
             .addToBackStack("detail").commit()
     }
