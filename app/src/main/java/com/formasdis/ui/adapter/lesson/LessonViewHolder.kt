@@ -1,13 +1,14 @@
-package com.formasdis.ui.fragment.education
-import coil.load
-import coil.transform.RoundedCornersTransformation
-import com.formasdis.model.Lesson
+package com.formasdis.ui.adapter.lesson
+
 import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
+import com.formasdis.model.Lesson
 
 class LessonViewHolder(itemView: View, val context: Context) :
     RecyclerView.ViewHolder(itemView) {
@@ -28,8 +29,8 @@ class LessonViewHolder(itemView: View, val context: Context) :
         imageLesson.load(lesson.urlImage) {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
-            size(400,400)
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
+            size(400, 400)
         }
     }
 }

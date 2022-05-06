@@ -5,21 +5,38 @@ import com.formasdis.model.Question
 import com.formasdis.model.Quiz
 
 object DataQuiz {
-    val listQuiz = ArrayList<Quiz>()
+    val listQuizApp = ArrayList<Quiz>()
+
+    val listQuizUser = ArrayList<Quiz>()
+
+    val listQuizOD = ArrayList<Quiz>()
+    val listQuizSAP = ArrayList<Quiz>()
+    val listQuizINC = ArrayList<Quiz>()
+
+
+    private fun filterQuiz() {
+        for (quiz in listQuizApp) {
+            when (quiz.type.lowercase()) {
+                "od" -> listQuizOD.add(quiz)
+                "inc" -> listQuizINC.add(quiz)
+                "sap" -> listQuizSAP.add(quiz)
+            }
+        }
+    }
 
     fun addQuiz(quiz: Quiz) {
         ClientFirebase.myRef.child("quiz").child(quiz.id.toString()).setValue(quiz)
     }
 
     fun getAllQuiz() {
-        ClientFirebase.myRef.child("quiz").get().addOnSuccessListener {
+        ClientFirebase.myRef.child("quizApp").get().addOnSuccessListener {
             for (idQuiz in it.children) {
                 var name = "null"
                 var nbrQuestion = 0
                 var type = ""
                 val listQuestions = ArrayList<Question>()
 
-                val id: Int = idQuiz.key.toString().toInt()
+                val id: Long = idQuiz.key.toString().toLong()
                 for (dataQuiz in it.child(idQuiz.key.toString()).children) {
                     when (dataQuiz.key.toString()) {
                         "name" -> name = dataQuiz.value.toString()
@@ -59,8 +76,10 @@ object DataQuiz {
                         }
                     }
                 }
-                listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions))
+                listQuizApp.add(Quiz(id, name, nbrQuestion, type, listQuestions))
             }
+
+            filterQuiz()
         }
     }
 

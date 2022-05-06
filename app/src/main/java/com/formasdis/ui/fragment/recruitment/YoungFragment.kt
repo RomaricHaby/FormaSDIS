@@ -1,7 +1,6 @@
 package com.formasdis.ui.fragment.recruitment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import coil.load
 import coil.transform.RoundedCornersTransformation
+import androidx.fragment.app.Fragment
 import com.formasdis.R
 
 class YoungFragment : Fragment() {
