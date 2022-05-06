@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Quiz
+import com.formasdis.network.User
 import com.formasdis.ui.activity.CurrentQuizActivity
 import com.formasdis.ui.activity.MainActivity
 
@@ -27,14 +28,14 @@ class QuizAdapter(private val listQuiz: List<Quiz>, val context: Context) :
 
         holder.itemView.setOnClickListener {
             // Init the current quiz
-            //User.currentQuiz.quiz = items
-            //User.currentQuiz.currentQuestion = items.listQuestions[0]
+            User.currentQuiz.quiz = items
+            User.currentQuiz.currentQuestion = items.listQuestions[0]
 
 
-            /*val activity = holder.itemView.context as Activity
+            val activity = holder.itemView.context as Activity
              if (activity is MainActivity) {
                  (activity).swipeActivity()
-             }*/
+             }
         }
     }
 

@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.navigation_education -> loadFragment(EducationFragment())
 
-                R.id.navigation_quiz -> swipeActivity()
+                R.id.navigation_quiz -> /*swipeActivity()*/loadFragment(AllQuizFragment())
 
                 R.id.navigation_notifications -> loadFragment(RecruitmentFragment())
             }
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun swipeActivity(){
+    fun swipeActivity(){
         val intent = Intent(this, CurrentQuizActivity::class.java)
         startActivity(intent)
     }

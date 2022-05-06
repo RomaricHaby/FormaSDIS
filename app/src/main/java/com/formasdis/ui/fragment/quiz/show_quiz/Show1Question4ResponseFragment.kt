@@ -6,11 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.formasdis.R
 import com.formasdis.model.Question
+import com.formasdis.network.User
 
 class Show1Question4ResponseFragment(val question: Question?) : Fragment() {
+
+    private lateinit var toolBarTitle: TextView
 
     private lateinit var questionName: TextView
 
@@ -38,6 +42,14 @@ class Show1Question4ResponseFragment(val question: Question?) : Fragment() {
     }
 
     private fun initUI(view: View) {
+        toolBarTitle = view.findViewById(R.id.titleToolBar)
+        // ToolBar
+        toolBarTitle.visibility = View.VISIBLE
+
+        toolBarTitle.text = User.currentQuiz.quiz?.name ?: "erreur"
+        toolBarTitle.textSize = 20F
+
+
         // Otherwise the correct answer is always first
         question?.listAnswer?.shuffle()
 
@@ -52,7 +64,7 @@ class Show1Question4ResponseFragment(val question: Question?) : Fragment() {
         response2TextView.text = question?.listAnswer?.get(1)?.answer ?: "Erreur"
 
         response3TextView = view.findViewById(R.id.response3TextView)
-        response3TextView.text = question?.listAnswer?.get(2)?.answer ?: "Erreur"
+       response3TextView.text = question?.listAnswer?.get(2)?.answer ?: "Erreur"
 
         response4TextView = view.findViewById(R.id.response4TextView)
         response4TextView.text = question?.listAnswer?.get(3)?.answer ?: "Erreur"
