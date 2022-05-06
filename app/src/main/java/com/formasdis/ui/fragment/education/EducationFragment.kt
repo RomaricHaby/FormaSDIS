@@ -31,7 +31,7 @@ class EducationFragment : Fragment() {
         // ToolBar
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
-        toolBarTitle.text = "Thème principal"
+        toolBarTitle.text = "Formation initial"
         toolBarTitle.textSize = 20F
 
         toolBarBack.setOnClickListener {

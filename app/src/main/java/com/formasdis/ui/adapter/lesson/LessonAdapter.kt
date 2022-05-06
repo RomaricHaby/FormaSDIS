@@ -14,7 +14,7 @@ class LessonAdapter(
 ) : RecyclerView.Adapter<LessonViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_lesson, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_lesson, parent, false)
         return LessonViewHolder(view, parent.context)
     }
 
