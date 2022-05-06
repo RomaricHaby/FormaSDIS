@@ -1,5 +1,6 @@
 package com.formasdis.ui.fragment.quiz.show_quiz
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.network.User
+import com.formasdis.ui.activity.MainActivity
 import com.formasdis.ui.adapter.result.ResultAdapter
 import com.formasdis.ui.fragment.HomeFragment
 
@@ -45,7 +47,13 @@ class ShowResultQuiz : Fragment() {
         button = view.findViewById(R.id.buttonResultQuiz)
 
         button.setOnClickListener {
-            loadFragment(HomeFragment())
+            User.currentQuiz.quiz = null
+            User.currentQuiz.currentQuestion = null
+            User.currentQuiz.isFinish = false
+            User.currentQuiz.correctAnswer.clear()
+
+           val intent = Intent(context, MainActivity::class.java)
+            startActivity(intent)
         }
 
         var nbrGoodAnswer = 0
