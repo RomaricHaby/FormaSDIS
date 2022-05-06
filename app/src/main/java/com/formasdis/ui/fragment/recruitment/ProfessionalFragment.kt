@@ -31,7 +31,7 @@ class ProfessionalFragment : Fragment() {
         toolBarTitle.text = "DEVENIR SAPEUR-POMPIER PROFESSIONNEL"
         toolBarTitle.textSize = 12F
 
-        image.load("https://www.pompiers.fr/sites/default/files/content/text/picture/visuel-tweet_volontariat-v2ok-800x650.jpg") {
+        image.load("https://www.efm-fonctionpublique.fr/Public/Images/Paragraphe/206/1_6.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
             transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
