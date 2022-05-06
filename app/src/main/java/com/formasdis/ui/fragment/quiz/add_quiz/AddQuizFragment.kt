@@ -134,7 +134,7 @@ class AddQuizFragment : Fragment() {
     //Management fragment
     private fun loadFragment(fragment: Fragment) {
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container_main_act, fragment)
             .setReorderingAllowed(true)
             .addToBackStack("detail").commit()
     }

@@ -68,7 +68,7 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
 
             if (valide) {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, AddQuizRecapFragment(quiz))
+                    .replace(R.id.fragment_container_main_act, AddQuizRecapFragment(quiz))
                     .setReorderingAllowed(true)
                     .commit()
             } else {
@@ -98,7 +98,7 @@ class AddQuestionToQuizFragment(val quiz: Quiz) : Fragment() {
     //Management fragment
     private fun loadFragment(fragment: Fragment) {
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container_main_act, fragment)
             .setReorderingAllowed(true)
             .addToBackStack("detail").commit()
     }
