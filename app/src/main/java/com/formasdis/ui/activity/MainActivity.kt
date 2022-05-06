@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.network.DataQuiz
 import com.formasdis.ui.fragment.education.EducationFragment
-import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
+import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity() : AppCompatActivity() {
@@ -20,7 +20,7 @@ class MainActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(bool){
+        if (bool) {
             DataQuiz.getAllQuiz()
             bool = false
         }
@@ -64,7 +64,7 @@ class MainActivity() : AppCompatActivity() {
             .commit()
     }
 
-    fun swipeActivity(){
+    fun swipeActivity() {
         val intent = Intent(this, CurrentQuizActivity::class.java)
         startActivity(intent)
     }

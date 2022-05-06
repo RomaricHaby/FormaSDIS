@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import androidx.fragment.app.Fragment
 import com.formasdis.R
 
 class ProfessionalFragment : Fragment() {
@@ -26,7 +26,7 @@ class ProfessionalFragment : Fragment() {
         val image = view.findViewById<ImageView>(R.id.imageViewProfessional)
 
         // ToolBar
-        toolBarBack.visibility= View.VISIBLE
+        toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "DEVENIR SAPEUR-POMPIER PROFESSIONNEL"
         toolBarTitle.textSize = 12F
@@ -34,7 +34,7 @@ class ProfessionalFragment : Fragment() {
         image.load("https://www.pompiers.fr/sites/default/files/content/text/picture/visuel-tweet_volontariat-v2ok-800x650.jpg") {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_foreground)
-            transformations(RoundedCornersTransformation(20f,20f,20f,20f))
+            transformations(RoundedCornersTransformation(20f, 20f, 20f, 20f))
         }
 
         return view

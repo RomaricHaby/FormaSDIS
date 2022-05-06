@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.quiz.show_quiz.Show1Question4ResponseFragment" >
+    tools:context=".ui.fragment.quiz.show_quiz.Show1Question4ResponseFragment">
 
     <TextView
         android:id="@+id/questionName1Question4Response"
