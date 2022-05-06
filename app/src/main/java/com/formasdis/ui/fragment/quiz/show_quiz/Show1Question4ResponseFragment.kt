@@ -79,7 +79,8 @@ class Show1Question4ResponseFragment() : Fragment() {
 
         if (indexCurrentQuestion != null) {
             //Quiz not finish
-            if (User.currentQuiz.quiz!!.listQuestions.size > indexCurrentQuestion++!!) {
+            indexCurrentQuestion++
+            if (User.currentQuiz.quiz!!.listQuestions.size > indexCurrentQuestion) {
 
                 User.currentQuiz.currentQuestion =
                     User.currentQuiz.quiz?.listQuestions?.get(indexCurrentQuestion)
@@ -89,7 +90,7 @@ class Show1Question4ResponseFragment() : Fragment() {
             //Quiz finish
             else {
                 User.currentQuiz.isFinish = true
-                loadFragment(HomeFragment())
+                loadFragment(ShowResultQuiz())
             }
         }
     }
@@ -129,8 +130,8 @@ class Show1Question4ResponseFragment() : Fragment() {
     //Management fragment
     private fun loadFragment(fragment: Fragment) {
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container_main_act, fragment)
+            .replace(R.id.fragment_container_current_quiz_act, fragment)
             .setReorderingAllowed(true)
-            .addToBackStack("detail").commit()
+           .commit()
     }
 }
