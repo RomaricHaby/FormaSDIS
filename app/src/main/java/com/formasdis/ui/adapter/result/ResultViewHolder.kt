@@ -32,15 +32,9 @@ class ResultViewHolder(itemView: View, val context: Context) :
             check.setImageDrawable(
                 ContextCompat.getDrawable(
                     context,
-                    R.drawable.ic_done
+                    R.drawable.ic_done_green
                 )
             )
-
-            check.setColorFilter(
-                ContextCompat.getColor(context, R.color.gree),
-                android.graphics.PorterDuff.Mode.MULTIPLY
-            )
         }
-
     }
 }
