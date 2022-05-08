@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">FormaSDIS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="volunteer">Volontaire</string>
+    <string name="professional">Professionnel(le)</string>
+    <string name="young">Jeune</string>
+    <string name="lifeSaving">Secours à personne</string>
+    <string name="fire">Incendie</string>
+    <string name="variousOperation">Opération diverse</string>
 </resources>

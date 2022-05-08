@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="typeQuestion">
+        <item>1 question / 4 réponses images</item>
+        <item>1 question / 4 réponses </item>
+        <item>1 question / vrai ou faux </item>
+        <item>1 image / 4 réponses </item>
+    </string-array>
+</resources>
