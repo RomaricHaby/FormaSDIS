@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.network.User
-import com.formasdis.ui.fragment.quiz.show_quiz.Show1Question4ResponseFragment
+import com.formasdis.ui.fragment.quiz.show_quiz.ShowQuestion
 
 class CurrentQuizActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class CurrentQuizActivity : AppCompatActivity() {
     //Initialise all item of the view
     private fun initUI() {
         if (!User.currentQuiz.isFinish) {
-            loadFragment(Show1Question4ResponseFragment())
+            loadFragment(ShowQuestion(false))
         }
     }
 
