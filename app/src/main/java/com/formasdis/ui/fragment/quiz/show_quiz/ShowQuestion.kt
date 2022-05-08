@@ -1,17 +1,19 @@
 package com.formasdis.ui.fragment.quiz.show_quiz
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.model.Question
 import com.formasdis.network.User
 
-class Show1Question4ResponseFragment() : Fragment() {
+class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
 
     private lateinit var toolBarTitle: TextView
 
@@ -49,6 +51,13 @@ class Show1Question4ResponseFragment() : Fragment() {
         toolBarTitle.text = User.currentQuiz.quiz?.name ?: "erreur"
         toolBarTitle.textSize = 20F
 
+        //Show1Question4Response
+        show1Question4Response(view)
+
+
+    }
+
+    private fun show1Question4Response(view: View) {
         questionName = view.findViewById(R.id.questionName1Question4Response)
         response1TextView = view.findViewById(R.id.response1TextView)
         response2TextView = view.findViewById(R.id.response2TextView)
@@ -60,7 +69,7 @@ class Show1Question4ResponseFragment() : Fragment() {
         response3Button = view.findViewById(R.id.response3Button)
         response4Button = view.findViewById(R.id.response4Button)
 
-        initData(User.currentQuiz.currentQuestion)
+        initData1Question4Response(User.currentQuiz.currentQuestion)
     }
 
     private fun checkAnswer(positionAnswer: Int, currentQuestion: Question?) {
@@ -83,7 +92,7 @@ class Show1Question4ResponseFragment() : Fragment() {
                 User.currentQuiz.currentQuestion =
                     User.currentQuiz.quiz?.listQuestions?.get(indexCurrentQuestion)
 
-                initData(User.currentQuiz.currentQuestion)
+                initData1Question4Response(User.currentQuiz.currentQuestion)
             }
             //Quiz finish
             else {
@@ -93,7 +102,7 @@ class Show1Question4ResponseFragment() : Fragment() {
         }
     }
 
-    private fun initData(currentQuestion: Question?) {
+    private fun initData1Question4Response(currentQuestion: Question?) {
         // Otherwise the correct answer is always first
         currentQuestion?.listAnswer?.shuffle()
 
@@ -104,24 +113,89 @@ class Show1Question4ResponseFragment() : Fragment() {
         response3TextView.text = currentQuestion?.listAnswer?.get(2)?.answer ?: "Erreur"
         response4TextView.text = currentQuestion?.listAnswer?.get(3)?.answer ?: "Erreur"
 
-        response1Button.setOnClickListener {
-            checkAnswer(0, currentQuestion)
-            getNextQuestion(currentQuestion)
-        }
 
-        response2Button.setOnClickListener {
-            checkAnswer(1, currentQuestion)
-            getNextQuestion(currentQuestion)
-        }
+        if (showAnswer) {
+            if (currentQuestion != null) {
+                var i = 0
+                while (i < currentQuestion.listAnswer.size) {
+                    if (currentQuestion.listAnswer[i].correct) {
+                        when (i) {
+                            0 -> {
+                                val nextColor = context?.let {
+                                    ContextCompat.getColor(
+                                        it, R.color.green
+                                    )
+                                }
+                                response1Button.backgroundTintList = nextColor?.let {
+                                    ColorStateList.valueOf(
+                                        it
+                                    )
+                                }
+                            }
 
-        response3Button.setOnClickListener {
-            checkAnswer(2, currentQuestion)
-            getNextQuestion(currentQuestion)
-        }
+                            1 -> {
+                                val nextColor = context?.let {
+                                    ContextCompat.getColor(
+                                        it, R.color.green
+                                    )
+                                }
+                                response2Button.backgroundTintList = nextColor?.let {
+                                    ColorStateList.valueOf(
+                                        it
+                                    )
+                                }
+                            }
 
-        response4Button.setOnClickListener {
-            checkAnswer(3, currentQuestion)
-            getNextQuestion(currentQuestion)
+                            2 -> {
+                                val nextColor = context?.let {
+                                    ContextCompat.getColor(
+                                        it, R.color.green
+                                    )
+                                }
+                                response3Button.backgroundTintList = nextColor?.let {
+                                    ColorStateList.valueOf(
+                                        it
+                                    )
+                                }
+                            }
+
+                            3 -> {
+                                val nextColor = context?.let {
+                                    ContextCompat.getColor(
+                                        it, R.color.green
+                                    )
+                                }
+                                response4Button.backgroundTintList = nextColor?.let {
+                                    ColorStateList.valueOf(
+                                        it
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    i++
+                }
+            }
+        } else {
+            response1Button.setOnClickListener {
+                checkAnswer(0, currentQuestion)
+                getNextQuestion(currentQuestion)
+            }
+
+            response2Button.setOnClickListener {
+                checkAnswer(1, currentQuestion)
+                getNextQuestion(currentQuestion)
+            }
+
+            response3Button.setOnClickListener {
+                checkAnswer(2, currentQuestion)
+                getNextQuestion(currentQuestion)
+            }
+
+            response4Button.setOnClickListener {
+                checkAnswer(3, currentQuestion)
+                getNextQuestion(currentQuestion)
+            }
         }
     }
 

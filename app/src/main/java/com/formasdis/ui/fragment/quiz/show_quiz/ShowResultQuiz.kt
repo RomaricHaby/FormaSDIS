@@ -69,7 +69,7 @@ class ShowResultQuiz : Fragment() {
     }
 
     private fun configureRecyclerView() {
-        val adapter = context?.let { ResultAdapter(it) }
+        val adapter = context?.let { ResultAdapter(it,parentFragmentManager) }
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
