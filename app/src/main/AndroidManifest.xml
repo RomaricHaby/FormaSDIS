@@ -20,6 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.activity.account.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.account.RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.account.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.CurrentQuizActivity"
             android:exported="false" />
         <activity
