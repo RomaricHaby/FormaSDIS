@@ -29,7 +29,7 @@ class ProfessionalFragment : Fragment() {
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "DEVENIR SAPEUR-POMPIER PROFESSIONNEL"
-        toolBarTitle.textSize = 12F
+        toolBarTitle.textSize = 20F
 
         image.load("https://www.efm-fonctionpublique.fr/Public/Images/Paragraphe/206/1_6.jpg") {
             crossfade(true)

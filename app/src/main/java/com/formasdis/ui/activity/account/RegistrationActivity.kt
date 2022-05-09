@@ -24,8 +24,8 @@ class RegistrationActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         val toolBarTitle = findViewById<TextView>(R.id.titleToolBar)
-        val textInputLogin = findViewById<TextInputEditText>(R.id.textInputEmailLogin)
-        val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPasswordLogin)
+        val textInputLogin = findViewById<TextInputEditText>(R.id.textInputEmailRegistration)
+        val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPasswordRegistration)
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
         val buttonLogin = findViewById<Button>(R.id.buttonLoginRegistration)
 

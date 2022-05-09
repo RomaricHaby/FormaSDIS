@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.ui.activity.MainActivity
+import com.formasdis.ui.activity.account.AccountActivity
 import com.formasdis.ui.activity.account.LoginActivity
 import com.formasdis.ui.fragment.education.EducationFragment
 import com.google.firebase.FirebaseApp
@@ -42,7 +43,8 @@ class HomeFragment : Fragment() {
         imageAccount.setOnClickListener {
             val currentUser = auth.currentUser
             if(currentUser != null){
-                loadFragment(EducationFragment())
+                val intent = Intent (activity, AccountActivity::class.java)
+                activity?.startActivity(intent)
             }
             else {
                 val intent = Intent (activity, LoginActivity::class.java)
