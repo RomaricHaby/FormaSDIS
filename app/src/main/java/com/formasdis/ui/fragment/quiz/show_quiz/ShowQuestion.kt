@@ -113,7 +113,7 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
 
         imageViewTrueFalse.load(User.currentQuiz.currentQuestion?.urlImage) {
             crossfade(true)
-            placeholder(com.formasdis.R.drawable.ic_launcher_foreground)
+            placeholder(R.drawable.ic_launcher_foreground)
             transformations(coil.transform.RoundedCornersTransformation(20f, 20f, 20f, 20f))
         }
 
@@ -124,31 +124,19 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
                     if (currentQuestion.listAnswer[i].correct) {
                         when (i) {
                             0 -> {
-                                val nextColor = context?.let {
-                                    ContextCompat.getColor(
-                                        it, R.color.green
+                                button1TrueFalse.backgroundTintList = setGreenColor()?.let {
+                                    ColorStateList.valueOf(
+                                        it
                                     )
                                 }
-                                button1TrueFalse.backgroundTintList =
-                                    nextColor?.let {
-                                        ColorStateList.valueOf(
-                                            it
-                                        )
-                                    }
                             }
 
                             1 -> {
-                                val nextColor = context?.let {
-                                    ContextCompat.getColor(
-                                        it, R.color.green
+                                button2TrueFalse.backgroundTintList = setGreenColor()?.let {
+                                    ColorStateList.valueOf(
+                                        it
                                     )
                                 }
-                                button2TrueFalse.backgroundTintList =
-                                    nextColor?.let {
-                                        ColorStateList.valueOf(
-                                            it
-                                        )
-                                    }
                             }
                         }
                     }
@@ -208,13 +196,8 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
                     if (currentQuestion.listAnswer[i].correct) {
                         when (i) {
                             0 -> {
-                                val nextColor = context?.let {
-                                    ContextCompat.getColor(
-                                        it, R.color.green
-                                    )
-                                }
                                 response1Button1Question4Answers.backgroundTintList =
-                                    nextColor?.let {
+                                    setGreenColor()?.let {
                                         ColorStateList.valueOf(
                                             it
                                         )
@@ -222,13 +205,8 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
                             }
 
                             1 -> {
-                                val nextColor = context?.let {
-                                    ContextCompat.getColor(
-                                        it, R.color.green
-                                    )
-                                }
                                 response2Button1Question4Answers.backgroundTintList =
-                                    nextColor?.let {
+                                    setGreenColor()?.let {
                                         ColorStateList.valueOf(
                                             it
                                         )
@@ -236,27 +214,18 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
                             }
 
                             2 -> {
-                                val nextColor = context?.let {
-                                    ContextCompat.getColor(
-                                        it, R.color.green
-                                    )
-                                }
                                 response3Button1Question4Answers.backgroundTintList =
-                                    nextColor?.let {
+                                    setGreenColor()?.let {
                                         ColorStateList.valueOf(
                                             it
                                         )
                                     }
+
                             }
 
                             3 -> {
-                                val nextColor = context?.let {
-                                    ContextCompat.getColor(
-                                        it, R.color.green
-                                    )
-                                }
                                 response4Button1Question4Answers.backgroundTintList =
-                                    nextColor?.let {
+                                    setGreenColor()?.let {
                                         ColorStateList.valueOf(
                                             it
                                         )
@@ -325,6 +294,10 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
     private fun resetView() {
         include1ImageTrueFalse.visibility = View.GONE
         include1Question4Answer.visibility = View.GONE
+    }
+
+    private fun setGreenColor(): Int? {
+        return context?.let { ContextCompat.getColor(it, R.color.green) }
     }
 
     //Management fragment
