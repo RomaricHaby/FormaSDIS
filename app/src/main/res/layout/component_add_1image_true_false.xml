@@ -5,38 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RadioGroup
-        android:id="@+id/radioGroup1imageTrueFalse"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Réponse au vrais faux"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextURL1ImageTrueFalse">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:minHeight="48dp"
-            android:text="Vrais" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Faux" />
-
-    </RadioGroup>
+        app:layout_constraintTop_toBottomOf="@+id/editTextURL1ImageTrueFalse" />
 
     <EditText
         android:id="@+id/editTextURL1ImageTrueFalse"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -55,5 +40,32 @@
         android:text="URL image : "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1imageTrueFalse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:minHeight="48dp"
+            android:text="Vrais" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Faux" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,10 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
     private lateinit var false2Answer: EditText
     private lateinit var false3Answer: EditText
 
+    //1image true false
+    private lateinit var include1ImageTrueFalse: ConstraintLayout
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +54,7 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
 
     private fun resetInclude() {
         include1question4answer.visibility = View.GONE
+        include1ImageTrueFalse.visibility = View.GONE
     }
 
     private fun setSpinner(view: View) {
@@ -79,7 +84,7 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
                     }
 
                     "1 question / vrai ou faux" -> {
-
+                        include1ImageTrueFalse.visibility = View.VISIBLE
                     }
 
                     "1 image / 4 réponses" -> {
@@ -102,6 +107,11 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
         false2Answer = view.findViewById(R.id.editTextFalseAnswer2AddQuestion)
         false3Answer = view.findViewById(R.id.editTextFalseAnswer3AddQuestion)
         include1question4answer = view.findViewById(R.id.component1question4answerAddQuestion)
+
+
+
+        include1ImageTrueFalse = view.findViewById(R.id.component1ImageTrueFalse)
+
 
 
         buttonValidate = view.findViewById(R.id.buttonValidateAddQuestion)
