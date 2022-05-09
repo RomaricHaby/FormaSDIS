@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import coil.load
 import com.formasdis.R
 import com.formasdis.model.Question
 import com.formasdis.network.User
@@ -59,25 +60,28 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
     }
 
     private fun initUI(view: View) {
+        //Get component layout
+        include1ImageTrueFalse = view.findViewById(R.id.Component1imagetruefalse)
+        include1Question4Answer = view.findViewById(R.id.Component1question4answers)
+
         //All component visibility gone
         resetView()
 
         setUpToolBar(view)
 
-        //Get component layout
-        include1ImageTrueFalse = view.findViewById(R.id.Component1imagetruefalse)
-        include1Question4Answer = view.findViewById(R.id.Component1question4answers)
+        setUpComponent(view)
+    }
 
-        //Show1Question4Response
+    private fun setUpComponent(view: View) {
         when (User.currentQuiz.currentQuestion?.type) {
-            1 -> {}
+            0 -> {}
 
-            2 -> {
+            1 -> {
                 include1Question4Answer.visibility = View.VISIBLE
                 show1Question4Response(view)
             }
 
-            3 -> {
+            2 -> {
                 include1ImageTrueFalse.visibility = View.VISIBLE
                 show1ImageTrueFalse(view)
             }
@@ -101,12 +105,17 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
         button1TrueFalse = view.findViewById(R.id.response1Button1Image)
         button2TrueFalse = view.findViewById(R.id.response2Button1Image)
 
-        initData1ImageTrueFalse(User.currentQuiz.currentQuestion)
+        initData1ImageTrueFalse(User.currentQuiz.currentQuestion, view)
     }
 
-    private fun initData1ImageTrueFalse(currentQuestion: Question?) {
+    private fun initData1ImageTrueFalse(currentQuestion: Question?, view: View) {
         questionTrueFalse.text = currentQuestion?.nameQuestion ?: "Erreur"
 
+        imageViewTrueFalse.load(User.currentQuiz.currentQuestion?.urlImage) {
+            crossfade(true)
+            placeholder(com.formasdis.R.drawable.ic_launcher_foreground)
+            transformations(coil.transform.RoundedCornersTransformation(20f, 20f, 20f, 20f))
+        }
 
         if (showAnswer) {
             if (currentQuestion != null) {
@@ -149,12 +158,12 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
         } else {
             button1TrueFalse.setOnClickListener {
                 checkAnswer(0, currentQuestion)
-                getNextQuestion(currentQuestion)
+                getNextQuestion(currentQuestion, view)
             }
 
             button2TrueFalse.setOnClickListener {
                 checkAnswer(1, currentQuestion)
-                getNextQuestion(currentQuestion)
+                getNextQuestion(currentQuestion, view)
             }
         }
     }
@@ -162,6 +171,7 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
     //1Question4Response
     private fun show1Question4Response(view: View) {
         question1Question4Answers = view.findViewById(R.id.questionName1Question4Response)
+
         response1TextView1Question4Answers = view.findViewById(R.id.response1TextView)
         response2TextView1Question4Answers = view.findViewById(R.id.response2TextView)
         response3TextView1Question4Answers = view.findViewById(R.id.response3TextView)
@@ -172,10 +182,10 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
         response3Button1Question4Answers = view.findViewById(R.id.response3Button)
         response4Button1Question4Answers = view.findViewById(R.id.response4Button)
 
-        initData1Question4Response(User.currentQuiz.currentQuestion)
+        initData1Question4Response(User.currentQuiz.currentQuestion, view)
     }
 
-    private fun initData1Question4Response(currentQuestion: Question?) {
+    private fun initData1Question4Response(currentQuestion: Question?, view: View) {
         // Otherwise the correct answer is always first
         currentQuestion?.listAnswer?.shuffle()
 
@@ -260,29 +270,28 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
         } else {
             response1Button1Question4Answers.setOnClickListener {
                 checkAnswer(0, currentQuestion)
-                getNextQuestion(currentQuestion)
+                getNextQuestion(currentQuestion, view)
             }
 
             response2Button1Question4Answers.setOnClickListener {
                 checkAnswer(1, currentQuestion)
-                getNextQuestion(currentQuestion)
+                getNextQuestion(currentQuestion, view)
             }
 
             response3Button1Question4Answers.setOnClickListener {
                 checkAnswer(2, currentQuestion)
-                getNextQuestion(currentQuestion)
+                getNextQuestion(currentQuestion, view)
             }
 
             response4Button1Question4Answers.setOnClickListener {
                 checkAnswer(3, currentQuestion)
-                getNextQuestion(currentQuestion)
+                getNextQuestion(currentQuestion, view)
             }
         }
     }
 
-
     //Management quiz
-    private fun getNextQuestion(currentQuestion: Question?) {
+    private fun getNextQuestion(currentQuestion: Question?, view: View) {
         var indexCurrentQuestion: Int? =
             User.currentQuiz.quiz?.listQuestions?.indexOf(currentQuestion)
 
@@ -294,7 +303,8 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
                 User.currentQuiz.currentQuestion =
                     User.currentQuiz.quiz?.listQuestions?.get(indexCurrentQuestion)
 
-                initData1Question4Response(User.currentQuiz.currentQuestion)
+                resetView()
+                setUpComponent(view)
             }
             //Quiz finish
             else {
