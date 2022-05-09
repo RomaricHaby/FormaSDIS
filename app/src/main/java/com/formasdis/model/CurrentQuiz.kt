@@ -6,5 +6,5 @@ data class CurrentQuiz(
     val correctAnswer: ArrayList<Boolean>,
     var isFinish: Boolean
 ) {
-    constructor() : this(null, null, ArrayList<Boolean>(), false)
+    constructor() : this(null, null, ArrayList<Boolean>(), true)
 }
