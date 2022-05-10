@@ -32,6 +32,12 @@
             android:name=".ui.activity.CurrentQuizActivity"
             android:exported="false" />
         <activity
+            android:name=".pdf.MainActivityPdf"
+            android:exported="false" />
+        <activity
+            android:name=".pdf.PdfViewerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
