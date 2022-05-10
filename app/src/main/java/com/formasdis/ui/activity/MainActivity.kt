@@ -14,15 +14,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     private lateinit var navigation: BottomNavigationView
 
-    private var bool = true
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (bool) {
+        if (DataQuiz.listQuizApp.isEmpty()) {
             DataQuiz.getAllQuiz()
-            bool = false
         }
 
         initUI()
