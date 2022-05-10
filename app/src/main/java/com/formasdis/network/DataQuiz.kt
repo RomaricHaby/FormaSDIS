@@ -5,7 +5,7 @@ import com.formasdis.model.Question
 import com.formasdis.model.Quiz
 
 object DataQuiz {
-    private val listQuizApp = ArrayList<Quiz>()
+    val listQuizApp = ArrayList<Quiz>()
 
     val listQuizUser = ArrayList<Quiz>()
 
