@@ -14,6 +14,7 @@ import com.formasdis.R
 import com.formasdis.model.Quiz
 import com.formasdis.network.DataQuiz
 import com.formasdis.network.User
+import com.formasdis.ui.adapter.myquiz.MyQuizAdapter
 import com.formasdis.ui.adapter.quiz.QuizAdapter
 import com.formasdis.ui.fragment.HomeFragment
 import com.formasdis.ui.fragment.quiz.add_quiz.AddQuizFragment
@@ -72,7 +73,7 @@ class AllQuizUser : Fragment() {
     }
 
     private fun configureRecyclerView(list: List<Quiz>, recyclerView: RecyclerView) {
-        val adapter = context?.let { QuizAdapter(list, it) }
+        val adapter = context?.let { MyQuizAdapter(list, it) }
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }

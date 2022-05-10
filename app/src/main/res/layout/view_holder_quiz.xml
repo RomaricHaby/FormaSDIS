@@ -60,10 +60,10 @@
         android:id="@+id/text_view_share_code_view_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/montserrat_light"
         android:text="Code de partage :  "
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -72,9 +72,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:fontFamily="@font/montserrat_light"
+        android:fontFamily="@font/montserrat_black"
         android:text="x"
-        android:visibility="gone"
+        android:textColor="@color/blue"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/text_view_share_code_view_holder"
         app:layout_constraintStart_toEndOf="@+id/text_view_share_code_view_holder"
         app:layout_constraintTop_toTopOf="@+id/text_view_share_code_view_holder" />
