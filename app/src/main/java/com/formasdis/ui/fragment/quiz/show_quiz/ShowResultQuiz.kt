@@ -51,7 +51,7 @@ class ShowResultQuiz : Fragment() {
             User.currentQuiz.isFinish = false
             User.currentQuiz.correctAnswer.clear()
 
-           val intent = Intent(context, MainActivity::class.java)
+            val intent = Intent(context, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -68,7 +68,7 @@ class ShowResultQuiz : Fragment() {
     }
 
     private fun configureRecyclerView() {
-        val adapter = context?.let { ResultAdapter(it,parentFragmentManager) }
+        val adapter = context?.let { ResultAdapter(it, parentFragmentManager) }
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }

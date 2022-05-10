@@ -1,8 +1,8 @@
 package com.formasdis.network
 
 import android.util.Log
-import com.formasdis.model.CurrentQuiz
 import com.formasdis.network.ClientFirebase.myRef
+import com.google.firebase.auth.FirebaseAuth
 
 object DataUser {
 
@@ -21,7 +21,8 @@ object DataUser {
     }
 
     fun clearData() {
-        ClientFirebase.myRef.child("user").child(User.uID).removeValue()
+        myRef.child("user").child(User.uID).removeValue()
+        FirebaseAuth.getInstance().signOut()
     }
 
 }
