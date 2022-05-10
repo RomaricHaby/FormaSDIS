@@ -27,7 +27,8 @@ class RegistrationActivity : AppCompatActivity() {
         val toolBarTitle = findViewById<TextView>(R.id.titleToolBar)
         val textInputLogin = findViewById<TextInputEditText>(R.id.textInputEmailRegistration)
         val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPasswordRegistration)
-        val textInputPasswordConfirmation = findViewById<TextInputEditText>(R.id.textInputPasswordConfirmationRegistration)
+        val textInputPasswordConfirmation =
+            findViewById<TextInputEditText>(R.id.textInputPasswordConfirmationRegistration)
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
         val buttonLogin = findViewById<Button>(R.id.buttonLoginRegistration)
 
@@ -48,7 +49,10 @@ class RegistrationActivity : AppCompatActivity() {
                             User.uID = auth.currentUser?.uid.toString()
                             DataUser.writeNewUser()
 
-                            auth.signInWithEmailAndPassword(textInputLogin.text.toString(), textInputPassword.text.toString())
+                            auth.signInWithEmailAndPassword(
+                                textInputLogin.text.toString(),
+                                textInputPassword.text.toString()
+                            )
                                 .addOnCompleteListener(this) { task ->
                                     if (task.isSuccessful) {
                                         // Sign in success, update UI with the signed-in user's information
@@ -58,14 +62,16 @@ class RegistrationActivity : AppCompatActivity() {
 
                                         DataUser.loadUser()
 
-                                        val intent = Intent (this, MainActivity::class.java)
+                                        val intent = Intent(this, MainActivity::class.java)
                                         this.startActivity(intent)
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.d("Dim", "signInWithEmail:failure", task.exception)
-                                        Toast.makeText(baseContext, "Connexion échoué.",
-                                            Toast.LENGTH_SHORT).show()
-                                        val intent = Intent (this, LoginActivity::class.java)
+                                        Toast.makeText(
+                                            baseContext, "Connexion échoué.",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                        val intent = Intent(this, LoginActivity::class.java)
                                         this.startActivity(intent)
                                     }
                                 }

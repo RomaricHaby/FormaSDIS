@@ -12,12 +12,9 @@ import com.formasdis.R
 import com.formasdis.ui.activity.MainActivity
 import com.formasdis.ui.activity.account.AccountActivity
 import com.formasdis.ui.activity.account.LoginActivity
-import com.formasdis.ui.fragment.education.EducationFragment
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.Dispatchers.Main
 
 class HomeFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
@@ -42,12 +39,11 @@ class HomeFragment : Fragment() {
 
         imageAccount.setOnClickListener {
             val currentUser = auth.currentUser
-            if(currentUser != null){
-                val intent = Intent (activity, AccountActivity::class.java)
+            if (currentUser != null) {
+                val intent = Intent(activity, AccountActivity::class.java)
                 activity?.startActivity(intent)
-            }
-            else {
-                val intent = Intent (activity, LoginActivity::class.java)
+            } else {
+                val intent = Intent(activity, LoginActivity::class.java)
                 activity?.startActivity(intent)
             }
         }

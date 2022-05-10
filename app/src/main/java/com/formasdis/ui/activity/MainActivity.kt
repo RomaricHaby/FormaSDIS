@@ -2,13 +2,10 @@ package com.formasdis.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.network.DataQuiz
-import com.formasdis.network.DataUser
-import com.formasdis.network.User
 import com.formasdis.ui.fragment.education.EducationFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
