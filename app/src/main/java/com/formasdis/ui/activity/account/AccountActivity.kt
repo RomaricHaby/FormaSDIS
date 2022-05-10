@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import com.formasdis.R
 import com.formasdis.network.DataUser
 import com.formasdis.ui.activity.MainActivity
@@ -21,7 +22,7 @@ class AccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account)
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         val toolBarTitle = findViewById<TextView>(R.id.titleToolBar)
         val toolBarBack = findViewById<ImageButton>(R.id.imageButtonBack)
@@ -37,7 +38,26 @@ class AccountActivity : AppCompatActivity() {
         textEmail.text = textEmail.text.toString() + " " + auth.currentUser?.email
 
         buttonDeleteAccount.setOnClickListener {
+            auth.currentUser?.delete()
+                ?.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // successful!
+                    DataUser.clearData()
+                    Toast.makeText(baseContext, "Compte supprimé",
+                        Toast.LENGTH_SHORT).show()
+                } else {
+                    // failed!
+                    Toast.makeText(baseContext, "Erreur lors de la suppression",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
+
+
             DataUser.clearData()
+            Toast.makeText(baseContext, "Test",
+                Toast.LENGTH_SHORT).show()
         }
 
         buttonDisconnection.setOnClickListener {

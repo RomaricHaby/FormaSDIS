@@ -21,7 +21,11 @@ object DataUser {
     }
 
     fun clearData() {
-        ClientFirebase.myRef.child("user").child(User.uID).removeValue()
+        myRef.child("user").child(User.uID).removeValue().addOnCompleteListener {
+            Log.e("firebase", "Success")
+        }.addOnFailureListener {
+            Log.e("firebase", "Error getting data", it)
+        }
     }
 
 }
