@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.formasdis.R
+import com.formasdis.network.DataUser
+import com.formasdis.network.User
 import com.formasdis.ui.activity.MainActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -38,8 +40,10 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("Dim", "signInWithEmail:success")
-                        val user = auth.currentUser
-                        //updateUI(user)
+
+                        User.uID = auth.currentUser?.uid ?: ""
+
+                        DataUser.loadUser()
 
                         val intent = Intent (this, MainActivity::class.java)
                         this.startActivity(intent)

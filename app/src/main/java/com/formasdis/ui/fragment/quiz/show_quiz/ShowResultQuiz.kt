@@ -14,7 +14,6 @@ import com.formasdis.R
 import com.formasdis.network.User
 import com.formasdis.ui.activity.MainActivity
 import com.formasdis.ui.adapter.result.ResultAdapter
-import com.formasdis.ui.fragment.HomeFragment
 
 class ShowResultQuiz : Fragment() {
     private lateinit var toolBarTitle: TextView
