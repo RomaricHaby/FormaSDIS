@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextTextNameQuizAdd2"
+        android:id="@+id/editTextShareCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -185,7 +185,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nbrQuestionAddQuiz" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/addQuizShareCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -197,7 +197,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextNameQuizAdd2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextShareCode" />
 
     <View
         android:id="@+id/divider"

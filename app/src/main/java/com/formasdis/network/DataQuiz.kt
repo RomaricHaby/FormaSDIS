@@ -24,9 +24,7 @@ object DataQuiz {
         }
     }
 
-    fun addQuiz(quiz: Quiz) {
-        ClientFirebase.myRef.child("quiz").child(quiz.id.toString()).setValue(quiz)
-    }
+
 
     fun getAllQuiz() {
         ClientFirebase.myRef.child("quizApp").get().addOnSuccessListener {
@@ -85,7 +83,7 @@ object DataQuiz {
         }
     }
 
-    fun getQuizById(id: Int) {
+    fun getQuizById(id: Long) {
         ClientFirebase.myRef.child("quiz").child(id.toString()).get().addOnSuccessListener {
             var name = "null"
             var nbrQuestion = 0
@@ -133,8 +131,12 @@ object DataQuiz {
                     }
                 }
             }
-            //  listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions))
+              listQuizUser.add(Quiz(id, name, nbrQuestion, type, listQuestions))
         }
+    }
+
+    fun addNewQuizUser(quiz: Quiz) {
+        ClientFirebase.myRef.child("quiz").child(quiz.id.toString()).setValue(quiz)
     }
 }
 

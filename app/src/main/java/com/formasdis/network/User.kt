@@ -6,5 +6,7 @@ object User {
     var currentQuiz = CurrentQuiz()
     var uID: String = ""
 
+    val listIdQuiz = ArrayList<Long>()
+
 
 }

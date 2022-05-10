@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import coil.load
 import com.formasdis.R
 import com.formasdis.model.Question
+import com.formasdis.network.DataUser
 import com.formasdis.network.User
 
 class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
@@ -274,9 +275,12 @@ class ShowQuestion(private val showAnswer: Boolean) : Fragment() {
 
                 resetView()
                 setUpComponent(view)
+
+                DataUser.updateCurrentQuiz()
             }
             //Quiz finish
             else {
+                DataUser.updateCurrentQuiz()
                 User.currentQuiz.isFinish = true
                 loadFragment(ShowResultQuiz())
             }
