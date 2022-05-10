@@ -39,7 +39,8 @@ object DataUser {
         myRef.child("user").child(User.uID).child("currentQuiz").setValue(User.currentQuiz)
     }
 
-    fun addNewQuiz(quiz: Quiz) {
+    fun addNewQuiz() {
+        myRef.child("user").child(User.uID).child("myQuiz").removeValue()
         myRef.child("user").child(User.uID).child("myQuiz").setValue(User.listIdQuiz)
     }
 

@@ -72,7 +72,7 @@ class AddQuizRecapFragment(val quiz: Quiz) : Fragment() {
 
         buttonValidate.setOnClickListener {
             User.listIdQuiz.add(quiz.id)
-            DataUser.addNewQuiz(quiz)
+            DataUser.addNewQuiz()
             DataQuiz.addNewQuizUser(quiz)
 
             loadFragment(AllQuizFragment())
