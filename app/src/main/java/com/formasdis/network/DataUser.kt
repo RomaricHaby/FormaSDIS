@@ -13,13 +13,15 @@ object DataUser {
     fun loadUser() {
 
         myRef.child("user").child(User.uID).get().addOnSuccessListener {
-            val test: Any = it.value as CurrentQuiz
-            Log.e("firebase", test.toString())
-            
+
         }.addOnFailureListener {
             Log.e("firebase", "Error getting data", it)
         }
 
+    }
+
+    fun clearData() {
+        ClientFirebase.myRef.child("user").child(User.uID).removeValue()
     }
 
 }

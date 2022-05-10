@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import com.formasdis.R
+import com.formasdis.network.DataUser
 import com.formasdis.ui.activity.MainActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -25,11 +26,19 @@ class AccountActivity : AppCompatActivity() {
         val toolBarTitle = findViewById<TextView>(R.id.titleToolBar)
         val toolBarBack = findViewById<ImageButton>(R.id.imageButtonBack)
 
+        val textEmail = findViewById<TextView>(R.id.textViewEmail)
         val buttonDisconnection = findViewById<Button>(R.id.buttonDisconnection)
+        val buttonDeleteAccount = findViewById<Button>(R.id.buttonDeleteAccount)
 
         toolBarTitle.visibility = View.VISIBLE
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.text = "Votre compte"
+
+        textEmail.text = textEmail.text.toString() + " " + auth.currentUser?.email
+
+        buttonDeleteAccount.setOnClickListener {
+            DataUser.clearData()
+        }
 
         buttonDisconnection.setOnClickListener {
             Firebase.auth.signOut()

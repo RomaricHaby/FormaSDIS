@@ -28,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
         val toolBarTitle = findViewById<TextView>(R.id.titleToolBar)
         val textInputLogin = findViewById<TextInputEditText>(R.id.textInputEmailLogin)
         val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPasswordLogin)
+        val textClickableResetPassword = findViewById<TextView>(R.id.textViewResetPassword)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistrationLogin)
 
@@ -53,6 +54,21 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(baseContext, "Authentication failed.",
                             Toast.LENGTH_SHORT).show()
                         //updateUI(null)
+                    }
+                }
+        }
+
+        textClickableResetPassword.setOnClickListener {
+            auth.sendPasswordResetEmail(textInputLogin.text.toString())
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                    // successful!
+                        Toast.makeText(baseContext, "Email envoyé.",
+                            Toast.LENGTH_SHORT).show()
+                    } else {
+                    // failed!
+                        Toast.makeText(baseContext, "Email incorrect.",
+                            Toast.LENGTH_SHORT).show()
                     }
                 }
         }
