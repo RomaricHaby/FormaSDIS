@@ -23,11 +23,10 @@ tools:context=".ui.activity.account.RegistrationActivity">
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="16dp"
-    android:src="@drawable/ic_account_plus"
+    android:src="@drawable/logo_720"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/toolbarRegistration"
-    app:srcCompat="@drawable/logo_720" />
+    app:layout_constraintTop_toBottomOf="@+id/toolbarRegistration" />
 
 <com.google.android.material.textfield.TextInputLayout
     android:id="@+id/textInputEmailRegistrationContainer"
@@ -68,6 +67,26 @@ tools:context=".ui.activity.account.RegistrationActivity">
         tools:ignore="TouchTargetSizeCheck" />
 </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputPasswordConfirmationRegistrationContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputPasswordRegistrationContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputPasswordConfirmationRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirmer votre mot de passe*"
+            android:inputType="textPassword"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 <Button
     android:id="@+id/buttonRegistration"
     android:layout_width="wrap_content"
@@ -82,7 +101,7 @@ tools:context=".ui.activity.account.RegistrationActivity">
     android:textColor="@color/white"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textInputPasswordRegistrationContainer" />
+    app:layout_constraintTop_toBottomOf="@+id/textInputPasswordConfirmationRegistrationContainer" />
 
 <View
     android:id="@+id/dividerRegistration"

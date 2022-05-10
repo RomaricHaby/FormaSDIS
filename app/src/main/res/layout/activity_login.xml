@@ -23,11 +23,10 @@ tools:context=".ui.activity.account.LoginActivity">
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_account_plus"
+        android:src="@drawable/logo_720"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarLogin"
-        app:srcCompat="@drawable/logo_720" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLogin" />
 
 <com.google.android.material.textfield.TextInputLayout
     android:id="@+id/textInputEmailLoginContainer"

@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistrationLogin)
 
         toolBarTitle.visibility = View.VISIBLE
-        toolBarTitle.text = "Forma SDIS"
+        toolBarTitle.text = "Connexion"
 
         buttonLogin.setOnClickListener {
             auth.signInWithEmailAndPassword(textInputLogin.text.toString(), textInputPassword.text.toString())
