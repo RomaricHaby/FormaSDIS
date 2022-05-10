@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.model.Quiz
 import com.formasdis.network.DataQuiz
+import com.formasdis.network.DataUser
+import com.formasdis.network.User
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 
 class AddQuizRecapFragment(val quiz: Quiz) : Fragment() {
@@ -69,7 +71,9 @@ class AddQuizRecapFragment(val quiz: Quiz) : Fragment() {
         }
 
         buttonValidate.setOnClickListener {
-            DataQuiz.addQuiz(quiz)
+            User.listIdQuiz.add(quiz.id)
+            DataUser.addNewQuiz(quiz)
+            DataQuiz.addNewQuizUser(quiz)
 
             loadFragment(AllQuizFragment())
         }

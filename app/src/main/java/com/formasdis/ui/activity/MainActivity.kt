@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.network.DataQuiz
+import com.formasdis.network.DataUser
 import com.formasdis.ui.fragment.education.EducationFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navigation: BottomNavigationView
@@ -21,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         if (DataQuiz.listQuizApp.isEmpty()) {
             DataQuiz.getAllQuiz()
         }
-
+        
         initUI()
     }
 

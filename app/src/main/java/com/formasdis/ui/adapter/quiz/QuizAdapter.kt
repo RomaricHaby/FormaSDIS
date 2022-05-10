@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Quiz
+import com.formasdis.network.ClientFirebase
+import com.formasdis.network.DataUser
 import com.formasdis.network.User
 import com.formasdis.ui.activity.MainActivity
+import com.google.firebase.ktx.Firebase
 
 class QuizAdapter(private val listQuiz: List<Quiz>, val context: Context) :
     RecyclerView.Adapter<QuizViewHolder>() {
@@ -30,6 +33,7 @@ class QuizAdapter(private val listQuiz: List<Quiz>, val context: Context) :
             User.currentQuiz.quiz = items
             User.currentQuiz.currentQuestion = items.listQuestions[0]
 
+            DataUser.updateCurrentQuiz()
 
             val activity = holder.itemView.context as Activity
             if (activity is MainActivity) {
