@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Réponse au vrais faux"
+        android:text="Réponse de la question"
         android:textColor="@color/blue"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

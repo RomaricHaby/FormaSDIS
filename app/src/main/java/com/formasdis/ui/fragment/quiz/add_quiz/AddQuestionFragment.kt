@@ -32,7 +32,8 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
 
     //1image true false
     private lateinit var include1ImageTrueFalse: ConstraintLayout
-
+    private lateinit var radioGroup: RadioGroup
+    private lateinit var imageQuestion: EditText
 
 
     override fun onCreateView(
@@ -97,11 +98,10 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
 
 
     private fun initUI(view: View) {
-        toolBarTitle = view.findViewById(R.id.titleToolBar)
-        toolBarBack = view.findViewById(R.id.imageButtonBack)
-
         nameQuestionEditTest = view.findViewById(R.id.editTextNameQuestionAddQuestion)
+        buttonValidate = view.findViewById(R.id.buttonValidateAddQuestion)
 
+        //1 question 4 answers
         answerGood = view.findViewById(R.id.editTextGoodAnswerAddQuestion)
         falseAnswer = view.findViewById(R.id.editTextFalseAnswer1AddQuestion)
         false2Answer = view.findViewById(R.id.editTextFalseAnswer2AddQuestion)
@@ -109,14 +109,16 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
         include1question4answer = view.findViewById(R.id.component1question4answerAddQuestion)
 
 
-
+        // true false
         include1ImageTrueFalse = view.findViewById(R.id.component1ImageTrueFalse)
+        radioGroup = view.findViewById(R.id.radioGroup1imageTrueFalse)
+        imageQuestion = view.findViewById(R.id.editTextURL1ImageTrueFalse)
 
-
-
-        buttonValidate = view.findViewById(R.id.buttonValidateAddQuestion)
 
         // ToolBar
+        toolBarTitle = view.findViewById(R.id.titleToolBar)
+        toolBarBack = view.findViewById(R.id.imageButtonBack)
+
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
 
@@ -132,9 +134,7 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
         }
 
         buttonValidate.setOnClickListener {
-            if (nameQuestionEditTest.text.isNotBlank()
-
-            ) {
+            if (nameQuestionEditTest.text.isNotBlank()) {
 
                 quiz.listQuestions[position].type = spinner.selectedItemPosition
 
@@ -146,10 +146,6 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
                     }
 
                     1 -> {
-
-                    }
-
-                    2 -> {
                         if (answerGood.text.isNotBlank()
                             && falseAnswer.text.isNotBlank()
                             && false2Answer.text.isNotBlank()
@@ -189,7 +185,34 @@ class AddQuestionFragment(val quiz: Quiz, private val position: Int) : Fragment(
                             )
                                 .show()
                         }
+                    }
 
+                    2 -> {
+                        if (imageQuestion.text.isNotBlank()) {
+                            val selectedRadioButton =
+                                view?.findViewById(radioGroup.checkedRadioButtonId) as RadioButton
+
+                            val goodAnswer: String = selectedRadioButton.text.toString()
+
+                            if (goodAnswer.lowercase() == "vrais") {
+                                quiz.listQuestions[position].listAnswer.add(Answer("vrais", true))
+                                quiz.listQuestions[position].listAnswer.add(Answer("faux", false))
+                            } else {
+                                quiz.listQuestions[position].listAnswer.add(Answer("vrais", false))
+                                quiz.listQuestions[position].listAnswer.add(Answer("faux", true))
+                            }
+
+                            quiz.listQuestions[position].urlImage = imageQuestion.text.toString()
+
+                            loadFragment(AddQuestionToQuizFragment(quiz))
+                        } else {
+                            Toast.makeText(
+                                context,
+                                "Tous les champs ne sont pas remplie",
+                                Toast.LENGTH_LONG
+                            )
+                                .show()
+                        }
                     }
                 }
             } else {
