@@ -118,7 +118,7 @@ class AddQuizFragment : Fragment() {
             if (nameQuiz.text.isNotBlank()) {
                 var i = 0
                 while (i < quiz.nbrQuestion) {
-                    quiz.listQuestions.add(Question("", 0, ArrayList()))
+                    quiz.listQuestions.add(Question("", 0, "",ArrayList()))
                     i++
                 }
 

@@ -14,18 +14,15 @@ import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity() : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     private lateinit var navigation: BottomNavigationView
-
-    var bool = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (bool) {
+        if (DataQuiz.listQuizApp.isEmpty()) {
             DataQuiz.getAllQuiz()
-            bool = false
         }
 
         initUI()
@@ -45,7 +42,7 @@ class MainActivity() : AppCompatActivity() {
             when (it.itemId) {
                 R.id.navigation_education -> loadFragment(EducationFragment())
 
-                R.id.navigation_quiz -> /*swipeActivity()*/loadFragment(AllQuizFragment())
+                R.id.navigation_quiz -> loadFragment(AllQuizFragment())
 
                 R.id.navigation_notifications -> loadFragment(RecruitmentFragment())
             }
