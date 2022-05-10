@@ -29,7 +29,7 @@ class VolunteerFragment : Fragment() {
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "DEVENIR SAPEUR-POMPIER VOLONTAIRE"
-        toolBarTitle.textSize = 12F
+        toolBarTitle.textSize = 20F
 
         image.load("https://www.pompiers.fr/sites/default/files/content/text/picture/visuel-tweet_volontariat-v2ok-800x650.jpg") {
             crossfade(true)

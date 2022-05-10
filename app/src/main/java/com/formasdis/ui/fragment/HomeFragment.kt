@@ -1,5 +1,6 @@
 package com.formasdis.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +10,18 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.ui.activity.MainActivity
-import com.formasdis.ui.fragment.account.LoginFragment
+import com.formasdis.ui.activity.account.AccountActivity
+import com.formasdis.ui.activity.account.LoginActivity
+import com.formasdis.ui.fragment.education.EducationFragment
 import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.Dispatchers.Main
 
 class HomeFragment : Fragment() {
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,9 +37,19 @@ class HomeFragment : Fragment() {
             (activity as MainActivity).resetNavBar()
         }
 
+        // Initialize Firebase Auth
+        auth = Firebase.auth
+
         imageAccount.setOnClickListener {
-            //if (FirebaseA)
-            loadFragment(LoginFragment())
+            val currentUser = auth.currentUser
+            if(currentUser != null){
+                val intent = Intent (activity, AccountActivity::class.java)
+                activity?.startActivity(intent)
+            }
+            else {
+                val intent = Intent (activity, LoginActivity::class.java)
+                activity?.startActivity(intent)
+            }
         }
 
         return view
