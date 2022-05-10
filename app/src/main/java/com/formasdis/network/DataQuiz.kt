@@ -46,6 +46,7 @@ object DataQuiz {
                             for (questionsId in dataQuiz.children) {
                                 var typeQuestion = 0
                                 var question = ""
+                                var url = ""
                                 val listAnswer = ArrayList<Answer>()
 
                                 for (dataQuestion in questionsId.children) {
@@ -53,6 +54,7 @@ object DataQuiz {
                                         "type" -> typeQuestion =
                                             dataQuestion.value.toString().toInt()
                                         "nameQuestion" -> question = dataQuestion.value.toString()
+                                        "urlImage" -> url = dataQuestion.value.toString()
                                         "listAnswer" -> {
                                             for (answerId in dataQuestion.children) {
                                                 var answer = ""
@@ -71,7 +73,7 @@ object DataQuiz {
                                         }
                                     }
                                 }
-                                listQuestions.add(Question(question, typeQuestion, listAnswer))
+                                listQuestions.add(Question(question, typeQuestion, url, listAnswer))
                             }
                         }
                     }
@@ -99,6 +101,7 @@ object DataQuiz {
                         for (questionsId in dataQuiz.children) {
                             var typeQuestion = 0
                             var question = ""
+                            var url = ""
                             val listAnswer = ArrayList<Answer>()
 
                             for (dataQuestion in questionsId.children) {
@@ -106,6 +109,7 @@ object DataQuiz {
                                     "type" -> typeQuestion =
                                         dataQuestion.value.toString().toInt()
                                     "nameQuestion" -> question = dataQuestion.value.toString()
+                                    "urlImage" -> url = dataQuestion.value.toString()
                                     "listAnswer" -> {
                                         for (answerId in dataQuestion.children) {
                                             var answer = ""
@@ -124,7 +128,7 @@ object DataQuiz {
                                     }
                                 }
                             }
-                            listQuestions.add(Question(question, typeQuestion, listAnswer))
+                            listQuestions.add(Question(question, typeQuestion, url, listAnswer))
                         }
                     }
                 }
