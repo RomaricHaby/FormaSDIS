@@ -1,13 +1,13 @@
 package com.formasdis.ui.activity.account
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.formasdis.R
 import com.formasdis.network.DataUser
 import com.formasdis.network.User
@@ -36,7 +36,10 @@ class LoginActivity : AppCompatActivity() {
         toolBarTitle.text = "Connexion"
 
         buttonLogin.setOnClickListener {
-            auth.signInWithEmailAndPassword(textInputLogin.text.toString(), textInputPassword.text.toString())
+            auth.signInWithEmailAndPassword(
+                textInputLogin.text.toString(),
+                textInputPassword.text.toString()
+            )
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
@@ -46,13 +49,15 @@ class LoginActivity : AppCompatActivity() {
 
                         DataUser.loadUser()
 
-                        val intent = Intent (this, MainActivity::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         this.startActivity(intent)
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.d("Dim", "signInWithEmail:failure", task.exception)
-                        Toast.makeText(baseContext, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            baseContext, "Authentication failed.",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         //updateUI(null)
                     }
                 }
@@ -62,19 +67,23 @@ class LoginActivity : AppCompatActivity() {
             auth.sendPasswordResetEmail(textInputLogin.text.toString())
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                    // successful!
-                        Toast.makeText(baseContext, "Email envoyé.",
-                            Toast.LENGTH_SHORT).show()
+                        // successful!
+                        Toast.makeText(
+                            baseContext, "Email envoyé.",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     } else {
-                    // failed!
-                        Toast.makeText(baseContext, "Email incorrect.",
-                            Toast.LENGTH_SHORT).show()
+                        // failed!
+                        Toast.makeText(
+                            baseContext, "Email incorrect.",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
         }
 
         buttonRegistration.setOnClickListener {
-            val intent = Intent (this, RegistrationActivity::class.java)
+            val intent = Intent(this, RegistrationActivity::class.java)
             this.startActivity(intent)
         }
     }
