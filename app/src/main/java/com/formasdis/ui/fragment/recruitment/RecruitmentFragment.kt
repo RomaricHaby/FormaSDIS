@@ -11,7 +11,6 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
 import com.formasdis.ui.fragment.HomeFragment
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class RecruitmentFragment : Fragment() {
     override fun onCreateView(
@@ -24,7 +23,7 @@ class RecruitmentFragment : Fragment() {
         // Get item in view
         val toolBarTitle = view.findViewById<TextView>(R.id.titleToolBar)
         val toolBarBack = view.findViewById<ImageButton>(R.id.imageButtonBack)
-        
+
         val imageYoung = view.findViewById<ImageButton>(R.id.imageButtonYoung)
         val imageProfessional = view.findViewById<ImageButton>(R.id.imageButtonProfessional)
         val imageVolunteer = view.findViewById<ImageButton>(R.id.imageButtonVolunteer)
@@ -40,7 +39,6 @@ class RecruitmentFragment : Fragment() {
         toolBarBack.setOnClickListener {
             loadFragment(HomeFragment())
         }
-
 
 
         // Volunteer

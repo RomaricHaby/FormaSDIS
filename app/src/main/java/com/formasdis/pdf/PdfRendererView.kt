@@ -77,7 +77,7 @@ class PdfRendererView @JvmOverloads constructor(
                 var foundPosition = findFirstCompletelyVisibleItemPosition()
 
                 pageNo.run {
-                    if (foundPosition != NO_POSITION){
+                    if (foundPosition != NO_POSITION) {
                         val page = "${(foundPosition + 1)} of $totalPageCount"
                         text = page
                     }

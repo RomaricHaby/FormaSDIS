@@ -1,24 +1,19 @@
 package com.formasdis.ui.fragment.user
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Quiz
 import com.formasdis.network.DataQuiz
-import com.formasdis.network.User
 import com.formasdis.ui.adapter.myquiz.MyQuizAdapter
-import com.formasdis.ui.adapter.quiz.QuizAdapter
 import com.formasdis.ui.fragment.HomeFragment
-import com.formasdis.ui.fragment.quiz.add_quiz.AddQuizFragment
-import com.google.firebase.auth.FirebaseAuth
 
 
 class AllQuizUserFragment : Fragment() {

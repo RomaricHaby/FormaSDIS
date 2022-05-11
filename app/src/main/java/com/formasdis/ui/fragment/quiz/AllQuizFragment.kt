@@ -90,7 +90,7 @@ class AllQuizFragment : Fragment() {
                 } else {
                     Toast.makeText(
                         context,
-                        "Vous devez un quiz, appuyez sur le plus en haut à droite",
+                        "Vous devez créer un quiz, appuyez sur le plus en haut à droite",
                         Toast.LENGTH_LONG
                     ).show()
                 }
