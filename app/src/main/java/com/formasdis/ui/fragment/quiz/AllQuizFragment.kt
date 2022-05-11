@@ -78,7 +78,7 @@ class AllQuizFragment : Fragment() {
             if (FirebaseAuth.getInstance().currentUser != null) {
                 loadFragment(AddQuizFragment())
             } else {
-                Toast.makeText(context, "Vous devez être connectez !", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Vous devez être connecté !", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -88,10 +88,14 @@ class AllQuizFragment : Fragment() {
                     loadFragment(AllQuizUserFragment())
 
                 } else {
-                    Toast.makeText(context, "La liste est vide attend !", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        context,
+                        "Vous devez un quiz, appuyez sur le plus en haut à droite",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             } else {
-                Toast.makeText(context, "Vous devez être connectez !", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Vous devez être connecté !", Toast.LENGTH_LONG).show()
             }
         }
 

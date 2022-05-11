@@ -26,8 +26,6 @@ class AllQuizUserFragment : Fragment() {
     // Get item in view
     private lateinit var toolBarTitle: TextView
     private lateinit var toolBarBack: ImageButton
-    private lateinit var toolBarAddQuiz: ImageButton
-
     private lateinit var recycleViewMyQuiz: RecyclerView
 
 
@@ -46,7 +44,7 @@ class AllQuizUserFragment : Fragment() {
     private fun initUI(view: View) {
         toolBarTitle = view.findViewById(R.id.titleToolBar)
         toolBarBack = view.findViewById(R.id.imageButtonBack)
-        toolBarAddQuiz = view.findViewById(R.id.imageButtonAddQuizz)
+
 
         recycleViewMyQuiz = view.findViewById(R.id.recyclerViewMyQuiz)
 
@@ -55,21 +53,14 @@ class AllQuizUserFragment : Fragment() {
         // ToolBar
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
-        toolBarAddQuiz.visibility = View.VISIBLE
+
 
         toolBarTitle.text = "Quiz"
         toolBarTitle.textSize = 20F
 
-
         toolBarBack.setOnClickListener {
             loadFragment(HomeFragment())
         }
-
-        toolBarAddQuiz.setOnClickListener {
-            loadFragment(AddQuizFragment())
-        }
-
-
     }
 
     private fun configureRecyclerView(list: List<Quiz>, recyclerView: RecyclerView) {
@@ -77,7 +68,6 @@ class AllQuizUserFragment : Fragment() {
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
-
 
     //Management fragment
     private fun loadFragment(fragment: Fragment) {
