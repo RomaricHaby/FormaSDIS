@@ -24,10 +24,6 @@ object DataQuiz {
         }
     }
 
-    fun addQuiz(quiz: Quiz) {
-        ClientFirebase.myRef.child("quiz").child(quiz.id.toString()).setValue(quiz)
-    }
-
     fun getAllQuiz() {
         ClientFirebase.myRef.child("quizApp").get().addOnSuccessListener {
             for (idQuiz in it.children) {
@@ -46,6 +42,7 @@ object DataQuiz {
                             for (questionsId in dataQuiz.children) {
                                 var typeQuestion = 0
                                 var question = ""
+                                var url = ""
                                 val listAnswer = ArrayList<Answer>()
 
                                 for (dataQuestion in questionsId.children) {
@@ -53,6 +50,7 @@ object DataQuiz {
                                         "type" -> typeQuestion =
                                             dataQuestion.value.toString().toInt()
                                         "nameQuestion" -> question = dataQuestion.value.toString()
+                                        "urlImage" -> url = dataQuestion.value.toString()
                                         "listAnswer" -> {
                                             for (answerId in dataQuestion.children) {
                                                 var answer = ""
@@ -71,7 +69,7 @@ object DataQuiz {
                                         }
                                     }
                                 }
-                                listQuestions.add(Question(question, typeQuestion, listAnswer))
+                                listQuestions.add(Question(question, typeQuestion, url, listAnswer))
                             }
                         }
                     }
@@ -83,7 +81,7 @@ object DataQuiz {
         }
     }
 
-    fun getQuizById(id: Int) {
+    fun getQuizById(id: Long) {
         ClientFirebase.myRef.child("quiz").child(id.toString()).get().addOnSuccessListener {
             var name = "null"
             var nbrQuestion = 0
@@ -99,6 +97,7 @@ object DataQuiz {
                         for (questionsId in dataQuiz.children) {
                             var typeQuestion = 0
                             var question = ""
+                            var url = ""
                             val listAnswer = ArrayList<Answer>()
 
                             for (dataQuestion in questionsId.children) {
@@ -106,6 +105,7 @@ object DataQuiz {
                                     "type" -> typeQuestion =
                                         dataQuestion.value.toString().toInt()
                                     "nameQuestion" -> question = dataQuestion.value.toString()
+                                    "urlImage" -> url = dataQuestion.value.toString()
                                     "listAnswer" -> {
                                         for (answerId in dataQuestion.children) {
                                             var answer = ""
@@ -124,13 +124,17 @@ object DataQuiz {
                                     }
                                 }
                             }
-                            listQuestions.add(Question(question, typeQuestion, listAnswer))
+                            listQuestions.add(Question(question, typeQuestion, url, listAnswer))
                         }
                     }
                 }
             }
-            //  listQuiz.add(Quiz(id, name, nbrQuestion, type, listQuestions))
+              listQuizUser.add(Quiz(id, name, nbrQuestion, type, listQuestions))
         }
+    }
+
+    fun addNewQuizUser(quiz: Quiz) {
+        ClientFirebase.myRef.child("quiz").child(quiz.id.toString()).setValue(quiz)
     }
 }
 

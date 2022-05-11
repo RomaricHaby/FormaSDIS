@@ -9,6 +9,10 @@ import androidx.fragment.app.Fragment
 import com.formasdis.R
 import com.formasdis.model.Question
 import com.formasdis.model.Quiz
+import com.formasdis.network.DataQuiz
+import com.formasdis.network.DataQuiz.listQuizUser
+import com.formasdis.network.DataUser
+import com.formasdis.network.User
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import java.lang.System.currentTimeMillis
 
@@ -27,6 +31,9 @@ class AddQuizFragment : Fragment() {
     private lateinit var nbrQuestion: TextView
 
     private lateinit var addQuestionButton: Button
+
+    private lateinit var shareCode : EditText
+    private lateinit var buttonAddShareCode : Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +62,9 @@ class AddQuizFragment : Fragment() {
 
         addQuestionButton = view.findViewById(R.id.buttonAddQuiz)
 
+        shareCode = view.findViewById(R.id.editTextShareCode)
+        buttonAddShareCode = view.findViewById(R.id.addQuizShareCode)
+
         // ToolBar
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
@@ -68,6 +78,26 @@ class AddQuizFragment : Fragment() {
 
         toolBarBack.setOnClickListener {
             loadFragment(AllQuizFragment())
+        }
+
+        buttonAddShareCode.setOnClickListener{
+            if(shareCode.text.isNotBlank()){
+                var isIn = false
+
+                for(quiz in listQuizUser){
+                    if(quiz.id == shareCode.text.toString().toLong()){
+                        isIn = true
+                        break
+                    }
+                }
+
+                if (!isIn){
+                    User.listIdQuiz.add(shareCode.text.toString().toLong())
+                    DataQuiz.getQuizById(shareCode.text.toString().toLong())
+                    DataUser.addNewQuiz()
+                }
+
+            }
         }
 
         addQuestion.setOnClickListener {
@@ -118,7 +148,7 @@ class AddQuizFragment : Fragment() {
             if (nameQuiz.text.isNotBlank()) {
                 var i = 0
                 while (i < quiz.nbrQuestion) {
-                    quiz.listQuestions.add(Question("", 0, ArrayList()))
+                    quiz.listQuestions.add(Question("", 0, "", ArrayList()))
                     i++
                 }
 

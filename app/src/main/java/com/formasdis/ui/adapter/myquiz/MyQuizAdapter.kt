@@ -1,4 +1,4 @@
-package com.formasdis.ui.adapter.quiz
+package com.formasdis.ui.adapter.myquiz
 
 import android.app.Activity
 import android.content.Context
@@ -7,25 +7,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Quiz
-import com.formasdis.network.ClientFirebase
 import com.formasdis.network.DataUser
 import com.formasdis.network.User
 import com.formasdis.ui.activity.MainActivity
-import com.google.firebase.ktx.Firebase
+import com.formasdis.ui.adapter.quiz.QuizViewHolder
 
-class QuizAdapter(private val listQuiz: List<Quiz>, val context: Context) :
-    RecyclerView.Adapter<QuizViewHolder>() {
+class MyQuizAdapter (private val listQuiz: List<Quiz>, val context: Context) :
+    RecyclerView.Adapter<MyQuizViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuizViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyQuizViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.view_holder_quiz, parent, false)
-        return QuizViewHolder(view, parent.context)
+        return MyQuizViewHolder(view, parent.context)
     }
 
-    override fun onBindViewHolder(holder: QuizViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyQuizViewHolder, position: Int) {
         val items = listQuiz[position]
-        holder.updateQuiz(items)
+        holder.updateMyQuiz(items)
 
 
         holder.itemView.setOnClickListener {

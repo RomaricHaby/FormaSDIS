@@ -1,8 +1,13 @@
 package com.formasdis.network
 
 import com.formasdis.model.CurrentQuiz
+import com.formasdis.model.Score
 
 object User {
-    val currentQuiz = CurrentQuiz()
+    var currentQuiz = CurrentQuiz()
+    var uID: String = ""
+
+    val listIdQuiz = ArrayList<Long>()
+    val listScore = ArrayList<Score>()
 
 }

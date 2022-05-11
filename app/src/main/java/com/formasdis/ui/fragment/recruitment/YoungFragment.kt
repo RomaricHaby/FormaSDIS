@@ -29,7 +29,7 @@ class YoungFragment : Fragment() {
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "DEVENIR JEUNE SAPEUR-POMPIER"
-        toolBarTitle.textSize = 12F
+        toolBarTitle.textSize = 20F
 
         image.load("https://www.pompiers.fr/sites/default/files/content/text/picture/jsp.jpg") {
             crossfade(true)
