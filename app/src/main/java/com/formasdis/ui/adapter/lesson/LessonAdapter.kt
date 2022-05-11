@@ -7,11 +7,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Lesson
-import com.formasdis.ui.fragment.education.WebViewFragment
 import com.formasdis.pdf.PdfViewerActivity
 
 class LessonAdapter(
-    val context : Context,
+    val context: Context,
     private val listLesson: List<Lesson>,
     val parentFragmentManager: FragmentManager
 ) : RecyclerView.Adapter<LessonViewHolder>() {

@@ -10,9 +10,8 @@ import com.formasdis.model.Quiz
 import com.formasdis.network.DataUser
 import com.formasdis.network.User
 import com.formasdis.ui.activity.MainActivity
-import com.formasdis.ui.adapter.quiz.QuizViewHolder
 
-class MyQuizAdapter (private val listQuiz: List<Quiz>, val context: Context) :
+class MyQuizAdapter(private val listQuiz: List<Quiz>, val context: Context) :
     RecyclerView.Adapter<MyQuizViewHolder>() {
 
 

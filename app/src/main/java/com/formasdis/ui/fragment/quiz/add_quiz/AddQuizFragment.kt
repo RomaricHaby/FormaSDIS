@@ -32,8 +32,8 @@ class AddQuizFragment : Fragment() {
 
     private lateinit var addQuestionButton: Button
 
-    private lateinit var shareCode : EditText
-    private lateinit var buttonAddShareCode : Button
+    private lateinit var shareCode: EditText
+    private lateinit var buttonAddShareCode: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,18 +80,18 @@ class AddQuizFragment : Fragment() {
             loadFragment(AllQuizFragment())
         }
 
-        buttonAddShareCode.setOnClickListener{
-            if(shareCode.text.isNotBlank()){
+        buttonAddShareCode.setOnClickListener {
+            if (shareCode.text.isNotBlank()) {
                 var isIn = false
 
-                for(quiz in listQuizUser){
-                    if(quiz.id == shareCode.text.toString().toLong()){
+                for (quiz in listQuizUser) {
+                    if (quiz.id == shareCode.text.toString().toLong()) {
                         isIn = true
                         break
                     }
                 }
 
-                if (!isIn){
+                if (!isIn) {
                     User.listIdQuiz.add(shareCode.text.toString().toLong())
                     DataQuiz.getQuizById(shareCode.text.toString().toLong())
                     DataUser.addNewQuiz()

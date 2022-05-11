@@ -67,7 +67,8 @@ class ShowResultQuiz : Fragment() {
                     "${nbrGoodAnswer}/${User.currentQuiz.quiz?.nbrQuestion}"
                 )
             }?.let { it2 ->
-                User.listScore.add(0,
+                User.listScore.add(
+                    0,
                     it2
                 )
             }
