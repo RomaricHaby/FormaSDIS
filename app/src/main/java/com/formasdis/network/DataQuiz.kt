@@ -24,8 +24,6 @@ object DataQuiz {
         }
     }
 
-
-
     fun getAllQuiz() {
         ClientFirebase.myRef.child("quizApp").get().addOnSuccessListener {
             for (idQuiz in it.children) {

@@ -21,7 +21,7 @@ import com.formasdis.ui.fragment.quiz.add_quiz.AddQuizFragment
 import com.google.firebase.auth.FirebaseAuth
 
 
-class AllQuizUser : Fragment() {
+class AllQuizUserFragment : Fragment() {
 
     // Get item in view
     private lateinit var toolBarTitle: TextView
