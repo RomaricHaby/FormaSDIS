@@ -22,19 +22,19 @@ class LessonAdapter(
     }
 
     override fun onBindViewHolder(holder: LessonViewHolder, position: Int) {
-        val items = listLesson[position]
+        val item = listLesson[position]
 
         holder.itemView.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_main_act, WebViewFragment(items.urlPdf, true))
+            /*parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_main_act, WebViewFragment(item.urlPdf, true))
                 .setReorderingAllowed(true)
-                .addToBackStack("detail").commit()
+                .addToBackStack("detail").commit()*/
 
             context.startActivity(
                 PdfViewerActivity.launchPdfFromPath(
                     context,
-                    "test.pdf",
-                    "ta mere",
+                    "${item.name}.pdf",
+                    item.name,
                     "assets",
                     enableDownload = false,
                     fromAssets = true,
@@ -42,7 +42,7 @@ class LessonAdapter(
             )
         }
 
-        holder.updateLesson(items)
+        holder.updateLesson(item)
     }
 
     override fun getItemCount(): Int {

@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
         imageAccount.setOnClickListener {
             val currentUser = auth.currentUser
             if (currentUser != null) {
-                val intent = Intent(activity, MainActivityPdf::class.java)
+                val intent = Intent(activity, AccountActivity::class.java)
                 activity?.startActivity(intent)
             } else {
                 val intent = Intent(activity, LoginActivity::class.java)

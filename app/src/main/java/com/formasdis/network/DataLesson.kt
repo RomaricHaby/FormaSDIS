@@ -7,22 +7,22 @@ object DataLesson {
         Lesson(
             "https://enasis.univ-lyon1.fr/file/resource/media/389665",
             "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/449295",
-            "Notions élémentaires : le feu"
+            "Le feu"
         ),
         Lesson(
             "https://enasis.univ-lyon1.fr/file/resource/media/398559",
             "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/964383",
-            "La sécurité en intervention"
+            "La protection des intervenants lors des interventions pour incendie"
         ),
         Lesson(
             "https://enasis.univ-lyon1.fr/file/resource/media/389699",
             "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/449299",
-            "La MGO"
+            "La marche générale des opérations (MGO)"
         ),
         Lesson(
             "https://enasis.univ-lyon1.fr/file/resource/media/389703",
             "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/449301",
-            "Rôle des binômes"
+            "Le rôle des binômes"
         ),
     )
 
@@ -30,12 +30,12 @@ object DataLesson {
         Lesson(
             "https://enasis.univ-lyon1.fr/file/resource/media/389741",
             "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/449313",
-            "Échelles à mains"
+            "Les échelles à mains"
         ),
         Lesson(
             "https://enasis.univ-lyon1.fr/file/resource/media/398559",
             "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/964383",
-            "La sécurité en intervention"
+            "LA PROTECTION DES INTERVENANTS LORS DES INTERVENTIONS POUR INCENDIE"
         ),
         Lesson(
             "https://enasis.univ-lyon1.fr/file/resource/media/389699",
