@@ -12,6 +12,7 @@ import com.formasdis.R
 import com.formasdis.ui.activity.MainActivity
 import com.formasdis.ui.activity.account.AccountActivity
 import com.formasdis.ui.activity.account.LoginActivity
+import com.formasdis.ui.fragment.user.ShowScoreFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -27,6 +28,8 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         val toolBarTitle = view.findViewById<TextView>(R.id.titleToolBar)
         val imageAccount = view.findViewById<ImageButton>(R.id.imageAccount)
+        val score = view.findViewById<ImageButton>(R.id.imageTrophy)
+
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "Forma SDIS"
 
@@ -36,6 +39,16 @@ class HomeFragment : Fragment() {
 
         // Initialize Firebase Auth
         auth = Firebase.auth
+
+        score.setOnClickListener {
+            val currentUser = auth.currentUser
+            if (currentUser != null) {
+                loadFragment(ShowScoreFragment())
+            } else {
+                val intent = Intent(activity, LoginActivity::class.java)
+                activity?.startActivity(intent)
+            }
+        }
 
         imageAccount.setOnClickListener {
             val currentUser = auth.currentUser

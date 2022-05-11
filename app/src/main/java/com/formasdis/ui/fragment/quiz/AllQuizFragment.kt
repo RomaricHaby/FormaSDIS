@@ -14,11 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Quiz
 import com.formasdis.network.DataQuiz
-import com.formasdis.network.User
 import com.formasdis.ui.adapter.quiz.QuizAdapter
 import com.formasdis.ui.fragment.HomeFragment
 import com.formasdis.ui.fragment.quiz.add_quiz.AddQuizFragment
-import com.formasdis.ui.fragment.user.AllQuizUser
+import com.formasdis.ui.fragment.user.AllQuizUserFragment
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -82,7 +81,7 @@ class AllQuizFragment : Fragment() {
         layoutMyQuiz.setOnClickListener {
             if (FirebaseAuth.getInstance().currentUser != null) {
                 if (DataQuiz.listQuizUser.isNotEmpty()) {
-                    loadFragment(AllQuizUser())
+                    loadFragment(AllQuizUserFragment())
 
                 } else {
                     Toast.makeText(context, "La liste est vide attend !", Toast.LENGTH_LONG).show()

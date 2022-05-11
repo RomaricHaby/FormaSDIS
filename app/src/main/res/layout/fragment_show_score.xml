@@ -4,23 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.user.AllQuizUserFragment" >
-
-    <TextView
-        android:id="@+id/resultQuizFragment2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Mes Quiz"
-        android:textColor="@color/blue"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include7" />
+    tools:context=".ui.fragment.user.ShowScoreFragment" >
 
     <include
-        android:id="@+id/include7"
+        android:id="@+id/include11"
         layout="@layout/component_toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,14 +15,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/resultQuizFragment4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Historiques des quiz"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include11" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMyQuiz"
+        android:id="@+id/recyclerVIewShowScore"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultQuizFragment2"
-        tools:listitem="@layout/view_holder_quiz" />
+        app:layout_constraintTop_toBottomOf="@+id/resultQuizFragment4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
