@@ -1,15 +1,14 @@
 package com.formasdis.pdf
 
-import android.annotation.TargetApi
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
 import android.graphics.Bitmap.createBitmap
 import android.graphics.BitmapFactory
 import android.graphics.pdf.PdfRenderer
-import android.os.Build
 import android.os.ParcelFileDescriptor
 import android.util.Log
+import com.formasdis.pdf.data.PdfQuality
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -17,22 +16,12 @@ import kotlinx.coroutines.launch
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import kotlin.math.min
 
-/**
- * Created by Rajat on 11,July,2020
- */
-
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 internal class PdfRendererCore(
     private val context: Context,
     pdfFile: File,
     private val pdfQuality: PdfQuality
 ) {
-    companion object {
-        private const val PREFETCH_COUNT = 3
-    }
-
     private val cachePath = "___pdf___cache___"
     private var pdfRenderer: PdfRenderer? = null
 
@@ -91,17 +80,7 @@ internal class PdfRendererCore(
                 buildBitmap(pageNo) { bitmap ->
                     GlobalScope.launch(Dispatchers.Main) { onBitmapReady?.invoke(bitmap, pageNo) }
                 }
-                onBitmapReady?.let {
-                    //prefetchNext(pageNo + 1)
-                }
             }
-        }
-    }
-
-    private fun prefetchNext(pageNo: Int) {
-        val countForPrefetch = min(getPageCount(), pageNo + PREFETCH_COUNT)
-        for (pageToPrefetch in pageNo until countForPrefetch) {
-            renderPage(pageToPrefetch)
         }
     }
 
@@ -111,9 +90,6 @@ internal class PdfRendererCore(
             onBitmap(it)
             return@buildBitmap
         }
-
-        val startTime = System.currentTimeMillis()
-
         try {
             val pdfPage = pdfRenderer!!.openPage(pageNo)
             bitmap = createBitmap(

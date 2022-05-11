@@ -1,8 +1,4 @@
-package com.formasdis.pdf
-
-/**
- * Created by Rajat on 11,July,2020
- */
+package com.formasdis.pdf.data
 
 enum class PdfQuality(val ratio: Int) {
     FAST(1),

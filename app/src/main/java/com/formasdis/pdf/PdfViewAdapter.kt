@@ -10,10 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import kotlinx.android.synthetic.main.list_item_pdf_page.view.*
 
-/**
- * Created by Rajat on 11,July,2020
- */
-
 internal class PdfViewAdapter(private val renderer: PdfRendererCore) :
     RecyclerView.Adapter<PdfViewAdapter.PdfPageViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PdfPageViewHolder {
