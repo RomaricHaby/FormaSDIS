@@ -13,13 +13,13 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.FrameLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
-import com.rajat.pdfviewer.*
+import com.formasdis.R
+import kotlinx.android.synthetic.main.pdf_rendererview.view.*
 import java.io.File
 import java.net.URLEncoder
 
@@ -46,10 +46,6 @@ class PdfRendererView @JvmOverloads constructor(
         get() {
             return pdfRendererCore.getPageCount()
         }
-
-    val pageNo = findViewById<TextView>(com.formasdis.R.id.pageNo)
-    val webView: WebView = findViewById(com.formasdis.R.id.webView)
-
 
     interface StatusCallBack {
         fun onDownloadStart() {}
@@ -110,7 +106,7 @@ class PdfRendererView @JvmOverloads constructor(
     private fun init(file: File, pdfQuality: PdfQuality) {
         pdfRendererCore = PdfRendererCore(context, file, pdfQuality)
         pdfRendererCoreInitialised = true
-        pdfViewAdapter = PdfViewAdapter(pdfRendererCore, webView)
+        pdfViewAdapter = PdfViewAdapter(pdfRendererCore)
         val v = LayoutInflater.from(context).inflate(R.layout.pdf_rendererview, this, false)
         addView(v)
         recyclerView = findViewById(R.id.recyclerView)

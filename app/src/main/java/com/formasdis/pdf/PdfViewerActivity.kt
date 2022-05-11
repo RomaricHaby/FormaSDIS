@@ -20,11 +20,10 @@ import android.view.MenuItem
 import android.view.View
 import android.view.View.GONE
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.rajat.pdfviewer.R
+import com.formasdis.R
 import kotlinx.android.synthetic.main.activity_pdf_viewer.*
 import kotlinx.android.synthetic.main.pdf_view_tool_bar.*
 import java.io.File
@@ -50,6 +49,7 @@ class PdfViewerActivity : AppCompatActivity() {
         var isPDFFromPath = false
         var isFromAssets = false
         var PERMISSION_CODE = 4040
+
 
         fun launchPdfFromUrl(
             context: Context?,
@@ -90,8 +90,6 @@ class PdfViewerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pdf_viewer)
-
-        val toolbar: Toolbar = findViewById(com.formasdis.R.id.toolbar)
 
         setUpToolbar(
             intent.extras!!.getString(
@@ -190,8 +188,8 @@ class PdfViewerActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        menuItem = menu?.findItem(R.id.download)
+        /*menuInflater.inflate(R.menu.menu, menu)
+        menuItem = menu?.findItem(R.id.download)*/
         return true
     }
 

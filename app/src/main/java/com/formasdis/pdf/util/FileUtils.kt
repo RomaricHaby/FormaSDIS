@@ -1,9 +1,7 @@
-package com.rajat.pdfviewer.util
+package com.formasdis.pdf.util
 
 import android.content.Context
 import android.os.Environment
-import android.provider.MediaStore
-import android.text.TextUtils
 import java.io.*
 
 object FileUtils {
