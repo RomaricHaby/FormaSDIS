@@ -1,17 +1,11 @@
 package com.formasdis.pdf
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.webkit.WebResourceError
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -23,11 +17,6 @@ import com.formasdis.pdf.data.PdfEngine
 import com.formasdis.pdf.data.PdfQuality
 import kotlinx.android.synthetic.main.pdf_rendererview.view.*
 import java.io.File
-import java.net.URLEncoder
-
-/**
- * Created by Rajat on 11,July,2020
- */
 
 class PdfRendererView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -50,13 +39,10 @@ class PdfRendererView @JvmOverloads constructor(
         }
 
     interface StatusCallBack {
-        fun onError(error: Throwable) {}
         fun onPageChanged(currentPage: Int, totalPage: Int) {}
     }
 
     fun initWithFile(file: File, pdfQuality: PdfQuality = this.quality) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
-            throw UnsupportedOperationException("should be over API 21")
         init(file, pdfQuality)
     }
 
@@ -82,7 +68,6 @@ class PdfRendererView @JvmOverloads constructor(
         runnable = Runnable {
             pageNo.visibility = View.GONE
         }
-
     }
 
     private val scrollListener = object : RecyclerView.OnScrollListener() {
@@ -92,8 +77,11 @@ class PdfRendererView @JvmOverloads constructor(
                 var foundPosition = findFirstCompletelyVisibleItemPosition()
 
                 pageNo.run {
-                    if (foundPosition != NO_POSITION)
-                        text = "${(foundPosition + 1)} of $totalPageCount"
+                    if (foundPosition != NO_POSITION){
+                        val page = "${(foundPosition + 1)} of $totalPageCount"
+                        text = page
+                    }
+
                     pageNo.visibility = View.VISIBLE
                 }
 
@@ -122,7 +110,6 @@ class PdfRendererView @JvmOverloads constructor(
                 pageNo.removeCallbacks(runnable)
             }
         }
-
     }
 
     init {
@@ -152,5 +139,4 @@ class PdfRendererView @JvmOverloads constructor(
         if (pdfRendererCoreInitialised)
             pdfRendererCore.closePdfRender()
     }
-
 }

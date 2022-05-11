@@ -8,10 +8,6 @@ import android.view.ScaleGestureDetector
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
 import androidx.recyclerview.widget.RecyclerView
 
-/**
- * Created by Rajat on 11,July,2020
- */
-
 class PinchZoomRecyclerView : RecyclerView {
     private var mActivePointerId = INVALID_POINTER_ID
     private var mScaleDetector: ScaleGestureDetector? = null

@@ -12,25 +12,20 @@ import com.formasdis.pdf.data.PdfQuality
 import kotlinx.android.synthetic.main.activity_pdf_viewer.*
 import java.io.File
 
-/**
- * Created by Rajat on 11,July,2020
- */
-
 class PdfViewerActivity : AppCompatActivity() {
 
     private var fileUrl: String? = null
 
     companion object {
         const val FILE_URL = "pdf_file_url"
-        const val FILE_DIRECTORY = "pdf_file_directory"
-        const val FILE_TITLE = "pdf_file_title"
+        private const val FILE_DIRECTORY = "pdf_file_directory"
+        private const val FILE_TITLE = "pdf_file_title"
         const val ENABLE_FILE_DOWNLOAD = "enable_download"
         const val FROM_ASSETS = "from_assests"
         var engine = PdfEngine.INTERNAL
         var enableDownload = true
         var isPDFFromPath = false
         var isFromAssets = false
-        var PERMISSION_CODE = 4040
 
         fun launchPdfFromPath(
             context: Context?,
