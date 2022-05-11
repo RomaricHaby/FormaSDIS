@@ -11,6 +11,7 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
 import com.formasdis.ui.fragment.HomeFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class RecruitmentFragment : Fragment() {
     override fun onCreateView(
@@ -23,12 +24,14 @@ class RecruitmentFragment : Fragment() {
         // Get item in view
         val toolBarTitle = view.findViewById<TextView>(R.id.titleToolBar)
         val toolBarBack = view.findViewById<ImageButton>(R.id.imageButtonBack)
+        
         val imageYoung = view.findViewById<ImageButton>(R.id.imageButtonYoung)
         val imageProfessional = view.findViewById<ImageButton>(R.id.imageButtonProfessional)
         val imageVolunteer = view.findViewById<ImageButton>(R.id.imageButtonVolunteer)
 
 
         // ToolBar
+
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "Devenir sapeur-pompier"
@@ -37,6 +40,8 @@ class RecruitmentFragment : Fragment() {
         toolBarBack.setOnClickListener {
             loadFragment(HomeFragment())
         }
+
+
 
         // Volunteer
         imageVolunteer.load("https://demarchesadministratives.fr/images/demarches/957/comment-devenir-pompier-volontaire-1.jpg") {

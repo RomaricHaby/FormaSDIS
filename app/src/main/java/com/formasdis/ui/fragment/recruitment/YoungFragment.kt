@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.formasdis.R
+import com.formasdis.ui.fragment.HomeFragment
 
 class YoungFragment : Fragment() {
     override fun onCreateView(
@@ -22,14 +23,22 @@ class YoungFragment : Fragment() {
 
         val toolBarTitle = view.findViewById<TextView>(R.id.titleToolBar)
         val toolBarBack = view.findViewById<ImageButton>(R.id.imageButtonBack)
-
+        val toolBarHome = view.findViewById<ImageButton>(R.id.imageButtonHome)
         val image = view.findViewById<ImageView>(R.id.imageViewYoung)
 
         // ToolBar
         toolBarBack.visibility = View.VISIBLE
         toolBarTitle.visibility = View.VISIBLE
         toolBarTitle.text = "DEVENIR JEUNE SAPEUR-POMPIER"
-        toolBarTitle.textSize = 20F
+        toolBarTitle.textSize = 14F
+        toolBarHome.visibility = View.VISIBLE
+        toolBarBack.setOnClickListener {
+            loadFragment(RecruitmentFragment())
+        }
+
+        toolBarHome.setOnClickListener {
+            loadFragment(HomeFragment())
+        }
 
         image.load("https://www.pompiers.fr/sites/default/files/content/text/picture/jsp.jpg") {
             crossfade(true)
@@ -38,5 +47,13 @@ class YoungFragment : Fragment() {
         }
 
         return view
+    }
+
+    //Management fragment
+    private fun loadFragment(fragment: Fragment) {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_main_act, fragment)
+            .setReorderingAllowed(true)
+            .addToBackStack("detail").commit()
     }
 }
