@@ -75,7 +75,11 @@ class AllQuizFragment : Fragment() {
         }
 
         toolBarAddQuiz.setOnClickListener {
-            loadFragment(AddQuizFragment())
+            if (FirebaseAuth.getInstance().currentUser != null) {
+                loadFragment(AddQuizFragment())
+            } else {
+                Toast.makeText(context, "Vous devez être connectez !", Toast.LENGTH_LONG).show()
+            }
         }
 
         layoutMyQuiz.setOnClickListener {
