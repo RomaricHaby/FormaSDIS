@@ -17,7 +17,7 @@ class ResultViewHolder(itemView: View, val context: Context) :
     private lateinit var check: ImageView
 
     private fun initUI() {
-        titleQuestion = itemView.findViewById(R.id.title_result_view_holder)
+        titleQuestion = itemView.findViewById(R.id.titleQuizScoreUser)
         check = itemView.findViewById(R.id.image_result_view_holder)
     }
 
