@@ -1,29 +1,14 @@
 package com.formasdis.pdf
 
-import android.Manifest.permission
-import android.app.DownloadManager
-import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
-import android.content.pm.PackageManager
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.text.TextUtils
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.View.GONE
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.formasdis.R
+import com.formasdis.pdf.data.PdfEngine
+import com.formasdis.pdf.data.PdfQuality
 import kotlinx.android.synthetic.main.activity_pdf_viewer.*
 import java.io.File
 
@@ -99,7 +84,6 @@ class PdfViewerActivity : AppCompatActivity() {
 
         //Initiating PDf Viewer with URL
         try {
-
             val file = if (isFromAssets)
                 com.rajat.pdfviewer.util.FileUtils.fileFromAsset(this, filePath!!)
             else File(filePath!!)
@@ -116,12 +100,7 @@ class PdfViewerActivity : AppCompatActivity() {
 
     private fun onPdfError() {
         Toast.makeText(this, "Pdf has been corrupted", Toast.LENGTH_SHORT).show()
-        true.showProgressBar()
         finish()
-    }
-
-    private fun Boolean.showProgressBar() {
-        progressBar.visibility = if (this) View.VISIBLE else GONE
     }
 
     override fun onDestroy() {

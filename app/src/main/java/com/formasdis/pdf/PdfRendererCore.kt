@@ -10,6 +10,7 @@ import android.graphics.pdf.PdfRenderer
 import android.os.Build
 import android.os.ParcelFileDescriptor
 import android.util.Log
+import com.formasdis.pdf.data.PdfQuality
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -95,13 +96,6 @@ internal class PdfRendererCore(
                     //prefetchNext(pageNo + 1)
                 }
             }
-        }
-    }
-
-    private fun prefetchNext(pageNo: Int) {
-        val countForPrefetch = min(getPageCount(), pageNo + PREFETCH_COUNT)
-        for (pageToPrefetch in pageNo until countForPrefetch) {
-            renderPage(pageToPrefetch)
         }
     }
 
