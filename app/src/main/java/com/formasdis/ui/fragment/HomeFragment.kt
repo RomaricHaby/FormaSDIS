@@ -9,7 +9,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.formasdis.R
-import com.formasdis.pdf.MainActivityPdf
 import com.formasdis.ui.activity.MainActivity
 import com.formasdis.ui.activity.account.AccountActivity
 import com.formasdis.ui.activity.account.LoginActivity
