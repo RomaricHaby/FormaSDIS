@@ -25,11 +25,6 @@ class LessonAdapter(
         val item = listLesson[position]
 
         holder.itemView.setOnClickListener {
-            /*parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_main_act, WebViewFragment(item.urlPdf, true))
-                .setReorderingAllowed(true)
-                .addToBackStack("detail").commit()*/
-
             context.startActivity(
                 PdfViewerActivity.launchPdfFromPath(
                     context,

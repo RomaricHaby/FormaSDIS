@@ -10,14 +10,7 @@ import androidx.core.content.ContextCompat
 import com.formasdis.databinding.ActivityMainPdfBinding
 
 class MainActivityPdf : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainPdfBinding
-
-
-
-    private var download_file_url = "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/449313"
-    var per = 0f
-    private val PERMISSION_CODE = 4040
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,15 +22,7 @@ class MainActivityPdf : AppCompatActivity() {
                 launchPdf()
         }
     }
-
     private fun launchPdf() {
-        /*startActivity(
-            PdfViewerActivity.launchPdfFromUrl(
-                this, download_file_url,
-                "Title", "dir",true
-            )
-        )*/
-
         startActivity(
             PdfViewerActivity.launchPdfFromPath(
                 this,
@@ -49,5 +34,4 @@ class MainActivityPdf : AppCompatActivity() {
             )
         )
     }
-
 }

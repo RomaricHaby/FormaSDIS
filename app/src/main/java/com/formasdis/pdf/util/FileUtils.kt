@@ -7,9 +7,9 @@ import java.io.*
 object FileUtils {
     @Throws(IOException::class)
     fun fileFromAsset(context: Context, assetName: String): File {
-        val outFile = File(context.cacheDir, "$assetName")
+        val outFile = File(context.cacheDir, assetName)
         if (assetName.contains("/")) {
-            outFile.parentFile.mkdirs()
+            outFile.parentFile?.mkdirs()
         }
         copy(context.assets.open(assetName), outFile)
         return outFile
