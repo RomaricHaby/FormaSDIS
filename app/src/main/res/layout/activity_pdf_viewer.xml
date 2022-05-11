@@ -7,8 +7,6 @@
     android:orientation="vertical"
     tools:context=".pdf.PdfViewerActivity">
 
-    <include layout="@layout/pdf_view_tool_bar" />
-
     <FrameLayout
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"

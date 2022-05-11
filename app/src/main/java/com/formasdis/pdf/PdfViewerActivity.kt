@@ -25,7 +25,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.formasdis.R
 import kotlinx.android.synthetic.main.activity_pdf_viewer.*
-import kotlinx.android.synthetic.main.pdf_view_tool_bar.*
 import java.io.File
 
 /**
@@ -90,13 +89,6 @@ class PdfViewerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pdf_viewer)
-
-        setUpToolbar(
-            intent.extras!!.getString(
-                FILE_TITLE,
-                "PDF"
-            )
-        )
 
         enableDownload = intent.extras!!.getBoolean(
             ENABLE_FILE_DOWNLOAD,
@@ -169,22 +161,6 @@ class PdfViewerActivity : AppCompatActivity() {
             }
         }
         return result != 0
-    }
-
-    private fun setUpToolbar(toolbarTitle: String) {
-        setSupportActionBar(toolbar)
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
-            if(tvAppBarTitle!=null) {
-                tvAppBarTitle?.text = toolbarTitle
-                setDisplayShowTitleEnabled(false)
-            }else{
-                setDisplayShowTitleEnabled(true)
-                title = toolbarTitle
-            }
-        }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

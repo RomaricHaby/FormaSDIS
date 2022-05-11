@@ -14,10 +14,6 @@ class MainActivityPdf : AppCompatActivity() {
     private lateinit var binding: ActivityMainPdfBinding
 
 
-    private val requiredPermissionList = arrayOf(
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.READ_EXTERNAL_STORAGE
-    )
 
     private var download_file_url = "https://enasis.univ-lyon1.fr/clarolinepdfplayerbundle/pdf/449313"
     var per = 0f
@@ -30,7 +26,6 @@ class MainActivityPdf : AppCompatActivity() {
         setContentView(view)
 
         binding.openPdf.setOnClickListener {
-            if (checkAndRequestPermission())
                 launchPdf()
         }
     }
@@ -53,48 +48,6 @@ class MainActivityPdf : AppCompatActivity() {
                 fromAssets = true,
             )
         )
-    }
-
-    private fun checkAndRequestPermission(): Boolean {
-        val permissionsNeeded = ArrayList<String>()
-
-        for (permission in requiredPermissionList) {
-            if (ContextCompat.checkSelfPermission(this, permission) !=
-                PackageManager.PERMISSION_GRANTED
-            ) {
-                permissionsNeeded.add(permission)
-            }
-        }
-
-        if (permissionsNeeded.isNotEmpty()) {
-            ActivityCompat.requestPermissions(
-                this,
-                permissionsNeeded.toTypedArray(),
-                PERMISSION_CODE
-            )
-            return false
-        }
-
-        return true
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            PERMISSION_CODE -> if (grantResults.isNotEmpty()) {
-                val readPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED
-                val writePermission = grantResults[1] == PackageManager.PERMISSION_GRANTED
-                if (readPermission && writePermission)
-                    launchPdf()
-                else {
-                    Toast.makeText(this, " Permission Denied", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
     }
 
 }
