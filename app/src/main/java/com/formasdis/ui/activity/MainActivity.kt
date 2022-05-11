@@ -22,11 +22,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        auth = FirebaseAuth.getInstance()
-        Firebase.auth.signOut()
-
         if (DataQuiz.listQuizApp.isEmpty()) {
             DataQuiz.getAllQuiz()
+            Firebase.auth.signOut()
         }
 
         initUI()
