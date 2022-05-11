@@ -58,7 +58,7 @@ class ShowListLessonFragment(val type: String) : Fragment() {
     }
 
     private fun configureRecyclerView(list: List<Lesson>, recyclerView: RecyclerView) {
-        val adapter = LessonAdapter(list, parentFragmentManager)
+        val adapter = context?.let { LessonAdapter(it, list, parentFragmentManager) }
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }

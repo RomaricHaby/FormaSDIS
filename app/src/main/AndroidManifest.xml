@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.formasdis">
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission
@@ -13,6 +18,7 @@
         tools:ignore="ScopedStorage" />
 
     <application
+        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_2"
         android:label="@string/app_name"
@@ -30,6 +36,12 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.CurrentQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pdf.MainActivityPdf"
+            android:exported="false" />
+        <activity
+            android:name=".pdf.PdfViewerActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"

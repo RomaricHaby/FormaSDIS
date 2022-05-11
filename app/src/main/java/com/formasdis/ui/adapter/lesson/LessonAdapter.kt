@@ -1,5 +1,6 @@
 package com.formasdis.ui.adapter.lesson
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
@@ -7,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.formasdis.R
 import com.formasdis.model.Lesson
 import com.formasdis.ui.fragment.education.WebViewFragment
+import com.formasdis.pdf.PdfViewerActivity
 
 class LessonAdapter(
+    val context : Context,
     private val listLesson: List<Lesson>,
     val parentFragmentManager: FragmentManager
 ) : RecyclerView.Adapter<LessonViewHolder>() {
@@ -19,17 +22,27 @@ class LessonAdapter(
     }
 
     override fun onBindViewHolder(holder: LessonViewHolder, position: Int) {
-        val items = listLesson[position]
+        val item = listLesson[position]
 
         holder.itemView.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_main_act, WebViewFragment(items.urlPdf, true))
+            /*parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_main_act, WebViewFragment(item.urlPdf, true))
                 .setReorderingAllowed(true)
-                .addToBackStack("detail").commit()
+                .addToBackStack("detail").commit()*/
+
+            context.startActivity(
+                PdfViewerActivity.launchPdfFromPath(
+                    context,
+                    "${item.name}.pdf",
+                    item.name,
+                    "assets",
+                    enableDownload = false,
+                    fromAssets = true,
+                )
+            )
         }
 
-
-        holder.updateLesson(items)
+        holder.updateLesson(item)
     }
 
     override fun getItemCount(): Int {
