@@ -10,9 +10,13 @@ import com.formasdis.ui.fragment.education.EducationFragment
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
 import com.formasdis.ui.fragment.recruitment.RecruitmentFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navigation: BottomNavigationView
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,11 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         if (DataQuiz.listQuizApp.isEmpty()) {
             DataQuiz.getAllQuiz()
+            Firebase.auth.signOut()
         }
 
         initUI()
     }
-
 
     //Initialise all item of the view
     private fun initUI() {

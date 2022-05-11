@@ -13,6 +13,7 @@ import com.formasdis.R
 import com.formasdis.model.Lesson
 import com.formasdis.network.DataLesson
 import com.formasdis.ui.adapter.lesson.LessonAdapter
+import com.formasdis.ui.fragment.HomeFragment
 
 class ShowListLessonFragment(val type: String) : Fragment() {
     // Get item in view
@@ -34,6 +35,13 @@ class ShowListLessonFragment(val type: String) : Fragment() {
     }
 
     private fun initUI(view: View) {
+        val toolBarHome = view.findViewById<ImageButton>(R.id.imageButtonHome)
+        toolBarHome.visibility = View.VISIBLE
+
+        toolBarHome.setOnClickListener {
+            loadFragment(HomeFragment())
+        }
+
         toolBarTitle = view.findViewById(R.id.titleToolBar)
         toolBarBack = view.findViewById(R.id.imageButtonBack)
         recyclerViewLesson = view.findViewById(R.id.recycler_view_lesson)
@@ -58,7 +66,7 @@ class ShowListLessonFragment(val type: String) : Fragment() {
     }
 
     private fun configureRecyclerView(list: List<Lesson>, recyclerView: RecyclerView) {
-        val adapter = LessonAdapter(list, parentFragmentManager)
+        val adapter = context?.let { LessonAdapter(it, list, parentFragmentManager) }
         adapter.also { recyclerView.adapter = it }
         recyclerView.layoutManager = LinearLayoutManager(context)
     }

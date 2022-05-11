@@ -129,7 +129,7 @@ object DataQuiz {
                     }
                 }
             }
-              listQuizUser.add(Quiz(id, name, nbrQuestion, type, listQuestions))
+            listQuizUser.add(Quiz(id, name, nbrQuestion, type, listQuestions))
         }
     }
 

@@ -13,57 +13,63 @@ object DataUser {
     }
 
     fun loadUser() {
-        myRef.child("user").child(User.uID).get().addOnSuccessListener {
-            for (dataQuiz in it.children) {
-                when (dataQuiz.key.toString()) {
-                    "myQuiz" -> {
-                        for (idQuiz in dataQuiz.children) {
-                            User.listIdQuiz.add(idQuiz.value.toString().toLong())
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            myRef.child("user").child(User.uID).get().addOnSuccessListener {
+                for (dataQuiz in it.children) {
+                    when (dataQuiz.key.toString()) {
+                        "myQuiz" -> {
+                            for (idQuiz in dataQuiz.children) {
+                                User.listIdQuiz.add(idQuiz.value.toString().toLong())
+                            }
                         }
-                    }
-                    "currentQuiz" -> {
+                        "currentQuiz" -> {
 
-                    }
-                    "myScore" -> {
-                        for (idScore in dataQuiz.children) {
-                            var nomQuiz = ""
-                            var idQuiz = 0L
-                            var score = ""
-                            for (scoreData in idScore.children){
-                                when (scoreData.key) {
-                                    "nomQuiz" -> {
-                                        nomQuiz = scoreData.value.toString()
-                                    }
+                        }
+                        "myScore" -> {
+                            for (idScore in dataQuiz.children) {
+                                var nomQuiz = ""
+                                var idQuiz = 0L
+                                var score = ""
+                                for (scoreData in idScore.children) {
+                                    when (scoreData.key) {
+                                        "nomQuiz" -> {
+                                            nomQuiz = scoreData.value.toString()
+                                        }
 
-                                    "idQuiz" -> {
-                                        idQuiz = scoreData.value.toString().toLong()
-                                    }
+                                        "idQuiz" -> {
+                                            idQuiz = scoreData.value.toString().toLong()
+                                        }
 
-                                    "score" -> {
-                                        score = scoreData.value.toString()
+                                        "score" -> {
+                                            score = scoreData.value.toString()
+                                        }
                                     }
                                 }
+                                User.listScore.add(0, Score(nomQuiz, idQuiz, score))
                             }
-                            User.listScore.add(0,Score(nomQuiz, idQuiz, score))
                         }
                     }
                 }
+                for (idQuiz in User.listIdQuiz) {
+                    DataQuiz.getQuizById(idQuiz)
+                }
+            }.addOnFailureListener {
+                Log.e("firebase", "Error getting data", it)
             }
-            for (idQuiz in User.listIdQuiz) {
-                DataQuiz.getQuizById(idQuiz)
-            }
-        }.addOnFailureListener {
-            Log.e("firebase", "Error getting data", it)
         }
     }
 
     fun updateCurrentQuiz() {
-        myRef.child("user").child(User.uID).child("currentQuiz").setValue(User.currentQuiz)
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            myRef.child("user").child(User.uID).child("currentQuiz").setValue(User.currentQuiz)
+        }
     }
 
     fun addNewQuiz() {
-        myRef.child("user").child(User.uID).child("myQuiz").removeValue()
-        myRef.child("user").child(User.uID).child("myQuiz").setValue(User.listIdQuiz)
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            myRef.child("user").child(User.uID).child("myQuiz").removeValue()
+            myRef.child("user").child(User.uID).child("myQuiz").setValue(User.listIdQuiz)
+        }
     }
 
     fun deleteQuiz(quiz: Quiz) {
@@ -71,13 +77,17 @@ object DataUser {
     }
 
     fun addNewScore() {
-        myRef.child("user").child(User.uID).child("myScore").removeValue()
-        myRef.child("user").child(User.uID).child("myScore").setValue(User.listScore)
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            myRef.child("user").child(User.uID).child("myScore").removeValue()
+            myRef.child("user").child(User.uID).child("myScore").setValue(User.listScore)
+        }
     }
 
     fun clearData() {
-        myRef.child("user").child(User.uID).removeValue()
-        FirebaseAuth.getInstance().signOut()
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            myRef.child("user").child(User.uID).removeValue()
+            FirebaseAuth.getInstance().signOut()
+        }
     }
 
 }

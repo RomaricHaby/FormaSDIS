@@ -21,7 +21,7 @@ class AccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account)
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         val toolBarTitle = findViewById<TextView>(R.id.titleToolBar)
         val toolBarBack = findViewById<ImageButton>(R.id.imageButtonBack)
