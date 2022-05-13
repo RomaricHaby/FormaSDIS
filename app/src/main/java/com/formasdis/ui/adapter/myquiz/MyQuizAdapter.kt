@@ -27,6 +27,8 @@ class MyQuizAdapter(private val listQuiz: List<Quiz>, val context: Context) :
 
 
         holder.itemView.setOnClickListener {
+            
+
             // Init the current quiz
             User.currentQuiz.quiz = items
             User.currentQuiz.currentQuestion = items.listQuestions[0]
