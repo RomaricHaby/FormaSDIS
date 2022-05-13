@@ -1,7 +1,6 @@
 package com.formasdis.network
 
 import android.util.Log
-import com.formasdis.model.Answer
 import com.formasdis.model.Quiz
 import com.formasdis.model.Score
 import com.formasdis.network.ClientFirebase.myRef
@@ -20,11 +19,12 @@ object DataUser {
                     when (dataQuiz.key.toString()) {
                         "myQuiz" -> {
                             User.listIdQuiz.clear()
+                            DataQuiz.listQuizUser.clear()
                             for (idQuiz in dataQuiz.children) {
                                 User.listIdQuiz.add(idQuiz.value.toString().toLong())
                             }
                         }
-                        "currentQuiz" -> {
+                        /*"currentQuiz" -> {
                             for (idCurrentQuiz in dataQuiz.children) {
 
                                 for (currentQuizData in idCurrentQuiz.children) {
@@ -96,7 +96,7 @@ object DataUser {
                                 }
 
                             }
-                        }
+                        }*/
                         "myScore" -> {
                             for (idScore in dataQuiz.children) {
                                 var nomQuiz = ""
