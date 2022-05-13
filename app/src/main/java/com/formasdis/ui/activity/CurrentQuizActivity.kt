@@ -31,26 +31,4 @@ class CurrentQuizActivity : AppCompatActivity() {
             .setReorderingAllowed(true)
             .commit()
     }
-
-    override fun onBackPressed() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Attention")
-        builder.setMessage("Voulez-vous quitter le quiz ? Si vous en commencez un autre votre progression sera perdue")
-
-        builder.setPositiveButton("Quitter") { _, _ ->
-            super.onBackPressed()
-
-            DataUser.updateCurrentQuiz()
-
-            User.currentQuiz.quiz = null
-            User.currentQuiz.currentQuestion = null
-            User.currentQuiz.isFinish = false
-            User.currentQuiz.correctAnswer.clear()
-        }
-
-        builder.setNegativeButton("Annuler") { _, _ ->
-        }
-
-        builder.show()
-    }
 }
