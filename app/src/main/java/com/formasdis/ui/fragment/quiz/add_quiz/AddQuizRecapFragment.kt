@@ -72,6 +72,8 @@ class AddQuizRecapFragment(val quiz: Quiz) : Fragment() {
 
         buttonValidate.setOnClickListener {
             User.listIdQuiz.add(quiz.id)
+            DataQuiz.listQuizUser.add(quiz)
+
             DataUser.addNewQuiz()
             DataQuiz.addNewQuizUser(quiz)
 

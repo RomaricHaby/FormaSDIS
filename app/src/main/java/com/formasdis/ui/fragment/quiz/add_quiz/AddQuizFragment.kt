@@ -14,6 +14,7 @@ import com.formasdis.network.DataQuiz.listQuizUser
 import com.formasdis.network.DataUser
 import com.formasdis.network.User
 import com.formasdis.ui.fragment.quiz.AllQuizFragment
+import com.formasdis.ui.fragment.user.AllQuizUserFragment
 import java.lang.System.currentTimeMillis
 
 
@@ -95,6 +96,8 @@ class AddQuizFragment : Fragment() {
                     User.listIdQuiz.add(shareCode.text.toString().toLong())
                     DataQuiz.getQuizById(shareCode.text.toString().toLong())
                     DataUser.addNewQuiz()
+
+                    loadFragment(AllQuizUserFragment())
                 }
 
             }
