@@ -133,6 +133,58 @@ object DataQuiz {
         }
     }
 
+    fun getCurrentQuizById(id: Long) {
+        ClientFirebase.myRef.child("quiz").child(id.toString()).get().addOnSuccessListener {
+            var name = "null"
+            var nbrQuestion = 0
+            var type = ""
+            val listQuestions = ArrayList<Question>()
+
+            for (dataQuiz in it.children) {
+                when (dataQuiz.key.toString()) {
+                    "name" -> name = dataQuiz.value.toString()
+                    "nbrQuestion" -> nbrQuestion = dataQuiz.value.toString().toInt()
+                    "type" -> type = dataQuiz.value.toString()
+                    "listQuestions" -> {
+                        for (questionsId in dataQuiz.children) {
+                            var typeQuestion = 0
+                            var question = ""
+                            var url = ""
+                            val listAnswer = ArrayList<Answer>()
+
+                            for (dataQuestion in questionsId.children) {
+                                when (dataQuestion.key.toString()) {
+                                    "type" -> typeQuestion =
+                                        dataQuestion.value.toString().toInt()
+                                    "nameQuestion" -> question = dataQuestion.value.toString()
+                                    "urlImage" -> url = dataQuestion.value.toString()
+                                    "listAnswer" -> {
+                                        for (answerId in dataQuestion.children) {
+                                            var answer = ""
+                                            var correct = false
+
+                                            for (dataAnswer in answerId.children) {
+                                                when (dataAnswer.key.toString()) {
+                                                    "answer" -> answer =
+                                                        dataAnswer.value.toString()
+                                                    "correct" -> correct =
+                                                        dataAnswer.value.toString().toBoolean()
+                                                }
+                                            }
+                                            listAnswer.add(Answer(answer, correct))
+                                        }
+                                    }
+                                }
+                            }
+                            listQuestions.add(Question(question, typeQuestion, url, listAnswer))
+                        }
+                    }
+                }
+            }
+            User.currentQuiz.quiz = Quiz(id, name, nbrQuestion, type, listQuestions)
+        }
+    }
+
     fun addNewQuizUser(quiz: Quiz) {
         ClientFirebase.myRef.child("quiz").child(quiz.id.toString()).setValue(quiz)
     }
